@@ -34,6 +34,25 @@ preserved untouched.
 Privacy earns a dedicated slide (#4) directly after the solution because it is the headline
 differentiator.
 
+## Update — 2026-06-19 (post-build iteration)
+
+Founder revisions after reviewing the live deck:
+- **Slide 4 is now "Built to Scale"** (agent inboxes scale, human email inboxes don't), not
+  the privacy contrast. Privacy now lives on the cover stat ("Zero data stored/trained on")
+  and the competition table's data-path rows. Consider reinstating a dedicated privacy slide
+  if the deck has room.
+- **Slide 1 (Problem)** drills into CX staffing economics: $10K–$20K & 60–90 days to train an
+  agent, 30–45% attrition, linear scaling, ~4–5 FTEs for 24/7 (sourced: Plivo/McKinsey, JustCall).
+- **Slide 3 (Solution)** trimmed to step titles only; step 4 = "Auto-send & track metrics".
+- **Slide 5 (Market)** SOM raised from $20M to **$70M** (~5% of SAM, 5-year), with a larger ring.
+- **Slide 7 (Business model)** shows a **subscription model with three tiers but no prices**.
+- **Slide 8 (Traction)** dates corrected: Apr started → May building → Jun live → Q3 first revenue.
+- **The ask is now $200K** (was [TBD]).
+- **Competition slide dropped** — deck is now 8 slides (cover + 7), renumbered to /08. Note:
+  privacy now appears **only as the cover stat** ("Zero data stored/trained on"); the dedicated
+  privacy slide and the competition data-path rows are both gone. Reinstate a privacy slide if
+  the "privacy-first" tagline needs on-slide support.
+
 ## Consequences
 
 - Market/competition numbers must be re-sourced for **AI customer service**, not marketing
