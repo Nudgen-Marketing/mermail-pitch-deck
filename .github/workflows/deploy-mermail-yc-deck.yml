@@ -1,12 +1,12 @@
-name: Deploy Mermail Pitch Deck to GitHub Pages
+name: Deploy Mermail YC Pitch to GitHub Pages
 
 on:
   push:
     branches:
       - main
     paths:
-      - mermail-pitch-deck.html
-      - .github/workflows/deploy-mermail-pitch-deck.yml
+      - mermail-yc-deck.html
+      - .github/workflows/deploy-mermail-yc-deck.yml
       - assets/**
   workflow_dispatch:
 

@@ -207,6 +207,21 @@
     .cagr p { font-size:1.02rem; color:var(--text-secondary); margin-top:var(--s4); line-height:1.5; max-width:32ch; }
     .cagr p a { color:var(--text-muted); text-decoration:underline; text-underline-offset:2px; }
 
+    /* ── Business model ── */
+    .tiers { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--s4); margin-top:var(--s10); }
+    .tier { padding:var(--s8); border:1px solid var(--border-subtle); border-radius:var(--r-lg); background:var(--surface); }
+    .tier.hot { border-color:var(--border-accent); background:var(--surface-2); }
+    .tier .k { font-size:.72rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--text-muted); margin-bottom:var(--s3); }
+    .tier.hot .k { color:var(--success-strong); }
+    .tier p { font-size:.9rem; color:var(--text-secondary); margin-top:var(--s3); line-height:1.55; }
+    .banner {
+      display:flex; align-items:center; gap:var(--s4); margin-top:var(--s10);
+      padding:var(--s6) var(--s8); border:1px solid var(--border-accent);
+      border-radius:var(--r-md); background:rgba(112,238,238,0.05); max-width:1000px;
+    }
+    .banner .ic { font-size:1.4rem; }
+    .banner span { font-size:1.05rem; color:var(--text-secondary); }
+
     /* ── Traction timeline ── */
     .tl { display:grid; grid-template-columns:repeat(4,1fr); gap:var(--s4); margin-top:var(--s12); position:relative; }
     .mile { position:relative; padding-top:var(--s8); }
@@ -297,7 +312,7 @@
           <div class="cstat"><div class="n">Zero</div><div class="l">customer data stored or trained on</div></div>
         </div>
       </div>
-      <div class="slide-meta">Cover</div><div class="slide-page">01 / 11</div>
+      <div class="slide-meta">Cover</div><div class="slide-page">01 / 12</div>
     </section>
 
     <!-- 02 · PROBLEM -->
@@ -323,7 +338,7 @@
         </div>
         <div class="banner" style="margin-top:var(--s6);"><span class="ic">⚡</span><span>An <strong style="color:var(--text-primary)">agent</strong> scales the instant it runs an inbox &mdash; a <strong style="color:var(--text-primary)">human</strong> never could.</span></div>
       </div>
-      <div class="slide-meta">The Problem</div><div class="slide-page">02 / 11</div>
+      <div class="slide-meta">The Problem</div><div class="slide-page">02 / 12</div>
     </section>
 
     <!-- 03 · SOLUTION -->
@@ -334,7 +349,7 @@
         <div class="eyebrow">Solution</div>
         <p class="statement">Give every job its own <span class="em">agentic inbox</span> &mdash; each with its own rules, tools, and permissions &mdash; and let them <span class="em">email each other</span> to get work done.</p>
       </div>
-      <div class="slide-meta">The Solution</div><div class="slide-page">03 / 11</div>
+      <div class="slide-meta">The Solution</div><div class="slide-page">03 / 12</div>
     </section>
 
     <!-- 04 · THE FLEET (diagram) -->
@@ -345,7 +360,7 @@
         <div class="eyebrow">The Fleet</div>
         <h2>An inbox fleet that <span class="em">coordinates itself.</span></h2>
         <div class="fleet-stage">
-          <svg viewBox="0 0 800 440" role="img" aria-label="Diagram of inbox agents coordinating: Support contacts Billing, Billing verifies the transaction and automatically sends the refund via x402">
+          <svg viewBox="0 0 800 440" role="img" aria-label="Diagram of inbox agents messaging each other, paying via the x402 protocol">
             <!-- structural mesh -->
             <g>
               <line class="edge-base" x1="400" y1="106" x2="530" y2="200" />
@@ -360,22 +375,22 @@
             <line class="edge-active" x1="400" y1="106" x2="270" y2="200" />
             <line class="edge-dash"   x1="400" y1="106" x2="270" y2="200" />
             <circle class="packet" r="4.5" />
-            <!-- inter-agent flow: Support contacts Billing, Billing verifies and auto-sends refund -->
+            <!-- inter-agent handoff flow with human-in-the-loop approval (clear of node labels) -->
             <line class="chip-line" x1="400" y1="47" x2="400" y2="62" />
             <g transform="translate(400,30)">
               <!-- requesting agent -->
               <rect class="fchip" x="-285" y="-15" width="100" height="30" rx="8" />
               <text class="fchip-txt" x="-235" y="1">Support</text>
               <text class="farrow" x="-172" y="1">&rarr;</text>
-              <!-- billing verifies the transaction -->
-              <rect class="fchip appr" x="-160" y="-15" width="150" height="30" rx="8" />
-              <text class="fchip-txt appr" x="-85" y="1">Billing &middot; verified &#x2713;</text>
-              <text class="farrow" x="3" y="1">&rarr;</text>
-              <!-- auto refund via x402 -->
-              <rect class="fchip" x="16" y="-15" width="196" height="30" rx="8" />
-              <text class="fchip-txt" x="114" y="1">Refund #1284 &middot; sent</text>
-              <rect class="pill" x="222" y="-11" width="56" height="22" rx="6" />
-              <text class="pill-txt" x="250" y="1">x402</text>
+              <!-- human approval gate -->
+              <rect class="fchip appr" x="-160" y="-15" width="146" height="30" rx="8" />
+              <text class="fchip-txt appr" x="-87" y="1">&#128100; You approve</text>
+              <text class="farrow" x="-2" y="1">&rarr;</text>
+              <!-- executing agent + payment -->
+              <rect class="fchip" x="10" y="-15" width="212" height="30" rx="8" />
+              <text class="fchip-txt" x="116" y="1">Billing &middot; refund #1284</text>
+              <rect class="pill" x="232" y="-11" width="56" height="22" rx="6" />
+              <text class="pill-txt" x="260" y="1">x402</text>
             </g>
             <!-- nodes -->
             <g>
@@ -407,9 +422,9 @@
             </g>
           </svg>
         </div>
-        <p class="fleet-cap">Each inbox is an <strong>autonomous agent</strong> &mdash; it triages, drafts, and coordinates with the fleet over email. When Support confirms a refund, Billing verifies the transaction and settles it automatically via the <strong>x402 protocol</strong> &mdash; no human required.</p>
+        <p class="fleet-cap">Each inbox is an <strong>autonomous agent</strong> &mdash; it triages, drafts, and hands work to another inbox over email. <strong>You approve the actions that matter</strong>; agents settle payments agent-to-agent via the <strong>x402 protocol</strong>.</p>
       </div>
-      <div class="slide-meta">The Fleet</div><div class="slide-page">04 / 11</div>
+      <div class="slide-meta">The Fleet</div><div class="slide-page">04 / 12</div>
     </section>
 
     <!-- 05 · ANATOMY -->
@@ -425,7 +440,7 @@
           <div class="tcard accent"><div class="ic">🔐</div><div class="k">Permissions</div><h3>What it&rsquo;s allowed</h3><p>Scoped access and approval gates. Auto-send the safe stuff; escalate the rest to a human. Every action is logged.</p></div>
         </div>
       </div>
-      <div class="slide-meta">Product</div><div class="slide-page">05 / 11</div>
+      <div class="slide-meta">Product</div><div class="slide-page">05 / 12</div>
     </section>
 
     <!-- TECHNOLOGY · built on Sui -->
@@ -441,7 +456,7 @@
           <div class="tcard accent"><div class="ic">🧠</div><div class="k">Memory</div><h3>MemWal</h3><p>Keeps each agent&rsquo;s business and knowledge-base context on-chain, so it picks up right where it left off across sessions and runtimes.</p></div>
         </div>
       </div>
-      <div class="slide-meta">Technology</div><div class="slide-page">06 / 11</div>
+      <div class="slide-meta">Technology</div><div class="slide-page">06 / 12</div>
     </section>
 
     <!-- 06 · WHY NOW -->
@@ -457,7 +472,7 @@
           <div class="tcard"><div class="ic">🔒</div><h3>Autonomy needs guardrails</h3><p>Permissions, approvals, and privacy are now table stakes. A fleet that acts on your behalf has to be governed and on-infra.</p></div>
         </div>
       </div>
-      <div class="slide-meta">Why Now</div><div class="slide-page">07 / 11</div>
+      <div class="slide-meta">Why Now</div><div class="slide-page">07 / 12</div>
     </section>
 
     <!-- 07 · MARKET -->
@@ -491,7 +506,7 @@
           </div>
         </div>
       </div>
-      <div class="slide-meta">Market</div><div class="slide-page">08 / 11</div>
+      <div class="slide-meta">Market</div><div class="slide-page">08 / 12</div>
     </section>
 
     <!-- 08 · WHY WE WIN -->
@@ -523,10 +538,27 @@
         </div>
         <div class="banner"><span class="ic">🔗</span><span>The more inboxes you run, the more they coordinate &mdash; <strong style="color:var(--text-primary)">and the harder we are to replace.</strong></span></div>
       </div>
-      <div class="slide-meta">Why We Win</div><div class="slide-page">09 / 11</div>
+      <div class="slide-meta">Why We Win</div><div class="slide-page">09 / 12</div>
     </section>
 
     <!-- 09 · BUSINESS MODEL -->
+    <section class="slide" id="s9" aria-label="Business model">
+      <div class="ghost-index">09</div>
+      <div class="slide-brand"></div>
+      <div class="content">
+        <div class="eyebrow">Business model</div>
+        <h2>Subscription <span class="em">per inbox.</span></h2>
+        <div class="tiers">
+          <div class="tier"><div class="k">Starter</div><h3>Your first inbox</h3><p>One agentic inbox (start with Support) · rules, tools &amp; human approval.</p></div>
+          <div class="tier hot"><div class="k">Growth · Most popular</div><h3>A small fleet</h3><p>Multiple inboxes · inter-agent handoff · auto-send · permissions &amp; analytics.</p></div>
+          <div class="tier"><div class="k">Scale</div><h3>Org-wide fleet</h3><p>Unlimited inboxes · SSO · dedicated isolation · SLA &amp; DPA · audit &amp; priority support.</p></div>
+        </div>
+        <div class="banner"><span class="ic">📈</span><span>Land with one inbox, expand to a fleet &mdash; revenue grows with <strong style="color:var(--text-primary)">the fleet, not your headcount.</strong></span></div>
+      </div>
+      <div class="slide-meta">Business Model</div><div class="slide-page">10 / 12</div>
+    </section>
+
+    <!-- 10 · TRACTION -->
     <section class="slide" id="s10" aria-label="Traction">
       <div class="ghost-index">10</div>
       <div class="slide-brand"></div>
@@ -540,7 +572,7 @@
           <div class="mile"><div class="dot"></div><div class="date">Q3 2026</div><h3>Fleet + revenue</h3><p>Ship inter-agent handoff, convert design partners to paid, start SOC&nbsp;2.</p></div>
         </div>
       </div>
-      <div class="slide-meta">Traction</div><div class="slide-page">10 / 11</div>
+      <div class="slide-meta">Traction</div><div class="slide-page">11 / 12</div>
     </section>
 
     <!-- 11 · TEAM + ASK -->
@@ -562,7 +594,7 @@
           </div>
         </div>
       </div>
-      <div class="slide-meta">Team</div><div class="slide-page">11 / 11</div>
+      <div class="slide-meta">Team</div><div class="slide-page">12 / 12</div>
     </section>
 
   </div>
