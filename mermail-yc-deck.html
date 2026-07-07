@@ -363,7 +363,7 @@
         <div class="eyebrow">The Fleet</div>
         <h2>An inbox fleet that <span class="em">coordinates itself.</span></h2>
         <div class="fleet-stage">
-          <svg viewBox="0 0 800 440" role="img" aria-label="Diagram of inbox agents messaging each other, paying via the x402 protocol">
+          <svg viewBox="0 0 800 440" role="img" aria-label="Diagram of inbox agents coordinating: Support checks Billing for purchase status, files a Linear card, and triages urgency automatically">
             <!-- structural mesh -->
             <g>
               <line class="edge-base" x1="400" y1="106" x2="530" y2="200" />
@@ -378,22 +378,20 @@
             <line class="edge-active" x1="400" y1="106" x2="270" y2="200" />
             <line class="edge-dash"   x1="400" y1="106" x2="270" y2="200" />
             <circle class="packet" r="4.5" />
-            <!-- inter-agent handoff flow with human-in-the-loop approval (clear of node labels) -->
+            <!-- inter-agent flow: Support checks billing, files Linear card, triages urgency -->
             <line class="chip-line" x1="400" y1="47" x2="400" y2="62" />
             <g transform="translate(400,30)">
-              <!-- requesting agent -->
+              <!-- support agent -->
               <rect class="fchip" x="-285" y="-15" width="100" height="30" rx="8" />
               <text class="fchip-txt" x="-235" y="1">Support</text>
               <text class="farrow" x="-172" y="1">&rarr;</text>
-              <!-- human approval gate -->
-              <rect class="fchip appr" x="-160" y="-15" width="146" height="30" rx="8" />
-              <text class="fchip-txt appr" x="-87" y="1">&#128100; You approve</text>
-              <text class="farrow" x="-2" y="1">&rarr;</text>
-              <!-- executing agent + payment -->
-              <rect class="fchip" x="10" y="-15" width="212" height="30" rx="8" />
-              <text class="fchip-txt" x="116" y="1">Billing &middot; refund #1284</text>
-              <rect class="pill" x="232" y="-11" width="56" height="22" rx="6" />
-              <text class="pill-txt" x="260" y="1">x402</text>
+              <!-- billing confirms purchase -->
+              <rect class="fchip appr" x="-160" y="-15" width="135" height="30" rx="8" />
+              <text class="fchip-txt appr" x="-92" y="1">Billing &middot; paid &#x2713;</text>
+              <text class="farrow" x="-12" y="1">&rarr;</text>
+              <!-- linear card filed + urgency triage -->
+              <rect class="fchip" x="0" y="-15" width="200" height="30" rx="8" />
+              <text class="fchip-txt" x="100" y="1">Linear #482 &middot; urgent</text>
             </g>
             <!-- nodes -->
             <g>
@@ -425,7 +423,7 @@
             </g>
           </svg>
         </div>
-        <p class="fleet-cap">Each inbox is an <strong>autonomous agent</strong> &mdash; it triages, drafts, and hands work to another inbox over email. <strong>You approve the actions that matter</strong>; agents settle payments agent-to-agent via the <strong>x402 protocol</strong>.</p>
+        <p class="fleet-cap">Each inbox is an <strong>autonomous agent</strong> &mdash; it reads the ticket, checks with Billing to confirm the customer paid, files a <strong>Linear card</strong> for the engineering team, and triages urgency &mdash; all over email, no human required.</p>
       </div>
       <div class="slide-meta">The Fleet</div><div class="slide-page">04 / 10</div>
 >>>>>>> 7145123 (feat: remove Technology (Sui) slide from YC deck)
