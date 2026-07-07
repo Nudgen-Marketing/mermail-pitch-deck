@@ -171,13 +171,6 @@
 
     /* ── Trio cards (anatomy / why now) ── */
     .trio { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--s6); margin-top:var(--s10); }
-    .tcard { padding:var(--s8); border:1px solid var(--border-subtle); border-radius:var(--r-lg); background:var(--surface); }
-    .tcard.accent { border-color:var(--border-accent); background:var(--surface-2); }
-    .tcard .ic { font-size:1.7rem; }
-    .tcard .k { font-size:.72rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--success-strong); margin-top:var(--s4); }
-    .tcard h3 { margin:var(--s2) 0 var(--s3); font-size:1.32rem; }
-    .tcard p { font-size:.92rem; color:var(--text-secondary); line-height:1.55; }
-
     /* ── Two-column compare ── */
     .duo { display:grid; grid-template-columns:1fr 1fr; gap:var(--s6); margin-top:var(--s10); }
     .panel { padding:var(--s8); border:1px solid var(--border-subtle); border-radius:var(--r-lg); background:var(--surface); }
@@ -206,21 +199,6 @@
     .cagr .pct { font-size:clamp(3.4rem,7.5vw,6rem); font-weight:900; letter-spacing:-.05em; color:var(--success-strong); line-height:.9; }
     .cagr p { font-size:1.02rem; color:var(--text-secondary); margin-top:var(--s4); line-height:1.5; max-width:32ch; }
     .cagr p a { color:var(--text-muted); text-decoration:underline; text-underline-offset:2px; }
-
-    /* ── Business model ── */
-    .tiers { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--s4); margin-top:var(--s10); }
-    .tier { padding:var(--s8); border:1px solid var(--border-subtle); border-radius:var(--r-lg); background:var(--surface); }
-    .tier.hot { border-color:var(--border-accent); background:var(--surface-2); }
-    .tier .k { font-size:.72rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--text-muted); margin-bottom:var(--s3); }
-    .tier.hot .k { color:var(--success-strong); }
-    .tier p { font-size:.9rem; color:var(--text-secondary); margin-top:var(--s3); line-height:1.55; }
-    .banner {
-      display:flex; align-items:center; gap:var(--s4); margin-top:var(--s10);
-      padding:var(--s6) var(--s8); border:1px solid var(--border-accent);
-      border-radius:var(--r-md); background:rgba(112,238,238,0.05); max-width:1000px;
-    }
-    .banner .ic { font-size:1.4rem; }
-    .banner span { font-size:1.05rem; color:var(--text-secondary); }
 
     /* ── Traction timeline ── */
     .tl { display:grid; grid-template-columns:repeat(4,1fr); gap:var(--s4); margin-top:var(--s12); position:relative; }
@@ -277,7 +255,7 @@
     @media (max-width:820px) {
       html { font-size:100%; }
       .slide { padding:13vh 6vw 16vh; justify-content:flex-start; overflow-y:auto; overflow-x:hidden; }
-      .trio, .tiers, .tl { grid-template-columns:1fr 1fr; }
+      .trio, .tl { grid-template-columns:1fr 1fr; }
       .duo, .market-grid, .team, .ask-grid { grid-template-columns:1fr; gap:var(--s8); }
       .mile::after { display:none; }
       .cover-stats { gap:var(--s8); }
@@ -293,7 +271,7 @@
       }
     }
     @media (max-width:520px) {
-      .trio, .tiers, .tl { grid-template-columns:1fr; }
+      .trio, .tl { grid-template-columns:1fr; }
     }
   </style>
 </head>
@@ -313,7 +291,6 @@
         </div>
       </div>
       <div class="slide-meta">Cover</div><div class="slide-page">01 / 10</div>
->>>>>>> 7145123 (feat: remove Technology (Sui) slide from YC deck)
     </section>
 
     <!-- 02 · PROBLEM -->
@@ -340,7 +317,6 @@
         <div class="banner" style="margin-top:var(--s6);"><span class="ic">⚡</span><span>An <strong style="color:var(--text-primary)">agent</strong> scales the instant it runs an inbox &mdash; a <strong style="color:var(--text-primary)">human</strong> never could.</span></div>
       </div>
       <div class="slide-meta">The Problem</div><div class="slide-page">02 / 10</div>
->>>>>>> 7145123 (feat: remove Technology (Sui) slide from YC deck)
     </section>
 
     <!-- 03 · SOLUTION -->
@@ -352,7 +328,6 @@
         <p class="statement">Give every job its own <span class="em">agentic inbox</span> &mdash; each with its own rules, tools, and permissions &mdash; and let them <span class="em">email each other</span> to get work done.</p>
       </div>
       <div class="slide-meta">The Solution</div><div class="slide-page">03 / 10</div>
->>>>>>> 7145123 (feat: remove Technology (Sui) slide from YC deck)
     </section>
 
     <!-- 04 · THE FLEET (diagram) -->
@@ -426,7 +401,6 @@
         <p class="fleet-cap">Each inbox is an <strong>autonomous agent</strong> &mdash; it reads the ticket, checks with Billing to confirm the customer paid, files a <strong>Linear card</strong> for the engineering team, and triages urgency &mdash; all over email, no human required.</p>
       </div>
       <div class="slide-meta">The Fleet</div><div class="slide-page">04 / 10</div>
->>>>>>> 7145123 (feat: remove Technology (Sui) slide from YC deck)
     </section>
 
     <!-- 05 · ANATOMY -->
@@ -443,7 +417,6 @@
         </div>
       </div>
       <div class="slide-meta">Product</div><div class="slide-page">05 / 10</div>
->>>>>>> 7145123 (feat: remove Technology (Sui) slide from YC deck)
     </section>
 
     <!-- 06 · WHY NOW -->
@@ -460,7 +433,6 @@
         </div>
       </div>
       <div class="slide-meta">Why Now</div><div class="slide-page">06 / 10</div>
->>>>>>> 7145123 (feat: remove Technology (Sui) slide from YC deck)
     </section>
 
     <!-- 06 · MARKET -->
@@ -495,7 +467,6 @@
         </div>
       </div>
       <div class="slide-meta">Market</div><div class="slide-page">07 / 10</div>
->>>>>>> 7145123 (feat: remove Technology (Sui) slide from YC deck)
     </section>
 
     <!-- 06 · WHY WE WIN -->
@@ -530,8 +501,7 @@
       <div class="slide-meta">Why We Win</div><div class="slide-page">08 / 10</div>
     </section>
 
-    <!-- 06 · BUSINESS MODEL -->
->>>>>>> 7145123 (feat: remove Technology (Sui) slide from YC deck)
+    <!-- 09 · TRACTION -->
     <section class="slide" id="s10" aria-label="Traction">
       <div class="ghost-index">10</div>
       <div class="slide-brand"></div>
@@ -546,7 +516,6 @@
         </div>
       </div>
       <div class="slide-meta">Traction</div><div class="slide-page">09 / 10</div>
->>>>>>> 7145123 (feat: remove Technology (Sui) slide from YC deck)
     </section>
 
     <!-- 11 · TEAM + ASK -->
@@ -569,7 +538,6 @@
         </div>
       </div>
       <div class="slide-meta">Team</div><div class="slide-page">10 / 10</div>
->>>>>>> 7145123 (feat: remove Technology (Sui) slide from YC deck)
     </section>
 
   </div>
@@ -597,7 +565,7 @@
       dotsEl.appendChild(d);
     });
 
-    const STAGGER = ['.eyebrow','h1','h2','.lede','.statement','.cstat','.row','.fleet-stage','.fleet-cap','.tcard','.tam','.cagr','.panel','.banner','.tier','.mile','.member','.ask-amt','.ask-sub','.fund','.vision'];
+    const STAGGER = ['.eyebrow','h1','h2','.lede','.statement','.cstat','.row','.fleet-stage','.fleet-cap','.tam','.cagr','.panel','.mile','.member','.ask-amt','.ask-sub','.fund','.vision'];
 
     function items(el) {
       const seen = new Set(), out = [];
