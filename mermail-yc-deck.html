@@ -126,14 +126,15 @@
     .cstat .l { font-size:.82rem; color:var(--text-muted); margin-top:6px; max-width:20ch; }
 
     /* ── Big number rows (problem) ── */
-    .stack { display:flex; flex-direction:column; gap:var(--s3); margin-top:var(--s6); max-width:980px; }
+    #s1 h2 { font-size:clamp(1.8rem,3vw,2.6rem); }
+    .stack { display:flex; flex-direction:column; gap:0; margin-top:var(--s6); max-width:900px; }
     .row {
-      display:grid; grid-template-columns:minmax(0,200px) 1fr; gap:var(--s6); align-items:center;
-      padding-bottom:var(--s4); border-bottom:1px solid var(--border-subtle);
+      display:flex; flex-direction:column; gap:4px;
+      padding:var(--s4) 0; border-bottom:1px solid var(--border-subtle);
     }
-    .row .big { font-size:clamp(1.25rem,2vw,1.6rem); font-weight:800; letter-spacing:-.02em; color:var(--success-strong); min-width:0; }
-    .row .big.neutral { color:var(--text-primary); }
-    .row .desc strong { display:block; font-size:1.05rem; font-weight:700; margin-bottom:3px; }
+    .row .big { font-size:.72rem; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:var(--success-strong); }
+    .row .big.neutral { color:var(--text-muted); }
+    .row .desc strong { display:block; font-size:1.05rem; font-weight:700; margin-bottom:2px; color:var(--text-primary); }
     .row .desc span { font-size:.9rem; color:var(--text-secondary); line-height:1.5; }
     .row a { color:var(--text-muted); text-decoration:underline; text-underline-offset:2px; }
 
