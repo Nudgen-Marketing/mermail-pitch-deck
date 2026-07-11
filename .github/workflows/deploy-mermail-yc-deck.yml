@@ -43,7 +43,13 @@ jobs:
           
           # Keep original filename for backward compatibility
           cp mermail-yc-deck.html site/mermail-yc-deck.html
-          
+
+          # /hackathon route serves mermail-hackathon.html
+          cp mermail-hackathon.html site/hackathon.html
+          mkdir -p site/hackathon
+          cp mermail-hackathon.html site/hackathon/index.html
+          cp mermail-hackathon.html site/mermail-hackathon.html
+
           # Copy assets directory so that favicon and og-image are deployed
           cp -r assets site/
 

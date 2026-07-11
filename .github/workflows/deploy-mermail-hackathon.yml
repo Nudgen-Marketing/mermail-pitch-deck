@@ -1,12 +1,12 @@
-name: Deploy Mermail Pitch Deck to GitHub Pages
+name: Deploy Mermail Hackathon Deck to GitHub Pages
 
 on:
   push:
     branches:
       - main
     paths:
-      - mermail-pitch-deck.html
-      - .github/workflows/deploy-mermail-pitch-deck.yml
+      - mermail-hackathon.html
+      - .github/workflows/deploy-mermail-hackathon.yml
       - assets/**
   workflow_dispatch:
 
@@ -35,13 +35,11 @@ jobs:
           # Default route (/) serves mermail-pitch-deck.html
           cp mermail-pitch-deck.html site/index.html
           cp mermail-pitch-deck.html site/mermail-pitch-deck.html
-          
+
           # /yc route serves mermail-yc-deck.html
           cp mermail-yc-deck.html site/yc.html
           mkdir -p site/yc
           cp mermail-yc-deck.html site/yc/index.html
-          
-          # Keep original filename for backward compatibility
           cp mermail-yc-deck.html site/mermail-yc-deck.html
 
           # /hackathon route serves mermail-hackathon.html
@@ -50,7 +48,7 @@ jobs:
           cp mermail-hackathon.html site/hackathon/index.html
           cp mermail-hackathon.html site/mermail-hackathon.html
 
-          # Copy assets directory so that favicon and og-image are deployed
+          # Copy assets
           cp -r assets site/
 
       - name: Upload Pages artifact
