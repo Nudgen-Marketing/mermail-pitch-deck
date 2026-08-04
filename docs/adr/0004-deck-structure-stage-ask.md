@@ -1,6 +1,6 @@
 # ADR 0004 — Stage, ask, deck structure, and visual reuse
 
-- **Status:** Accepted
+- **Status:** Superseded for the primary deck by ADR 0005
 - **Date:** 2026-06-19
 - **Context:** Final grilling decisions before building the customer-care pitch deck.
 

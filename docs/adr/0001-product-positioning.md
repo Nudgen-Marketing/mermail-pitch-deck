@@ -1,6 +1,6 @@
 # ADR 0001 — Product positioning: Mermail is the AI that works the inbox
 
-- **Status:** Accepted
+- **Status:** Superseded by ADR 0005
 - **Date:** 2026-06-19
 - **Context:** Grilling session for a new pitch deck. The live deck positioned Mermail as
   "real inboxes for agents" (mailbox infrastructure so third-party bots can receive OTPs,

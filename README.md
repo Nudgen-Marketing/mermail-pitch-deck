@@ -1,6 +1,6 @@
 # Mermail — Investor Pitch Deck
 
-Investor pitch deck and brand design assets for [Mermail](https://mermail.app) — the privacy-first agentic inbox for customer care.
+Investor pitch deck and brand design assets for [Mermail](https://mermail.app) — email identity and controlled payments for AI agents.
 
 ## Contents
 
@@ -16,19 +16,19 @@ The investor pitch deck (`mermail-pitch-deck.html`) is fully self-contained with
 
 ### Slide Structure (9 Slides)
 
-1. **Cover** — One-liner positioning, main logo, and high-level stats.
-2. **The Problem** — The high cost, staffing overhead, and limited hours of traditional customer support.
-3. **How It Works (Solution)** — A self-working inbox that triages, drafts, and replies with human-in-the-loop control.
-4. **Technology** — Built on Sui using Harbor (encrypted vault), cryptographic proofs for audit trails, and agentic routing.
-5. **Built to Scale** — Head-to-head comparison of human email inboxes versus the unlimited, instant scaling of Mermail.
-6. **Market** — TAM ($6.65B), SAM ($1.2B), and target CAGRs demonstrating the customer service market wave.
-7. **Business Model** — Clear monthly subscription tiers (Starter, Pro, Enterprise) and unit economics.
-8. **Traction** — Milestone timeline spanning problem validation, private MVP beta, signed pilot LOIs, and mainnet rollout.
-9. **Team & Ask** — Co-founders Nathan Nguyen (Webjet) and Toan Nhu (VinGroup/Tiki), and the $250K pre-seed raise details.
+1. **Cover** — “Give your AI a way to act” through its own inbox, Agent Wallet, and one MCP connection.
+2. **The Missing Action Layer** — Why registration, verification, and checkout still force a human handoff.
+3. **The Product** — One agent identity from message to payment.
+4. **Agent Wallet** — Per-action approval or policy-bound autonomy, protected credentials, and receipt history.
+5. **Why Mermail** — Dedicated agent identity versus borrowing a person's inbox and reusable credentials.
+6. **Why Now** — MCP, network payment programs, and the arrival of live agentic-commerce rails.
+7. **Business Model** — Subscription and usage revenue, with payment economics as planned expansion.
+8. **Product Progress** — Built email foundation, live MCP connection, Agent Wallet work, and next activation proofs.
+9. **Team & Ask** — Co-founders Nathan Nguyen and Toan Nhu, plus the $200K raise and use of funds.
 
 ## About Mermail
 
-Mermail is the inbox that answers itself — a privacy-first agentic inbox for customer care with human-in-the-loop control, built on the Sui blockchain. It replaces human-to-human inbox routing with cryptographic audit trails and specialized AI agent workers.
+Mermail gives an AI agent its own email inbox and a user-controlled Agent Wallet. Through MCP, agents can register, verify, buy, book, manage billing, and preserve confirmations without borrowing the user's inbox or handing reusable payment credentials to the agent.
 
 - **Website:** [mermail.app](https://mermail.app)
 - **Founders:** Nathan Nguyen & Toan Nhu (Co-founders)

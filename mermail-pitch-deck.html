@@ -9,11 +9,11 @@
     <meta property="og:url" content="https://pitching.mermail.app/" />
     <meta
       property="og:title"
-      content="Mermail — Privacy-First Agentic Inbox for Customer Care"
+      content="Mermail — Email Identity and Agent Wallet for AI Agents"
     />
     <meta
       property="og:description"
-      content="The inbox that answers itself. A privacy-first agentic inbox for customer care."
+      content="Mermail gives AI agents their own inbox and a user-controlled Agent Wallet, so they can complete real online workflows."
     />
     <meta
       property="og:image"
@@ -29,18 +29,18 @@
     <meta name="twitter:url" content="https://pitching.mermail.app/" />
     <meta
       name="twitter:title"
-      content="Mermail — Privacy-First Agentic Inbox for Customer Care"
+      content="Mermail — Email Identity and Agent Wallet for AI Agents"
     />
     <meta
       name="twitter:description"
-      content="The inbox that answers itself. A privacy-first agentic inbox for customer care."
+      content="Mermail gives AI agents their own inbox and a user-controlled Agent Wallet, so they can complete real online workflows."
     />
     <meta
       name="twitter:image"
       content="https://pitching.mermail.app/assets/og-image.png"
     />
 
-    <title>Mermail — Privacy-First Agentic Inbox for Customer Care</title>
+    <title>Mermail — Email Identity and Agent Wallet for AI Agents</title>
     <link
       rel="icon"
       type="image/x-icon"
@@ -49,7 +49,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
       rel="stylesheet"
     />
 
@@ -131,6 +131,12 @@
         -webkit-font-smoothing: antialiased;
       }
 
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+
       h1,
       h2,
       h3 {
@@ -141,17 +147,22 @@
       .deck {
         width: 100vw;
         height: 100vh;
+        height: 100dvh;
         position: relative;
       }
 
       .slide {
         position: absolute;
         inset: 0;
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
+        overflow: hidden;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 56px var(--s16);
+        padding: clamp(36px, 5.2vh, 56px) clamp(20px, 4.5vw, 64px);
         opacity: 0;
         transform: translateY(14px);
         transition:
@@ -1331,6 +1342,530 @@
           transform: translate(-50%, -50%) scale(1) !important;
         }
       }
+
+      /* ── Viewport safety ── */
+      @media (max-height: 760px) {
+        .pain-list {
+          gap: 8px;
+          margin-top: 16px;
+        }
+        .pain-list li {
+          padding: 14px 20px;
+        }
+        #slide-8 .ask-layout {
+          margin-top: 12px;
+        }
+        #slide-8 .team-card {
+          padding: 14px !important;
+        }
+        #slide-8 .ask-need {
+          padding: 18px;
+        }
+        #slide-8 .ask-need p {
+          margin-bottom: 12px !important;
+        }
+      }
+
+      @media (max-width: 600px) {
+        html {
+          font-size: 100%;
+        }
+        .slide {
+          padding: 46px 20px 52px;
+        }
+        .slide-num {
+          top: 16px;
+          right: 20px;
+          font-size: 11px;
+        }
+        .slide-brand {
+          top: 16px;
+          left: 20px;
+        }
+        .slide-brand img {
+          height: 16px;
+        }
+        h1 {
+          font-size: clamp(2rem, 11vw, 2.7rem);
+        }
+        h2 {
+          width: 100%;
+          font-size: clamp(1.35rem, 7vw, 1.85rem);
+        }
+        h3 {
+          font-size: 0.9rem;
+        }
+        .eyebrow {
+          width: 100%;
+          font-size: 11px;
+          margin-bottom: 6px;
+        }
+        .subtitle {
+          font-size: 0.9rem;
+          line-height: 1.45;
+          margin-top: 14px;
+        }
+        .logo-mark img {
+          height: 46px;
+        }
+        .rule.center {
+          margin: 14px auto;
+        }
+        .stat-row {
+          width: 100%;
+          gap: 7px;
+          margin-top: 22px;
+        }
+        .stat {
+          flex: 1;
+          min-width: 0;
+        }
+        .stat-num {
+          font-size: 2rem;
+        }
+        .stat-label {
+          font-size: 0.64rem;
+          line-height: 1.25;
+          letter-spacing: 0;
+        }
+        .stat-divider {
+          height: 42px;
+        }
+        .pain-list {
+          gap: 7px;
+          margin-top: 12px;
+        }
+        .pain-list li {
+          gap: 10px;
+          padding: 9px 11px;
+        }
+        .pain-icon {
+          font-size: 0.95rem;
+        }
+        .pain-list li > div > strong {
+          font-size: 0.84rem;
+        }
+        .pain-list span {
+          font-size: 0.72rem;
+          line-height: 1.32;
+        }
+        .flow {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 7px;
+          margin-top: 12px;
+        }
+        .flow-arrow {
+          display: none;
+        }
+        .flow-step,
+        .flow-step:first-child,
+        .flow-step:last-child {
+          border: 1px solid var(--border);
+          border-radius: var(--r-md);
+          padding: 16px 10px;
+        }
+        .flow-step h3 {
+          font-size: 0.84rem;
+          margin-bottom: 0;
+        }
+        .step-num {
+          font-size: 10px;
+          margin-bottom: 5px;
+        }
+        .card-grid {
+          gap: 7px;
+          margin-top: 12px;
+        }
+        .card-grid.cols-2,
+        .card-grid.cols-3,
+        .card-grid.cols-4 {
+          grid-template-columns: 1fr;
+        }
+        .card,
+        .biz-card {
+          padding: 10px 12px;
+        }
+        .card p,
+        .biz-card p {
+          font-size: 0.72rem;
+          line-height: 1.35;
+        }
+        .card h3,
+        .biz-card h3 {
+          margin-bottom: 3px;
+        }
+        #slide-3 .card-grid {
+          margin-top: 8px;
+        }
+        #slide-3 .card {
+          padding-block: 8px;
+        }
+        #slide-3 .card > div:first-child {
+          font-size: 1.05rem !important;
+        }
+        #slide-4 .card-grid {
+          margin-top: 8px;
+        }
+        #slide-4 .card ul {
+          gap: 8px !important;
+          margin-top: 10px !important;
+        }
+        #slide-4 .card li {
+          font-size: 0.78rem !important;
+          line-height: 1.35 !important;
+        }
+        .known-unknown {
+          margin-top: 8px;
+          padding: 8px 10px;
+          gap: 8px;
+        }
+        .known-unknown span {
+          font-size: 0.7rem;
+        }
+        .venn-layout {
+          margin-top: 10px;
+        }
+        .venn-rings {
+          display: none;
+        }
+        .venn-stats {
+          width: 100%;
+          gap: 6px;
+        }
+        .venn-stat {
+          padding: 7px 9px;
+        }
+        .venn-stat > div:last-child > div:first-child span:first-child {
+          font-size: 0.9rem !important;
+        }
+        .venn-stat > div:last-child > div:last-child {
+          font-size: 0.68rem !important;
+          line-height: 1.3 !important;
+        }
+        .cagr-banner {
+          margin-top: 8px;
+          padding: 8px 10px;
+          gap: 8px;
+        }
+        .cagr-num {
+          font-size: 1rem;
+        }
+        .cagr-text strong {
+          font-size: 0.72rem;
+        }
+        .cagr-text span {
+          font-size: 0.64rem;
+          line-height: 1.2;
+        }
+        .biz-row {
+          flex-direction: column;
+          gap: 7px;
+          margin-top: 12px;
+        }
+        .biz-label {
+          font-size: 9px;
+          margin-bottom: 4px;
+        }
+        .timeline {
+          margin-top: 12px;
+        }
+        .timeline-track,
+        .t-dot {
+          display: none;
+        }
+        .timeline-items {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 7px;
+        }
+        .t-item {
+          display: block;
+        }
+        .t-card {
+          width: 100%;
+          padding: 8px;
+        }
+        .t-date {
+          font-size: 9px;
+        }
+        .t-card h3 {
+          font-size: 0.78rem;
+        }
+        .t-card p {
+          font-size: 0.66rem;
+          line-height: 1.3;
+        }
+        #slide-8 .ask-layout {
+          flex-direction: column;
+          gap: 7px;
+          margin-top: 10px;
+        }
+        #slide-8 .ask-layout > div:first-child {
+          max-width: none !important;
+          gap: 6px !important;
+        }
+        #slide-8 .team-card {
+          padding: 7px !important;
+        }
+        #slide-8 .team-card p {
+          display: block;
+          font-size: 0.58rem !important;
+          line-height: 1.2;
+        }
+        #slide-8 .avatar {
+          width: 42px;
+          height: 42px;
+        }
+        #slide-8 .ask-need {
+          max-width: none !important;
+          padding: 10px;
+        }
+        #slide-8 .ask-need h3 {
+          font-size: 1rem;
+          margin-bottom: 5px;
+        }
+        #slide-8 .ask-need p {
+          display: block;
+          font-size: 0.58rem;
+          line-height: 1.2;
+          margin-bottom: 6px !important;
+        }
+        #slide-8 .fund-row {
+          margin-bottom: 6px !important;
+        }
+        #slide-8 .fund-row > div:first-child {
+          font-size: 0.68rem !important;
+          margin-bottom: 3px !important;
+        }
+        #slide-8 .btn-primary {
+          padding: 7px 16px;
+          font-size: 0.75rem;
+        }
+        #slide-8 .contact-row,
+        .kbd-hint {
+          display: none;
+        }
+      }
+
+      @media (max-height: 500px) and (min-width: 601px) {
+        html {
+          font-size: 78%;
+        }
+        .slide {
+          padding: 25px 30px 18px;
+        }
+        .slide-num,
+        .slide-brand {
+          top: 10px;
+        }
+        .slide-num {
+          right: 20px;
+          font-size: 9px;
+        }
+        .slide-brand {
+          left: 20px;
+        }
+        .slide-brand img {
+          height: 13px;
+        }
+        h1 {
+          font-size: 2.25rem;
+        }
+        h2 {
+          font-size: 1.45rem;
+        }
+        h3 {
+          font-size: 0.86rem;
+        }
+        .eyebrow {
+          font-size: 9px;
+          margin-bottom: 4px;
+        }
+        .subtitle {
+          font-size: 0.8rem;
+          margin-top: 8px;
+        }
+        .logo-mark img {
+          height: 34px;
+        }
+        .rule.center {
+          margin: 8px auto;
+        }
+        .stat-row {
+          margin-top: 12px;
+          gap: 18px;
+        }
+        .stat-num {
+          font-size: 1.8rem;
+        }
+        .stat-label {
+          font-size: 0.58rem;
+        }
+        .pain-list {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 6px;
+          max-width: 980px;
+          margin-top: 8px;
+        }
+        .pain-list li {
+          padding: 7px 10px;
+          gap: 8px;
+        }
+        .pain-icon {
+          font-size: 0.85rem;
+        }
+        .pain-list li > div > strong {
+          font-size: 0.75rem;
+        }
+        .pain-list span {
+          font-size: 0.63rem;
+          line-height: 1.25;
+        }
+        .flow,
+        .card-grid,
+        .biz-row,
+        .timeline {
+          margin-top: 8px;
+        }
+        .flow-step {
+          padding: 12px 8px;
+        }
+        .flow-step h3 {
+          font-size: 0.76rem;
+          margin-bottom: 0;
+        }
+        .step-num {
+          font-size: 8px;
+          margin-bottom: 4px;
+        }
+        .card-grid {
+          gap: 8px;
+        }
+        .card,
+        .biz-card {
+          padding: 9px 11px;
+        }
+        .card p,
+        .biz-card p {
+          font-size: 0.64rem;
+          line-height: 1.3;
+        }
+        .card h3,
+        .biz-card h3 {
+          margin-bottom: 2px;
+        }
+        .known-unknown {
+          display: none;
+        }
+        .venn-rings {
+          display: none;
+        }
+        .venn-layout {
+          max-width: 1100px;
+          margin-top: 7px;
+        }
+        .venn-stats {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 7px;
+        }
+        .venn-stat {
+          padding: 7px 8px;
+        }
+        .venn-stat > div:last-child > div:first-child span:first-child {
+          font-size: 0.84rem !important;
+        }
+        .venn-stat > div:last-child > div:last-child {
+          font-size: 0.59rem !important;
+          line-height: 1.2 !important;
+        }
+        .cagr-banner {
+          margin-top: 6px;
+          padding: 6px 9px;
+        }
+        .cagr-num {
+          font-size: 0.9rem;
+        }
+        .cagr-text strong {
+          font-size: 0.66rem;
+        }
+        .cagr-text span {
+          font-size: 0.56rem;
+        }
+        .biz-row {
+          gap: 7px;
+        }
+        .biz-label {
+          font-size: 8px;
+          margin-bottom: 3px;
+        }
+        .timeline-track {
+          top: 13px;
+        }
+        .t-dot {
+          width: 11px;
+          height: 11px;
+          margin-bottom: 6px;
+        }
+        .t-card {
+          padding: 7px;
+        }
+        .t-date {
+          font-size: 8px;
+        }
+        .t-card h3 {
+          font-size: 0.7rem;
+        }
+        .t-card p {
+          font-size: 0.58rem;
+          line-height: 1.25;
+        }
+        #slide-8 .ask-layout {
+          gap: 8px;
+          margin-top: 7px;
+          max-width: 1040px;
+        }
+        #slide-8 .ask-layout > div:first-child {
+          gap: 5px !important;
+        }
+        #slide-8 .team-card {
+          padding: 6px !important;
+        }
+        #slide-8 .team-card p,
+        #slide-8 .ask-need p {
+          display: block;
+          font-size: 0.5rem !important;
+          line-height: 1.15;
+        }
+        #slide-8 .avatar {
+          width: 36px;
+          height: 36px;
+        }
+        #slide-8 .ask-need {
+          padding: 8px;
+        }
+        #slide-8 .ask-need h3 {
+          font-size: 0.9rem;
+          margin-bottom: 5px;
+        }
+        #slide-8 .fund-row {
+          margin-bottom: 5px !important;
+        }
+        #slide-8 .fund-row > div:first-child {
+          font-size: 0.58rem !important;
+          margin-bottom: 2px !important;
+        }
+        #slide-8 .btn-primary {
+          padding: 5px 13px;
+          font-size: 0.66rem;
+        }
+        #slide-8 .contact-row,
+        .kbd-hint {
+          display: none;
+        }
+      }
     </style>
   </head>
   <body>
@@ -1347,23 +1882,27 @@
         </div>
         <div class="rule center"></div>
         <h1 style="text-align: center; max-width: 840px">
-          The inbox that <span class="em">answers itself.</span>
+          Give your AI <span class="em">a way to act.</span>
         </h1>
-        <p class="subtitle">A privacy-first agentic inbox for customer care.</p>
+        <p class="subtitle">
+          Its own inbox. A user-controlled Agent Wallet. One MCP connection.
+        </p>
         <div class="stat-row">
           <div class="stat">
-            <div class="stat-num">$12B</div>
-            <div class="stat-label">AI customer service market, 2024</div>
+            <div class="stat-num">1</div>
+            <div class="stat-label">persistent identity across tasks</div>
           </div>
           <div class="stat-divider"></div>
           <div class="stat">
-            <div class="stat-num">25.8%</div>
-            <div class="stat-label">projected CAGR to 2030</div>
+            <div class="stat-num">MCP</div>
+            <div class="stat-label">works where the agent already lives</div>
           </div>
           <div class="stat-divider"></div>
           <div class="stat">
-            <div class="stat-num">Zero</div>
-            <div class="stat-label">customer data stored or trained on</div>
+            <div class="stat-num">2</div>
+            <div class="stat-label">
+              approval modes: Always Ask or bounded autonomy
+            </div>
           </div>
         </div>
       </div>
@@ -1378,76 +1917,48 @@
           />
         </div>
 
-        <div class="eyebrow">The Problem</div>
+        <div class="eyebrow">The Missing Action Layer</div>
         <h2>
-          Great customer care is
-          <span class="em">expensive to staff and never sleeps.</span>
+          Agents can reason. <span class="em">Real workflows still stop.</span>
         </h2>
         <ul class="pain-list">
           <li>
-            <span class="pain-icon">🎓</span>
+            <span class="pain-icon">@</span>
             <div>
-              <strong
-                >One agent takes months &mdash; and thousands &mdash; to
-                train</strong
-              >
+              <strong>No identity of their own</strong>
               <span
-                >A new support hire costs <strong>$10K&ndash;$20K</strong> and
-                <strong>60&ndash;90 days</strong> of ramp before they're fully
-                productive. ·
-                <a
-                  href="https://www.plivo.com/blog/hidden-costs-of-customer-service-agent-turnover-and-how-to-reduce-them/"
-                  target="_blank"
-                  style="
-                    color: var(--text-muted);
-                    text-decoration: underline;
-                    text-underline-offset: 2px;
-                  "
-                  >McKinsey / industry</a
-                ></span
+                >An agent must borrow a person's inbox, credentials, and history
+                just to register or receive a code.</span
               >
             </div>
           </li>
           <li>
-            <span class="pain-icon">🔁</span>
+            <span class="pain-icon">01</span>
             <div>
-              <strong>&hellip;and you're re-hiring before they're good</strong>
+              <strong>Verification breaks the workflow</strong>
               <span
-                >Support attrition runs <strong>30&ndash;45% a year</strong>,
-                with 70% of it in the first 90 days &mdash; so you pay that ramp
-                cost over and over. ·
-                <a
-                  href="https://justcall.io/blog/call-center-onboarding.html"
-                  target="_blank"
-                  style="
-                    color: var(--text-muted);
-                    text-decoration: underline;
-                    text-underline-offset: 2px;
-                  "
-                  >JustCall</a
-                ></span
+                >OTPs, confirmation links, invoices, and receipts arrive outside
+                the agent's working context.</span
               >
             </div>
           </li>
           <li>
-            <span class="pain-icon">📈</span>
+            <span class="pain-icon">$</span>
             <div>
-              <strong>Support can't scale with growth</strong>
+              <strong>Payment requires a custody handoff</strong>
               <span
-                >Double your customers and you double the queue. Headcount
-                &mdash; and cost &mdash; climbs linearly while your margins
-                shrink.</span
+                >Users either stop to pay manually or give software a reusable
+                credential with too much authority.</span
               >
             </div>
           </li>
           <li>
-            <span class="pain-icon">🌙</span>
+            <span class="pain-icon">↳</span>
             <div>
-              <strong>24/7 coverage is out of reach for an SMB</strong>
+              <strong>The user has to take the task back</strong>
               <span
-                >Staffing a single seat around the clock takes
-                <strong>4&ndash;5 agents</strong> across shifts, weekends, and
-                holidays. Nights and spikes still go unanswered.</span
+                >The agent recommends the next step; the human still completes
+                checkout, billing, or booking.</span
               >
             </div>
           </li>
@@ -1464,36 +1975,33 @@
           />
         </div>
 
-        <div class="eyebrow">How It Works</div>
-        <h2>
-          An inbox that <span class="em">works itself</span> &mdash; with you in
-          control.
-        </h2>
+        <div class="eyebrow">The Product</div>
+        <h2>One identity from <span class="em">message to payment.</span></h2>
         <div class="flow">
           <div class="flow-step">
             <div class="step-num">Step 1</div>
-            <h3>Get a Mermail mailbox</h3>
+            <h3>Connect Mermail through MCP</h3>
           </div>
           <div class="flow-arrow">→</div>
           <div class="flow-step">
             <div class="step-num">Step 2</div>
-            <h3>AI triages &amp; drafts</h3>
+            <h3>Agent uses its own inbox</h3>
           </div>
           <div class="flow-arrow">→</div>
           <div class="flow-step">
-            <div class="step-num">Step 3</div>
-            <h3>You approve</h3>
+            <div class="step-num">Step 3 · In build</div>
+            <h3>Set the Agent Wallet policy</h3>
           </div>
           <div class="flow-arrow">→</div>
           <div class="flow-step">
-            <div class="step-num">Step 4</div>
-            <h3>Auto-send &amp; track metrics</h3>
+            <div class="step-num">Step 4 · In build</div>
+            <h3>Wallet enforces policy &amp; captures the receipt</h3>
           </div>
         </div>
       </div>
 
-      <!-- 04 · TECHNOLOGY -->
-      <div class="slide" id="slide-tech">
+      <!-- 04 · AGENT WALLET -->
+      <div class="slide" id="slide-3">
         <div class="slide-num">04 / 09</div>
         <div class="slide-brand">
           <img
@@ -1502,12 +2010,12 @@
           />
         </div>
 
-        <div class="eyebrow">Technology</div>
-        <h2>Built on <span class="em">Sui.</span></h2>
+        <div class="eyebrow">Agent Wallet · In Build</div>
+        <h2>Autonomy <span class="em">without custody.</span></h2>
         <div class="card-grid cols-3" style="max-width: 1040px">
           <div class="card privacy-card" style="text-align: left">
-            <div style="font-size: 1.8rem">🗄️</div>
-            <h3 style="margin-top: var(--s3)">Harbor</h3>
+            <div style="font-size: 1.8rem">01</div>
+            <h3 style="margin-top: var(--s3)">Choose the policy</h3>
             <div
               style="
                 font-size: 0.72rem;
@@ -1518,27 +2026,17 @@
                 margin: 6px 0 var(--s3);
               "
             >
-              S3-comparable storage
+              Per-action or policy-bound
             </div>
             <p>
-              Decentralized object storage for mailboxes, attachments, and files
-              with <strong>SEAL</strong> on-chain encryption and access control
-              built in, so only authorized parties can read your data.
+              Always Ask requires approval per action. Bounded autonomy lets the
+              agent act inside one human-approved policy and user-defined
+              limits.
             </p>
           </div>
           <div class="card privacy-card" style="text-align: left">
-            <div style="font-size: 1.8rem">🔑</div>
-            <h3 style="margin-top: var(--s3)">
-              zkLogin
-              <span
-                style="
-                  font-weight: 500;
-                  color: var(--text-muted);
-                  font-size: 0.85rem;
-                "
-                >by Enoki</span
-              >
-            </h3>
+            <div style="font-size: 1.8rem">02</div>
+            <h3 style="margin-top: var(--s3)">Keep credentials out of reach</h3>
             <div
               style="
                 font-size: 0.72rem;
@@ -1549,17 +2047,17 @@
                 margin: 6px 0 var(--s3);
               "
             >
-              Web2 login, Web3 rails
+              No reusable secret in agent context
             </div>
             <p>
-              A familiar Web2 sign-in &mdash; just your everyday social account
-              running on Web3 infrastructure. No wallets, seed phrases, or
-              passwords.
+              Cards and wallet keys stay behind a secure permission layer. The
+              agent can trigger permitted actions, but cannot access raw
+              credentials or bypass the user's policy.
             </p>
           </div>
           <div class="card privacy-card" style="text-align: left">
-            <div style="font-size: 1.8rem">🧠</div>
-            <h3 style="margin-top: var(--s3)">MemWal</h3>
+            <div style="font-size: 1.8rem">03</div>
+            <h3 style="margin-top: var(--s3)">Approve, pay &amp; prove</h3>
             <div
               style="
                 font-size: 0.72rem;
@@ -1570,18 +2068,19 @@
                 margin: 6px 0 var(--s3);
               "
             >
-              Persistent memory layer
+              Authorization + receipt
             </div>
             <p>
-              Keeps the agent's business and knowledge-base context on-chain, so
-              it picks up right where it left off across sessions and runtimes.
+              Always Ask approvals expire after one action; autonomous actions
+              must remain inside the active policy. Confirmation returns to the
+              agent's inbox.
             </p>
           </div>
         </div>
       </div>
 
-      <!-- 04 · SCALING -->
-      <div class="slide" id="slide-3">
+      <!-- 05 · DIFFERENTIATION -->
+      <div class="slide" id="slide-4">
         <div class="slide-num">05 / 09</div>
         <div class="slide-brand">
           <img
@@ -1590,16 +2089,19 @@
           />
         </div>
 
-        <div class="eyebrow">Built to Scale</div>
+        <div class="eyebrow">Why Mermail</div>
         <h2>
-          We scale agent inboxes. <span class="em">Email inboxes don't.</span>
+          Borrowed access is a workaround.
+          <span class="em">Mermail is agent-native.</span>
         </h2>
         <div class="card-grid cols-2" style="max-width: 980px">
           <div
             class="card privacy-card"
             style="border-left: 3px solid var(--red)"
           >
-            <h3 style="color: var(--text-secondary)">A human email inbox</h3>
+            <h3 style="color: var(--text-secondary)">
+              Borrow the human's accounts
+            </h3>
             <ul
               style="
                 list-style: none;
@@ -1618,8 +2120,8 @@
                   line-height: 1.5;
                 "
               >
-                <span style="color: var(--red)">✗</span> More volume means more
-                hires
+                <span style="color: var(--red)">✗</span> Shared identity and
+                mixed history
               </li>
               <li
                 style="
@@ -1630,8 +2132,8 @@
                   line-height: 1.5;
                 "
               >
-                <span style="color: var(--red)">✗</span> $10K&ndash;$20K and
-                months to add each seat
+                <span style="color: var(--red)">✗</span> Reusable credentials
+                reach the agent
               </li>
               <li
                 style="
@@ -1642,8 +2144,8 @@
                   line-height: 1.5;
                 "
               >
-                <span style="color: var(--red)">✗</span> Capped by headcount and
-                working hours
+                <span style="color: var(--red)">✗</span> Email and payment live
+                in separate flows
               </li>
               <li
                 style="
@@ -1654,8 +2156,8 @@
                   line-height: 1.5;
                 "
               >
-                <span style="color: var(--red)">✗</span> Cost climbs linearly
-                with growth
+                <span style="color: var(--red)">✗</span> Human takes over at
+                every critical step
               </li>
             </ul>
           </div>
@@ -1666,7 +2168,9 @@
               background: var(--surface-2);
             "
           >
-            <h3 style="color: var(--success-strong)">A Mermail agent inbox</h3>
+            <h3 style="color: var(--success-strong)">
+              Give the agent its own identity
+            </h3>
             <ul
               style="
                 list-style: none;
@@ -1685,7 +2189,8 @@
                   line-height: 1.5;
                 "
               >
-                <span class="check">✓</span> Add unlimited capacity instantly
+                <span class="check">✓</span> Dedicated inbox, address, and
+                history
               </li>
               <li
                 style="
@@ -1696,8 +2201,8 @@
                   line-height: 1.5;
                 "
               >
-                <span class="check">✓</span> Every message answered the moment
-                it lands
+                <span class="check">✓</span> Agent Wallet with scoped, revocable
+                permissions
               </li>
               <li
                 style="
@@ -1708,8 +2213,7 @@
                   line-height: 1.5;
                 "
               >
-                <span class="check">✓</span> Always on &mdash; nights, weekends,
-                spikes
+                <span class="check">✓</span> One MCP layer across agent clients
               </li>
               <li
                 style="
@@ -1720,7 +2224,8 @@
                   line-height: 1.5;
                 "
               >
-                <span class="check">✓</span> Cost stays flat as you grow
+                <span class="check">✓</span> Registration, checkout, and
+                receipts stay connected
               </li>
             </ul>
           </div>
@@ -1728,14 +2233,14 @@
         <div class="known-unknown" style="max-width: 980px">
           <span>📈</span>
           <span
-            >Grow your customer base &mdash;
-            <strong>not your support team.</strong></span
+            >Mermail turns a capable assistant into an agent that can
+            <strong>finish the job.</strong></span
           >
         </div>
       </div>
 
-      <!-- 05 · MARKET -->
-      <div class="slide" id="slide-4">
+      <!-- 06 · WHY NOW -->
+      <div class="slide" id="slide-5">
         <div class="slide-num">06 / 09</div>
         <div class="slide-brand">
           <img
@@ -1744,16 +2249,18 @@
           />
         </div>
 
-        <div class="eyebrow">Market</div>
-        <h2>Riding the <span class="em">AI customer service</span> wave.</h2>
+        <div class="eyebrow">Why Now</div>
+        <h2>
+          The rails for <span class="em">agentic commerce</span> are arriving.
+        </h2>
         <div class="venn-layout">
           <div class="venn-rings">
-            <div class="v-ring tam"><span class="v-ring-tag">TAM</span></div>
+            <div class="v-ring tam"><span class="v-ring-tag">TOOLS</span></div>
             <div class="v-ring sam"></div>
             <div class="v-ring som">
               <div class="v-som-label">
-                <div class="vs-tag">SOM</div>
-                <div class="vs-val">$140M</div>
+                <div class="vs-tag">ACTION</div>
+                <div class="vs-val">NOW</div>
               </div>
             </div>
           </div>
@@ -1769,7 +2276,7 @@
                       font-size: 1.15rem;
                       color: var(--text-primary);
                     "
-                    >$47.8B</span
+                    >2024</span
                   ><span
                     style="
                       font-size: 0.7rem;
@@ -1778,7 +2285,7 @@
                       text-transform: uppercase;
                       color: var(--text-muted);
                     "
-                    >TAM</span
+                    >OPEN STANDARD</span
                   >
                 </div>
                 <div
@@ -1788,16 +2295,17 @@
                     line-height: 1.45;
                   "
                 >
-                  Global AI for customer service by 2030 ·
+                  Anthropic open-sources MCP, giving agents a common tool layer
+                  ·
                   <a
-                    href="https://www.marketsandmarkets.com/PressReleases/ai-for-customer-service.asp"
+                    href="https://www.anthropic.com/news/model-context-protocol"
                     target="_blank"
                     style="
                       color: var(--text-muted);
                       text-decoration: underline;
                       text-underline-offset: 2px;
                     "
-                    >MarketsandMarkets</a
+                    >Anthropic</a
                   >
                 </div>
               </div>
@@ -1816,7 +2324,7 @@
                       font-size: 1.15rem;
                       color: var(--text-primary);
                     "
-                    >$1.4B</span
+                    >2025</span
                   ><span
                     style="
                       font-size: 0.7rem;
@@ -1825,7 +2333,7 @@
                       text-transform: uppercase;
                       color: var(--text-muted);
                     "
-                    >SAM</span
+                    >PAYMENTS</span
                   >
                 </div>
                 <div
@@ -1835,16 +2343,17 @@
                     line-height: 1.45;
                   "
                 >
-                  AI support automation for SMBs, 2024 ·
+                  Mastercard launches Agent Pay with tokenized credentials and
+                  user control ·
                   <a
-                    href="https://dataintelo.com/report/it-help-desk-chatbot-for-smb-market/"
+                    href="https://newsroom.mastercard.com/news/press/2025/april/mastercard-unveils-agent-pay-pioneering-agentic-payments-technology-to-power-commerce-in-the-age-of-ai/"
                     target="_blank"
                     style="
                       color: var(--text-muted);
                       text-decoration: underline;
                       text-underline-offset: 2px;
                     "
-                    >Dataintelo</a
+                    >Mastercard</a
                   >
                 </div>
               </div>
@@ -1863,7 +2372,7 @@
                       font-size: 1.15rem;
                       color: var(--success-strong);
                     "
-                    >$140M</span
+                    >2026</span
                   ><span
                     style="
                       font-size: 0.7rem;
@@ -1872,7 +2381,7 @@
                       text-transform: uppercase;
                       color: var(--text-muted);
                     "
-                    >SOM</span
+                    >NETWORK PILOTS</span
                   >
                 </div>
                 <div
@@ -1882,28 +2391,51 @@
                     line-height: 1.45;
                   "
                 >
-                  3-year obtainable &mdash; ~10% of the SMB AI-support market
-                  (Mermail bottoms-up estimate)
+                  Authenticated transactions and network pilots reach market ·
+                  <a
+                    href="https://www.mastercard.com/news/ap/en/newsroom/press-releases/en/2026/mastercard-accelerates-ai-powered-commerce-with-australia-s-first-authenticated-agentic-transactions-using-agent-pay/"
+                    target="_blank"
+                    style="
+                      color: var(--text-muted);
+                      text-decoration: underline;
+                      text-underline-offset: 2px;
+                    "
+                    >Mastercard</a
+                  >
+                  ·
+                  <a
+                    href="https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.22276.html"
+                    target="_blank"
+                    style="
+                      color: var(--text-muted);
+                      text-decoration: underline;
+                      text-underline-offset: 2px;
+                    "
+                    >Visa</a
+                  >
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div class="cagr-banner">
-          <div class="cagr-num">25.8%</div>
+          <div class="cagr-num">A$670B</div>
           <div class="cagr-text">
-            <strong>The AI customer service market is compounding fast.</strong
+            <strong
+              >Agentic commerce could influence 55% of Australian consumer
+              transactions by 2030.</strong
             ><span
-              >CAGR 2024&ndash;2030, from $12B to $47.8B ·
+              >Worth up to A$670B in spending &mdash; a market signal, not
+              Mermail revenue ·
               <a
-                href="https://www.marketsandmarkets.com/PressReleases/ai-for-customer-service.asp"
+                href="https://www.mastercard.com/news/ap/en/newsroom/press-releases/en/2026/mastercard-accelerates-ai-powered-commerce-with-australia-s-first-authenticated-agentic-transactions-using-agent-pay/"
                 target="_blank"
                 style="
                   color: var(--text-muted);
                   text-decoration: underline;
                   text-underline-offset: 2px;
                 "
-                >MarketsandMarkets, 2025</a
+                >Mastercard Australia, 2026</a
               ></span
             >
           </div>
@@ -1921,43 +2453,46 @@
         </div>
 
         <div class="eyebrow">Business Model</div>
-        <h2>A simple <span class="em">monthly subscription.</span></h2>
+        <h2>
+          Subscription first.
+          <span class="em">Payment economics expand ARPU.</span>
+        </h2>
         <div class="biz-row">
           <div class="biz-card">
-            <div class="biz-label">Starter</div>
-            <h3>For getting started</h3>
+            <div class="biz-label">Core · Subscription</div>
+            <h3>Agent identity</h3>
             <p>
-              One support mailbox · AI triage &amp; drafts · human approval.
-              Perfect for early teams.
+              Monthly access to dedicated inboxes, MCP tools, mailbox history,
+              and supported agent clients.
             </p>
           </div>
           <div class="biz-card highlight">
-            <div class="biz-label">Growth · Most popular</div>
-            <h3>For growing volume</h3>
+            <div class="biz-label">Expansion · Usage</div>
+            <h3>More agents, more work</h3>
             <p>
-              Auto-send unlock · multiple mailboxes · deflection analytics &amp;
-              reporting.
+              Revenue grows with active mailboxes, message volume, and
+              higher-value workflows across operators and teams.
             </p>
           </div>
           <div class="biz-card">
-            <div class="biz-label">Scale</div>
-            <h3>For larger teams</h3>
+            <div class="biz-label">Upside · Payments</div>
+            <h3>Agent Wallet economics</h3>
             <p>
-              SSO · dedicated isolation · SLA &amp; DPA · unlimited volume ·
-              priority support.
+              Planned transaction revenue as controlled agent spend scales,
+              subject to processor and network economics.
             </p>
           </div>
         </div>
         <div class="known-unknown" style="max-width: 1020px">
           <span>💳</span>
           <span
-            >A <strong>predictable monthly subscription</strong> that scales
-            with your volume &mdash; not your headcount.</span
+            >The inbox earns recurring revenue. The wallet layer adds a
+            <strong>high-intent monetization surface.</strong></span
           >
         </div>
       </div>
 
-      <!-- 08 · TRACTION -->
+      <!-- 08 · PRODUCT PROGRESS -->
       <div class="slide" id="slide-7">
         <div class="slide-num">08 / 09</div>
         <div class="slide-brand">
@@ -1967,8 +2502,11 @@
           />
         </div>
 
-        <div class="eyebrow">Traction</div>
-        <h2><span class="em">Live today</span> &mdash; now proving demand.</h2>
+        <div class="eyebrow">Product Progress</div>
+        <h2>
+          The identity rails are built.
+          <span class="em">Now close the payment loop.</span>
+        </h2>
         <div class="timeline">
           <div class="timeline-track">
             <div class="timeline-progress" style="width: 66%"></div>
@@ -1977,44 +2515,45 @@
             <div class="t-item done">
               <div class="t-dot"></div>
               <div class="t-card">
-                <div class="t-date">Apr 2026</div>
-                <h3>Started</h3>
+                <div class="t-date">Built</div>
+                <h3>Email foundation</h3>
                 <p>
-                  Kicked off Mermail and validated the SMB support pain:
-                  expensive to staff, impossible to scale 24/7.
+                  Workspaces, dedicated mailboxes, send/receive, folders,
+                  subscriptions, and integrations.
                 </p>
               </div>
             </div>
             <div class="t-item done">
               <div class="t-dot"></div>
               <div class="t-card">
-                <div class="t-date">May 2026</div>
-                <h3>Building</h3>
+                <div class="t-date">Live</div>
+                <h3>MCP connection</h3>
                 <p>
-                  Built the MVP: our own mail server + agentic triage, drafting,
-                  and human-in-the-loop approval.
+                  Agents connect through
+                  <strong>console.mermail.app/mcp</strong>
+                  and use email tools where they already work.
                 </p>
               </div>
             </div>
             <div class="t-item now">
               <div class="t-dot"></div>
               <div class="t-card">
-                <div class="t-date">Now · Jun 2026</div>
-                <h3>Product Live</h3>
+                <div class="t-date">Now</div>
+                <h3>Agent Wallet flow</h3>
                 <p>
-                  mermail.app is live with early users on hosted support
-                  mailboxes &mdash; gathering deflection signal.
+                  Finishing policy controls, one-time approvals, secure payment
+                  execution, and receipt handling end to end.
                 </p>
               </div>
             </div>
             <div class="t-item">
               <div class="t-dot"></div>
               <div class="t-card">
-                <div class="t-date">Q3 2026</div>
-                <h3>First Revenue</h3>
+                <div class="t-date">Next proof</div>
+                <h3>Repeatable activation</h3>
                 <p>
-                  Convert design partners to paid, prove ticket-deflection
-                  economics, and start SOC&nbsp;2.
+                  Measure connected agents, successful email workflows,
+                  controlled payments, reliability, and acquisition cost.
                 </p>
               </div>
             </div>
@@ -2034,7 +2573,7 @@
 
         <div class="eyebrow">Team &amp; Ask</div>
         <h2>
-          Operators who ship. <span class="em">Raising to reach revenue.</span>
+          Infrastructure builders for <span class="em">agents that act.</span>
         </h2>
         <div class="ask-layout" style="align-items: stretch">
           <div
@@ -2074,9 +2613,8 @@
                   Co-founder
                 </div>
                 <p style="font-size: 0.82rem">
-                  Data Scientist at Webjet.com.au · MSc Data Science, Deakin
-                  University. Brings AI workflow and product validation
-                  discipline.
+                  Data Scientist, Webjet.com.au · MSc Data Science, Deakin
+                  University.
                 </p>
               </div>
             </div>
@@ -2108,19 +2646,20 @@
                   Co-founder
                 </div>
                 <p style="font-size: 0.82rem">
-                  Principal Software Engineer at VinGroup · ex Senior Data
-                  Engineer at Tiki. Built data warehouse, CDP, and platforms at
-                  enterprise scale.
+                  Principal Software Engineer, VinGroup · ex Senior Data
+                  Engineer, Tiki.
                 </p>
               </div>
             </div>
           </div>
           <div class="ask-need" style="max-width: 460px; flex: 1">
             <div class="need-tag">The Ask</div>
-            <h3>Raising <span class="em">$200K</span> to get to revenue.</h3>
+            <h3>
+              Raising <span class="em">$200K</span> to prove agentic action.
+            </h3>
             <p style="margin-bottom: var(--s6)">
-              ~18 months of runway to convert early users to paid, prove
-              ticket-deflection economics, and start SOC&nbsp;2.
+              Ship Agent Wallet, harden multi-client onboarding, and turn
+              successful workflows into paid activation.
             </p>
             <div class="fund-row" style="margin-bottom: var(--s4)">
               <div
@@ -2132,7 +2671,7 @@
                 "
               >
                 <span style="color: var(--text-primary); font-weight: 600"
-                  >Engineering &amp; product</span
+                  >Product &amp; payment integrations</span
                 ><span style="color: var(--success-strong); font-weight: 700"
                   >50%</span
                 >
@@ -2166,9 +2705,9 @@
                 "
               >
                 <span style="color: var(--text-primary); font-weight: 600"
-                  >Go-to-market</span
+                  >AI-operator acquisition</span
                 ><span style="color: var(--success-strong); font-weight: 700"
-                  >35%</span
+                  >30%</span
                 >
               </div>
               <div
@@ -2182,7 +2721,7 @@
                 <div
                   class="bar"
                   style="
-                    width: 35%;
+                    width: 30%;
                     height: 100%;
                     background: var(--success-strong);
                     border-radius: 4px;
@@ -2200,9 +2739,9 @@
                 "
               >
                 <span style="color: var(--text-primary); font-weight: 600"
-                  >Security &amp; compliance (SOC 2)</span
+                  >Security, risk &amp; compliance</span
                 ><span style="color: var(--success-strong); font-weight: 700"
-                  >15%</span
+                  >20%</span
                 >
               </div>
               <div
@@ -2216,7 +2755,7 @@
                 <div
                   class="bar"
                   style="
-                    width: 15%;
+                    width: 20%;
                     height: 100%;
                     background: var(--success-strong);
                     border-radius: 4px;
