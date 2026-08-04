@@ -1,0 +1,269 @@
+- generic [active] [ref=f1e1]:
+  - paragraph [ref=f1e2]: ← → Arrow keys to navigate
+  - generic [ref=f1e3]:
+    - generic [ref=f1e4]:
+      - img "Mermail logo" [ref=f1e6]
+      - heading "Give your AI a way to act." [level=1] [ref=f1e8]
+      - paragraph [ref=f1e9]: Its own inbox. A user-controlled Agent Wallet. One MCP connection.
+    - generic:
+      - generic: 02 / 09
+      - generic: The Missing Action Layer
+      - heading "Agents can reason. Real workflows still stop." [level=2]
+      - list:
+        - listitem:
+          - generic: "@"
+          - generic:
+            - strong: No identity of their own
+            - text: An agent must borrow a person's inbox, credentials, and history just to register or receive a code.
+        - listitem:
+          - generic: "01"
+          - generic:
+            - strong: Verification breaks the workflow
+            - text: OTPs, confirmation links, invoices, and receipts arrive outside the agent's working context.
+        - listitem:
+          - generic: $
+          - generic:
+            - strong: Payment requires a custody handoff
+            - text: Users either stop to pay manually or give software a reusable credential with too much authority.
+        - listitem:
+          - generic: ↳
+          - generic:
+            - strong: The user has to take the task back
+            - text: The agent recommends the next step; the human still completes checkout, billing, or booking.
+    - generic:
+      - generic: 03 / 09
+      - generic: The Product
+      - heading "One identity from message to payment." [level=2]
+      - generic:
+        - generic:
+          - generic: Step 1
+          - heading "Connect Mermail through MCP" [level=3]
+        - generic: →
+        - generic:
+          - generic: Step 2
+          - heading "Agent uses its own inbox" [level=3]
+        - generic: →
+        - generic:
+          - generic: Step 3 · In build
+          - heading "Set the Agent Wallet policy" [level=3]
+        - generic: →
+        - generic:
+          - generic: Step 4 · In build
+          - heading "Wallet enforces policy & captures the receipt" [level=3]
+    - generic:
+      - generic: 04 / 09
+      - generic: Agent Wallet · In Build
+      - heading "Autonomy without custody." [level=2]
+      - generic:
+        - generic:
+          - generic: "01"
+          - heading "Choose the policy" [level=3]
+          - generic: Per-action or policy-bound
+          - paragraph: Always Ask requires approval per action. Bounded autonomy lets the agent act inside one human-approved policy and user-defined limits.
+        - generic:
+          - generic: "02"
+          - heading "Keep credentials out of reach" [level=3]
+          - generic: No reusable secret in agent context
+          - paragraph: Cards and wallet keys stay behind a secure permission layer. The agent can trigger permitted actions, but cannot access raw credentials or bypass the user's policy.
+        - generic:
+          - generic: "03"
+          - heading "Approve, pay & prove" [level=3]
+          - generic: Authorization + receipt
+          - paragraph: Always Ask approvals expire after one action; autonomous actions must remain inside the active policy. Confirmation returns to the agent's inbox.
+    - generic:
+      - generic: 05 / 09
+      - generic: Why Mermail
+      - heading "Borrowed access is a workaround. Mermail is agent-native." [level=2]
+      - generic:
+        - generic:
+          - heading "Borrow the human's accounts" [level=3]
+          - list:
+            - listitem:
+              - generic: ✗
+              - text: Shared identity and mixed history
+            - listitem:
+              - generic: ✗
+              - text: Reusable credentials reach the agent
+            - listitem:
+              - generic: ✗
+              - text: Email and payment live in separate flows
+            - listitem:
+              - generic: ✗
+              - text: Human takes over at every critical step
+        - generic:
+          - heading "Give the agent its own identity" [level=3]
+          - list:
+            - listitem:
+              - generic: ✓
+              - text: Dedicated inbox, address, and history
+            - listitem:
+              - generic: ✓
+              - text: Agent Wallet with scoped, revocable permissions
+            - listitem:
+              - generic: ✓
+              - text: One MCP layer across agent clients
+            - listitem:
+              - generic: ✓
+              - text: Registration, checkout, and receipts stay connected
+      - generic:
+        - generic: 📈
+        - generic:
+          - text: Mermail turns a capable assistant into an agent that can
+          - strong: finish the job.
+    - generic:
+      - generic: 06 / 09
+      - generic: Why Now
+      - heading "The rails for agentic commerce are arriving." [level=2]
+      - generic:
+        - generic:
+          - generic: TOOLS
+          - generic:
+            - generic:
+              - generic: ACTION
+              - generic: NOW
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - generic: "2024"
+                - generic: OPEN STANDARD
+              - generic:
+                - text: Anthropic open-sources MCP, giving agents a common tool layer ·
+                - link "Anthropic":
+                  - /url: https://www.anthropic.com/news/model-context-protocol
+          - generic:
+            - generic:
+              - generic:
+                - generic: "2025"
+                - generic: PAYMENTS
+              - generic:
+                - text: Mastercard launches Agent Pay with tokenized credentials and user control ·
+                - link "Mastercard":
+                  - /url: https://newsroom.mastercard.com/news/press/2025/april/mastercard-unveils-agent-pay-pioneering-agentic-payments-technology-to-power-commerce-in-the-age-of-ai/
+          - generic:
+            - generic:
+              - generic:
+                - generic: "2026"
+                - generic: NETWORK PILOTS
+              - generic:
+                - text: Authenticated transactions and network pilots reach market ·
+                - link "Mastercard":
+                  - /url: https://www.mastercard.com/news/ap/en/newsroom/press-releases/en/2026/mastercard-accelerates-ai-powered-commerce-with-australia-s-first-authenticated-agentic-transactions-using-agent-pay/
+                - text: ·
+                - link "Visa":
+                  - /url: https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.22276.html
+      - generic:
+        - generic: A$670B
+        - generic:
+          - strong: Agentic commerce could influence 55% of Australian consumer transactions by 2030.
+          - generic:
+            - text: Worth up to A$670B in spending — a market signal, not Mermail revenue ·
+            - link "Mastercard Australia, 2026":
+              - /url: https://www.mastercard.com/news/ap/en/newsroom/press-releases/en/2026/mastercard-accelerates-ai-powered-commerce-with-australia-s-first-authenticated-agentic-transactions-using-agent-pay/
+    - generic:
+      - generic: 07 / 09
+      - generic: Business Model
+      - heading "Subscription first. Payment economics expand ARPU." [level=2]
+      - generic:
+        - generic:
+          - generic: Core · Subscription
+          - heading "Agent identity" [level=3]
+          - paragraph: Monthly access to dedicated inboxes, MCP tools, mailbox history, and supported agent clients.
+        - generic:
+          - generic: Expansion · Usage
+          - heading "More agents, more work" [level=3]
+          - paragraph: Revenue grows with active mailboxes, message volume, and higher-value workflows across operators and teams.
+        - generic:
+          - generic: Upside · Payments
+          - heading "Agent Wallet economics" [level=3]
+          - paragraph: Planned transaction revenue as controlled agent spend scales, subject to processor and network economics.
+      - generic:
+        - generic: 💳
+        - generic:
+          - text: The inbox earns recurring revenue. The wallet layer adds a
+          - strong: high-intent monetization surface.
+    - generic:
+      - generic: 08 / 09
+      - generic: Product Progress
+      - heading "The identity rails are built. Now close the payment loop." [level=2]
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - generic: Built
+              - heading "Email foundation" [level=3]
+              - paragraph: Workspaces, dedicated mailboxes, send/receive, folders, subscriptions, and integrations.
+          - generic:
+            - generic:
+              - generic: Live
+              - heading "MCP connection" [level=3]
+              - paragraph:
+                - text: Agents connect through
+                - strong: console.mermail.app/mcp
+                - text: and use email tools where they already work.
+          - generic:
+            - generic:
+              - generic: Now
+              - heading "Agent Wallet flow" [level=3]
+              - paragraph: Finishing policy controls, one-time approvals, secure payment execution, and receipt handling end to end.
+          - generic:
+            - generic:
+              - generic: Next proof
+              - heading "Repeatable activation" [level=3]
+              - paragraph: Measure connected agents, successful email workflows, controlled payments, reliability, and acquisition cost.
+    - generic:
+      - generic: 09 / 09
+      - generic: Team & Ask
+      - heading "Infrastructure builders for agents that act." [level=2]
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - heading "Nathan Nguyen" [level=3]
+              - generic: Co-founder
+              - paragraph: Data Scientist, Webjet.com.au · MSc Data Science, Deakin University.
+          - generic:
+            - generic:
+              - heading "Toan Nhu" [level=3]
+              - generic: Co-founder
+              - paragraph: Principal Software Engineer, VinGroup · ex Senior Data Engineer, Tiki.
+        - generic:
+          - generic: The Ask
+          - heading "Raising $200K to prove agentic action." [level=3]
+          - paragraph: Ship Agent Wallet, harden multi-client onboarding, and turn successful workflows into paid activation.
+          - generic:
+            - generic:
+              - generic: Product & payment integrations
+              - generic: 50%
+          - generic:
+            - generic:
+              - generic: AI-operator acquisition
+              - generic: 30%
+          - generic:
+            - generic:
+              - generic: Security, risk & compliance
+              - generic: 20%
+          - link "Try Mermail →":
+            - /url: https://mermail.app/
+      - generic:
+        - generic:
+          - generic: ✉
+          - link "contact@mermail.app":
+            - /url: mailto:contact@mermail.app
+        - generic:
+          - generic: 🌐
+          - link "mermail.app":
+            - /url: https://mermail.app/
+  - navigation "Slide navigation" [ref=f1e10]:
+    - button "Previous slide" [ref=f1e11] [cursor=pointer]: ←
+    - tablist [ref=f1e12]:
+      - tab "Slide 1" [ref=f1e13] [cursor=pointer]
+      - tab "Slide 2" [ref=f1e14] [cursor=pointer]
+      - tab "Slide 3" [ref=f1e15] [cursor=pointer]
+      - tab "Slide 4" [ref=f1e16] [cursor=pointer]
+      - tab "Slide 5" [ref=f1e17] [cursor=pointer]
+      - tab "Slide 6" [ref=f1e18] [cursor=pointer]
+      - tab "Slide 7" [ref=f1e19] [cursor=pointer]
+      - tab "Slide 8" [ref=f1e20] [cursor=pointer]
+      - tab "Slide 9" [ref=f1e21] [cursor=pointer]
+    - button "Next slide" [ref=f1e22] [cursor=pointer]: →

@@ -281,36 +281,6 @@
         margin: var(--s6) auto;
       }
 
-      /* ── Stat row ── */
-      .stat-row {
-        display: flex;
-        gap: var(--s10);
-        margin-top: var(--s10);
-        align-items: center;
-      }
-      .stat {
-        text-align: center;
-      }
-      .stat-num {
-        font-family: "Inter", sans-serif;
-        font-size: 3.2rem;
-        font-weight: 800;
-        color: var(--success-strong);
-        line-height: 1;
-        letter-spacing: -0.03em;
-      }
-      .stat-label {
-        font-size: 0.85rem;
-        color: var(--text-muted);
-        margin-top: var(--s2);
-        letter-spacing: 0.04em;
-      }
-      .stat-divider {
-        width: 1px;
-        background: var(--border);
-        height: 56px;
-      }
-
       /* ── Cards ── */
       .card {
         background: var(--surface);
@@ -1000,7 +970,6 @@
         h1,
         h2,
         .subtitle,
-        .stat-row,
         .pain-list li,
         .flow-step,
         .venn-stat,
@@ -1411,26 +1380,6 @@
         .rule.center {
           margin: 14px auto;
         }
-        .stat-row {
-          width: 100%;
-          gap: 7px;
-          margin-top: 22px;
-        }
-        .stat {
-          flex: 1;
-          min-width: 0;
-        }
-        .stat-num {
-          font-size: 2rem;
-        }
-        .stat-label {
-          font-size: 0.64rem;
-          line-height: 1.25;
-          letter-spacing: 0;
-        }
-        .stat-divider {
-          height: 42px;
-        }
         .pain-list {
           gap: 7px;
           margin-top: 12px;
@@ -1692,16 +1641,6 @@
         .rule.center {
           margin: 8px auto;
         }
-        .stat-row {
-          margin-top: 12px;
-          gap: 18px;
-        }
-        .stat-num {
-          font-size: 1.8rem;
-        }
-        .stat-label {
-          font-size: 0.58rem;
-        }
         .pain-list {
           display: grid;
           grid-template-columns: 1fr 1fr;
@@ -1887,24 +1826,6 @@
         <p class="subtitle">
           Its own inbox. A user-controlled Agent Wallet. One MCP connection.
         </p>
-        <div class="stat-row">
-          <div class="stat">
-            <div class="stat-num">1</div>
-            <div class="stat-label">persistent identity across tasks</div>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat">
-            <div class="stat-num">MCP</div>
-            <div class="stat-label">works where the agent already lives</div>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat">
-            <div class="stat-num">2</div>
-            <div class="stat-label">
-              approval modes: Always Ask or bounded autonomy
-            </div>
-          </div>
-        </div>
       </div>
 
       <!-- 02 · PROBLEM -->
@@ -2826,7 +2747,6 @@
         "h1",
         "h2",
         ".subtitle",
-        ".stat-row",
         ".pain-list li",
         ".flow-step",
         ".venn-stat",

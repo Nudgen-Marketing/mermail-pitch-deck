@@ -1,0 +1,13 @@
+[     295ms] [WARNING] MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 close listeners added. Use emitter.setMaxListeners() to increase limit @ chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/scripts/contentscript.js:14082
+[     296ms] [WARNING] MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 end listeners added. Use emitter.setMaxListeners() to increase limit @ chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/scripts/contentscript.js:14082
+[     318ms] [ERROR] MetaMask encountered an error setting the global Ethereum provider - this is likely due to another Ethereum wallet extension also setting the global Ethereum provider: TypeError: Cannot set property ethereum of #<Window> which has only a getter
+    at chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/scripts/inpage.js:19:36498
+    at s (chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/scripts/inpage.js:19:36754)
+    at chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/scripts/inpage.js:20:40
+    at chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/scripts/inpage.js:20:4054
+    at chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/scripts/inpage.js:20:4058 @ chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/scripts/inpage.js:18
+[     337ms] [WARNING] ObjectMultiplex - orphaned data for stream "app-init-liveness" @ chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/scripts/contentscript.js:14082
+[     338ms] [WARNING] ObjectMultiplex - orphaned data for stream "app-init-liveness" @ chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/scripts/contentscript.js:14082
+[     338ms] [WARNING] ObjectMultiplex - orphaned data for stream "background-liveness" @ chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/scripts/contentscript.js:14082
+[     338ms] [WARNING] ObjectMultiplex - orphaned data for stream "background-liveness" @ chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/scripts/contentscript.js:14082
+[     697ms] [LOG] Backpack was unable to override window.ethereum. If you're having issues connecting to a dapp, disable any other wallets and try again. @ chrome-extension://aflkmfhebedbjioipglgcbcmnbpgliof/injected.js:0
