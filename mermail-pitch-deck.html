@@ -1865,7 +1865,127 @@
         }
       }
 
-      /* ── Business model + GTM ── */
+      /* ── Go-to-market distribution flywheel ── */
+      .gtm-engine {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: var(--s4);
+        width: 100%;
+        max-width: 1040px;
+        margin-top: var(--s6);
+      }
+      .gtm-engine::before {
+        content: "";
+        position: absolute;
+        top: 43px;
+        left: 16.5%;
+        right: 16.5%;
+        height: 1px;
+        background: linear-gradient(90deg, rgba(112, 238, 238, 0.14), var(--success-strong), rgba(112, 238, 238, 0.14));
+      }
+      .gtm-motion {
+        position: relative;
+        z-index: 1;
+        min-width: 0;
+        padding: var(--s6);
+        border: 1px solid var(--border);
+        border-radius: var(--r-lg);
+        background: linear-gradient(155deg, rgba(11, 29, 42, 0.96), rgba(4, 16, 25, 0.94));
+      }
+      .gtm-motion:nth-child(2) {
+        border-color: var(--border-accent);
+        background: linear-gradient(155deg, rgba(112, 238, 238, 0.09), rgba(4, 16, 25, 0.96));
+        transform: translateY(-8px);
+      }
+      .gtm-motion-head {
+        display: flex;
+        align-items: center;
+        gap: var(--s3);
+      }
+      .gtm-motion-num {
+        display: grid;
+        place-items: center;
+        width: 38px;
+        height: 38px;
+        flex: 0 0 38px;
+        border: 1px solid var(--border-accent);
+        border-radius: 50%;
+        background: #06141d;
+        color: var(--success-strong);
+        font-size: 0.72rem;
+        font-weight: 800;
+        box-shadow: 0 0 22px rgba(112, 238, 238, 0.08);
+      }
+      .gtm-motion-label {
+        font-size: 0.58rem;
+        font-weight: 750;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+      }
+      .gtm-motion h3 {
+        margin-top: var(--s5);
+        font-size: 1.05rem;
+        line-height: 1.2;
+        color: var(--text-primary);
+      }
+      .gtm-motion p {
+        margin-top: var(--s2);
+        min-height: 42px;
+        font-size: 0.72rem;
+        line-height: 1.45;
+        color: var(--text-secondary);
+      }
+      .gtm-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin-top: var(--s5);
+      }
+      .gtm-chips span {
+        padding: 6px 9px;
+        border: 1px solid rgba(112, 238, 238, 0.18);
+        border-radius: 999px;
+        background: rgba(112, 238, 238, 0.035);
+        font-size: 0.64rem;
+        font-weight: 650;
+        color: var(--text-primary);
+      }
+      .gtm-flywheel {
+        display: grid;
+        grid-template-columns: auto 1fr auto 1fr auto 1fr auto;
+        align-items: center;
+        gap: var(--s3);
+        width: 100%;
+        max-width: 1040px;
+        margin-top: var(--s5);
+        padding: var(--s4) var(--s6);
+        border: 1px solid var(--border-accent);
+        border-radius: var(--r-md);
+        background: linear-gradient(90deg, rgba(112, 238, 238, 0.07), rgba(112, 238, 238, 0.018));
+      }
+      .gtm-flywheel strong {
+        font-size: 0.72rem;
+        color: var(--text-primary);
+        white-space: nowrap;
+      }
+      .gtm-flywheel-line {
+        height: 1px;
+        background: rgba(112, 238, 238, 0.24);
+      }
+      .gtm-flywheel-loop {
+        color: var(--success-strong);
+        font-size: 1rem;
+      }
+      .gtm-thesis {
+        margin-top: var(--s4);
+        font-size: 0.82rem;
+        color: var(--text-secondary);
+      }
+      .gtm-thesis strong {
+        color: var(--success-strong);
+      }
       .gtm-row {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -1906,6 +2026,136 @@
         color: var(--text-secondary);
         font-size: 0.74rem;
         line-height: 1.4;
+      }
+
+      @media (max-width: 800px) and (min-height: 501px) {
+        .gtm-engine {
+          grid-template-columns: 1fr;
+          gap: 7px;
+          margin-top: 12px;
+        }
+        .gtm-engine::before {
+          display: none;
+        }
+        .gtm-motion,
+        .gtm-motion:nth-child(2) {
+          display: grid;
+          grid-template-columns: auto minmax(0, 1fr) auto;
+          column-gap: 10px;
+          align-items: center;
+          padding: 10px 12px;
+          transform: none;
+        }
+        .gtm-motion-head {
+          grid-column: 1;
+        }
+        .gtm-motion-label {
+          display: none;
+        }
+        .gtm-motion h3 {
+          grid-column: 2;
+          margin-top: 0;
+          font-size: 0.84rem;
+        }
+        .gtm-motion p {
+          display: none;
+        }
+        .gtm-chips {
+          grid-column: 3;
+          justify-content: flex-end;
+          margin-top: 0;
+        }
+        .gtm-chips span {
+          padding: 5px 7px;
+          font-size: 0.54rem;
+        }
+        .gtm-flywheel {
+          margin-top: 8px;
+          padding: 9px 11px;
+        }
+        .gtm-flywheel strong {
+          font-size: 0.58rem;
+        }
+        .gtm-thesis {
+          margin-top: 8px;
+          font-size: 0.68rem;
+        }
+      }
+
+      @media (max-width: 600px) and (min-height: 501px) {
+        .gtm-motion,
+        .gtm-motion:nth-child(2) {
+          grid-template-columns: auto minmax(0, 1fr);
+          row-gap: 7px;
+          padding: 9px 11px;
+        }
+        .gtm-motion h3 {
+          grid-column: 2;
+          line-height: 1.15;
+        }
+        .gtm-chips {
+          grid-column: 1 / -1;
+          justify-content: flex-start;
+          padding-left: 48px;
+        }
+        .gtm-flywheel {
+          grid-template-columns: auto auto auto auto;
+          justify-content: space-between;
+          gap: 5px;
+        }
+        .gtm-flywheel-line {
+          display: none;
+        }
+        .gtm-flywheel strong {
+          font-size: 0.5rem;
+        }
+      }
+
+      @media (max-height: 500px) and (min-width: 601px) {
+        .gtm-engine {
+          gap: 8px;
+          margin-top: 10px;
+        }
+        .gtm-motion,
+        .gtm-motion:nth-child(2) {
+          padding: 10px 12px;
+          transform: none;
+        }
+        .gtm-motion-num {
+          width: 28px;
+          height: 28px;
+          flex-basis: 28px;
+          font-size: 0.58rem;
+        }
+        .gtm-engine::before {
+          top: 25px;
+        }
+        .gtm-motion h3 {
+          margin-top: 8px;
+          font-size: 0.78rem;
+        }
+        .gtm-motion p {
+          display: none;
+        }
+        .gtm-chips {
+          gap: 4px;
+          margin-top: 8px;
+        }
+        .gtm-chips span {
+          padding: 4px 6px;
+          font-size: 0.48rem;
+        }
+        .gtm-flywheel {
+          margin-top: 8px;
+          padding: 7px 10px;
+        }
+        .gtm-flywheel strong {
+          font-size: 0.54rem;
+        }
+        .gtm-thesis {
+          margin-top: 6px;
+          font-size: 0.62rem;
+        }
       }
 
       /* ── Funding allocation ── */
@@ -4044,7 +4294,7 @@
         </div>
       </div>
 
-      <!-- 07 · BUSINESS MODEL + GTM -->
+      <!-- 07 · GO-TO-MARKET -->
       <div class="slide" id="slide-6">
         <div class="slide-num">07 / 9</div>
         <div class="slide-brand">
@@ -4054,49 +4304,61 @@
           />
         </div>
 
-        <div class="eyebrow">Business Model &amp; Go-to-Market</div>
+        <div class="eyebrow">Go-to-Market</div>
         <h2>
-          Land with agent identity.
-          <span class="em">Expand through controlled transactions.</span>
+          Meet agents <span class="em">where they already live.</span>
         </h2>
-        <div class="biz-row">
-          <div class="biz-card">
-            <div class="biz-label">Free</div>
-            <div class="biz-num">$0</div>
-            <h3>Try one real agent inbox</h3>
-            <p>One inbox, 1,000 emails per month, MCP tools, and a Mermail-hosted address.</p>
+        <div class="gtm-engine">
+          <div class="gtm-motion">
+            <div class="gtm-motion-head">
+              <div class="gtm-motion-num">01</div>
+              <div class="gtm-motion-label">Distribute</div>
+            </div>
+            <h3>Provision the Mermail plugin</h3>
+            <p>Ship inside agent ecosystems where builders already discover and install capabilities.</p>
+            <div class="gtm-chips">
+              <span>Grok Bot</span>
+              <span>Hermes</span>
+              <span>OpenClaw marketplace</span>
+            </div>
           </div>
-          <div class="biz-card highlight">
-            <div class="biz-label">Developer · Most popular</div>
-            <div class="biz-num">$1</div>
-            <h3>First month · then $19/month</h3>
-            <p>Five inboxes, custom domains, 10,000 emails per month, and higher automation limits.</p>
+          <div class="gtm-motion">
+            <div class="gtm-motion-head">
+              <div class="gtm-motion-num">02</div>
+              <div class="gtm-motion-label">Activate</div>
+            </div>
+            <h3>Turn builders into a skills community</h3>
+            <p>Run contests and bounties that produce reusable skills, demos, and workflows.</p>
+            <div class="gtm-chips">
+              <span>Skill contests</span>
+              <span>Community bounties</span>
+              <span>Templates</span>
+            </div>
           </div>
-          <div class="biz-card">
-            <div class="biz-label">Enterprise</div>
-            <div class="biz-num">Custom</div>
-            <h3>Make email core infrastructure</h3>
-            <p>Custom scale, private or BYO cloud, dedicated routing, SSO, and direct support.</p>
+          <div class="gtm-motion">
+            <div class="gtm-motion-head">
+              <div class="gtm-motion-num">03</div>
+              <div class="gtm-motion-label">Prove</div>
+            </div>
+            <h3>Show agents completing real tasks</h3>
+            <p>Publish concrete use cases where identity and agentic payment unlock the outcome.</p>
+            <div class="gtm-chips">
+              <span>Signups</span>
+              <span>Subscriptions</span>
+              <span>Agentic payments</span>
+            </div>
           </div>
         </div>
-        <div class="gtm-row">
-          <div class="gtm-step">
-            <div class="gtm-step-num">1</div>
-            <div><strong>Design partners</strong><span>Qualify 5 external partners; stretch to 8–10.</span></div>
-          </div>
-          <div class="gtm-step">
-            <div class="gtm-step-num">2</div>
-            <div><strong>Paid activation</strong><span>Prove 10 external paying workspaces by month 5.</span></div>
-          </div>
-          <div class="gtm-step">
-            <div class="gtm-step-num">3</div>
-            <div><strong>Repeatability</strong><span>Reach 30–50 paying workspaces and 3 customer references by month 8.</span></div>
-          </div>
+        <div class="gtm-flywheel" aria-label="Go-to-market flywheel">
+          <strong>More ecosystems</strong>
+          <span class="gtm-flywheel-line"></span>
+          <strong>More builders</strong>
+          <span class="gtm-flywheel-line"></span>
+          <strong>More working skills</strong>
+          <span class="gtm-flywheel-line"></span>
+          <span class="gtm-flywheel-loop">↺</span>
         </div>
-        <div class="known-unknown" style="max-width: 1020px">
-          <span>🎯</span>
-          <span><strong>Focused wedge:</strong> one agent client, one payment provider, one region, one SaaS subscription workflow.</span>
-        </div>
+        <div class="gtm-thesis"><strong>Every successful skill becomes distribution.</strong> Every completed task becomes proof.</div>
       </div>
 
       <!-- 08 · FUNDING ALLOCATION -->
