@@ -2566,20 +2566,21 @@
         background: var(--surface);
         border: 1px solid var(--border-accent);
         border-radius: var(--r-lg);
-        padding: var(--s8);
-        display: flex;
-        flex-direction: column;
+        padding: var(--s6);
+        display: grid;
+        grid-template-columns: 190px minmax(0, 1fr);
         justify-content: center;
         align-items: center;
         gap: var(--s6);
-        text-align: center;
+        text-align: left;
       }
       .qr-card > a {
         display: inline-flex;
+        justify-self: center;
       }
       .qr-code {
-        width: 210px;
-        height: 210px;
+        width: 190px;
+        height: 190px;
         padding: 12px;
         background: #fff;
         border-radius: 14px;
@@ -2617,6 +2618,10 @@
         color: var(--success-strong);
         text-decoration: none;
         overflow-wrap: anywhere;
+      }
+      #slide-8 .qr-card {
+        max-width: 460px;
+        flex: 1;
       }
 
       .btn-primary {
@@ -3513,6 +3518,35 @@
           max-width: none !important;
           padding: 10px;
         }
+        #slide-8 .qr-card {
+          width: 100%;
+          max-width: none;
+          grid-template-columns: 112px minmax(0, 1fr);
+          gap: 12px;
+          padding: 10px;
+        }
+        #slide-8 .qr-code {
+          width: 112px;
+          height: 112px;
+          padding: 6px;
+          border-radius: 9px;
+        }
+        #slide-8 .qr-copy .need-tag {
+          font-size: 9px;
+          margin-bottom: 4px;
+        }
+        #slide-8 .qr-copy h3 {
+          font-size: 1rem;
+          margin-bottom: 4px;
+        }
+        #slide-8 .qr-copy p {
+          font-size: 0.65rem;
+          line-height: 1.25;
+        }
+        #slide-8 .qr-link {
+          margin-top: 6px;
+          font-size: 0.72rem;
+        }
         #slide-8 .ask-need h3 {
           font-size: 1rem;
           margin-bottom: 5px;
@@ -3856,6 +3890,33 @@
         }
         #slide-8 .ask-need {
           padding: 8px;
+        }
+        #slide-8 .qr-card {
+          grid-template-columns: 118px minmax(0, 1fr);
+          gap: 8px;
+          padding: 8px;
+        }
+        #slide-8 .qr-code {
+          width: 118px;
+          height: 118px;
+          padding: 6px;
+          border-radius: 8px;
+        }
+        #slide-8 .qr-copy .need-tag {
+          font-size: 8px;
+          margin-bottom: 3px;
+        }
+        #slide-8 .qr-copy h3 {
+          font-size: 0.9rem;
+          margin-bottom: 4px;
+        }
+        #slide-8 .qr-copy p {
+          font-size: 0.55rem;
+          line-height: 1.2;
+        }
+        #slide-8 .qr-link {
+          margin-top: 4px;
+          font-size: 0.62rem;
         }
         #slide-8 .ask-need h3 {
           font-size: 0.9rem;
@@ -4564,7 +4625,7 @@
           />
         </div>
 
-        <div class="eyebrow">Team &amp; Ask</div>
+        <div class="eyebrow">Team &amp; Connect</div>
         <h2>
           Infrastructure builders for <span class="em">agents that act.</span>
         </h2>
@@ -4645,24 +4706,31 @@
               </div>
             </div>
           </div>
-          <div class="ask-need" style="max-width: 460px; flex: 1">
-            <div class="need-tag">The Ask</div>
-            <h3>
-              Raising <span class="em">$250K</span> to prove repeatable agentic action.
-            </h3>
-            <p style="margin-bottom: var(--s6)">
-              Turn working identity rails and the first paid transaction into a
-              policy-controlled SaaS procurement workflow.
-            </p>
-            <ul class="referral-list" style="margin: 0 0 var(--s6)">
-              <li>100+ production-external workflows with ≥95% completion</li>
-              <li>30–50 external paying workspaces by month 8</li>
-              <li>≥40% eight-week repeat core-workflow use</li>
-              <li>Zero known charges outside active user policy</li>
-            </ul>
-            <a class="btn-primary" href="https://mermail.app/" target="_blank"
-              >Try Mermail →</a
+          <div class="qr-card">
+            <a
+              href="https://mermail.app/?utm_source=pitch_deck&amp;utm_medium=qr&amp;utm_campaign=investor_pitch"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open Mermail from the pitch deck"
             >
+              <img
+                class="qr-code"
+                src="assets/mermail-pitch-qr.svg"
+                alt="QR code to visit Mermail"
+              />
+            </a>
+            <div class="qr-copy">
+              <div class="need-tag">Scan to try Mermail</div>
+              <h3>Give your AI <span class="em">a way to act.</span></h3>
+              <p>Agent-owned inbox &amp; wallet for real world tasks.</p>
+              <a
+                class="qr-link"
+                href="https://mermail.app/?utm_source=pitch_deck&amp;utm_medium=qr&amp;utm_campaign=investor_pitch"
+                target="_blank"
+                rel="noopener noreferrer"
+                >mermail.app</a
+              >
+            </div>
           </div>
         </div>
         <div class="contact-row">
