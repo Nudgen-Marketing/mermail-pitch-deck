@@ -17,7 +17,7 @@ The investor pitch deck (`mermail-pitch-deck.html`) is fully self-contained with
 ### Slide Structure (10 Slides)
 
 1. **Cover** — “Give your AI a way to act” through its own inbox, Agent Wallet, and one MCP connection.
-2. **The Missing Action Layer** — Why registration, verification, and checkout still force a human handoff.
+2. **The Behavior Shift** — From searching the web, to asking AI, to delegating outcomes to agents.
 3. **The Product** — One agent identity from message to payment.
 4. **Agent Wallet** — Per-action approval or policy-bound autonomy, protected credentials, and receipt history.
 5. **Why Mermail** — Dedicated agent identity versus borrowing a person's inbox and reusable credentials.

@@ -346,46 +346,105 @@
         grid-template-columns: repeat(4, 1fr);
       }
 
-      /* ── Pain list ── */
-      .pain-list {
-        list-style: none;
-        max-width: 800px;
+      /* ── Behavior shift ── */
+      .behavior-reflection {
+        max-width: 1040px;
+        width: 100%;
+        margin-top: var(--s4);
+        padding-left: var(--s4);
+        border-left: 3px solid var(--success-strong);
+      }
+      .behavior-quote {
+        font-size: clamp(0.95rem, 1.7vw, 1.25rem);
+        color: var(--text-secondary);
+        line-height: 1.45;
+      }
+      .behavior-quote strong {
+        color: var(--text-primary);
+        font-weight: 700;
+      }
+      .behavior-journey {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr auto 1fr;
+        align-items: stretch;
+        gap: var(--s3);
+        max-width: 1040px;
         width: 100%;
         margin-top: var(--s6);
-        display: flex;
-        flex-direction: column;
-        gap: var(--s3);
       }
-      .pain-list li {
-        display: flex;
-        align-items: flex-start;
-        gap: var(--s4);
+      .behavior-stage {
         background: var(--surface);
         border: 1px solid var(--border);
-        border-left: 3px solid var(--red);
-        padding: var(--s6) var(--s8);
-        border-radius: 0 var(--r-md) var(--r-md) 0;
+        border-radius: var(--r-md);
+        padding: var(--s6);
       }
-      .pain-icon {
-        font-size: 1.5rem;
-        flex-shrink: 0;
-        padding-top: 2px;
+      .behavior-stage.current {
+        border-color: rgba(60, 145, 255, 0.45);
       }
-      .pain-list li > div > strong {
+      .behavior-stage.next {
+        border-color: var(--border-accent);
+        background: var(--surface-2);
+        box-shadow: 0 18px 50px rgba(112, 238, 238, 0.07);
+      }
+      .behavior-kicker {
         display: block;
-        font-size: 1rem;
-        font-weight: 600;
-        color: var(--text-primary);
-        margin-bottom: var(--s1);
+        margin-bottom: var(--s3);
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--text-muted);
       }
-      .pain-list span strong {
-        font-weight: 600;
+      .behavior-stage.next .behavior-kicker {
+        color: var(--success-strong);
+      }
+      .behavior-stage strong {
+        display: block;
+        font-size: 1.05rem;
+        font-weight: 700;
         color: var(--text-primary);
       }
-      .pain-list span {
-        font-size: 0.88rem;
+      .behavior-stage p {
+        margin-top: var(--s2);
+        font-size: 0.8rem;
         color: var(--text-secondary);
-        line-height: 1.6;
+        line-height: 1.45;
+      }
+      .behavior-arrow {
+        display: grid;
+        place-items: center;
+        color: var(--text-muted);
+        font-size: 1.4rem;
+      }
+      .behavior-thesis {
+        display: flex;
+        align-items: center;
+        gap: var(--s4);
+        max-width: 1040px;
+        width: 100%;
+        margin-top: var(--s4);
+        padding: 13px var(--s4);
+        border: 1px solid var(--border-accent);
+        border-radius: var(--r-md);
+        background: rgba(112, 238, 238, 0.08);
+      }
+      .behavior-thesis span {
+        flex-shrink: 0;
+        font-size: 0.66rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        color: var(--success-strong);
+      }
+      .behavior-thesis strong {
+        font-size: 0.9rem;
+        color: var(--text-primary);
+      }
+      .behavior-context {
+        max-width: 1040px;
+        width: 100%;
+        margin-top: var(--s3);
+        font-size: 0.72rem;
+        color: var(--text-muted);
       }
 
       /* ── Flow ── */
@@ -1215,7 +1274,10 @@
         h1,
         h2,
         .subtitle,
-        .pain-list li,
+        .behavior-reflection,
+        .behavior-stage,
+        .behavior-thesis,
+        .behavior-context,
         .flow-step,
         .venn-stat,
         .cagr-banner,
@@ -1565,12 +1627,18 @@
 
       /* ── Viewport safety ── */
       @media (max-height: 760px) {
-        .pain-list {
-          gap: 8px;
-          margin-top: 16px;
+        .behavior-journey {
+          margin-top: 14px;
         }
-        .pain-list li {
-          padding: 14px 20px;
+        .behavior-stage {
+          padding: 14px 16px;
+        }
+        .behavior-thesis {
+          margin-top: 10px;
+          padding: 10px 14px;
+        }
+        .behavior-context {
+          margin-top: 8px;
         }
         #slide-9 .ask-layout {
           margin-top: 12px;
@@ -1646,23 +1714,53 @@
         .rule.center {
           margin: 14px auto;
         }
-        .pain-list {
-          gap: 7px;
-          margin-top: 12px;
+        .behavior-reflection {
+          margin-top: 8px;
+          padding-left: 10px;
         }
-        .pain-list li {
-          gap: 10px;
-          padding: 9px 11px;
+        .behavior-quote {
+          font-size: 0.78rem;
+          line-height: 1.32;
         }
-        .pain-icon {
-          font-size: 0.95rem;
+        .behavior-journey {
+          grid-template-columns: 1fr;
+          gap: 5px;
+          margin-top: 9px;
         }
-        .pain-list li > div > strong {
+        .behavior-arrow {
+          display: none;
+        }
+        .behavior-stage {
+          padding: 8px 10px;
+        }
+        .behavior-kicker {
+          margin-bottom: 3px;
+          font-size: 0.55rem;
+        }
+        .behavior-stage strong {
           font-size: 0.84rem;
         }
-        .pain-list span {
-          font-size: 0.72rem;
-          line-height: 1.32;
+        .behavior-stage p {
+          margin-top: 2px;
+          font-size: 0.66rem;
+          line-height: 1.25;
+        }
+        .behavior-thesis {
+          gap: 8px;
+          margin-top: 7px;
+          padding: 7px 9px;
+        }
+        .behavior-thesis span {
+          font-size: 0.5rem;
+        }
+        .behavior-thesis strong {
+          font-size: 0.68rem;
+          line-height: 1.25;
+        }
+        .behavior-context {
+          margin-top: 5px;
+          font-size: 0.58rem;
+          line-height: 1.25;
         }
         .flow {
           display: grid;
@@ -2028,26 +2126,40 @@
         .rule.center {
           margin: 8px auto;
         }
-        .pain-list {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
+        .behavior-reflection {
+          margin-top: 5px;
+        }
+        .behavior-quote {
+          font-size: 0.72rem;
+        }
+        .behavior-journey {
+          grid-template-columns: 1fr auto 1fr auto 1fr;
           gap: 6px;
-          max-width: 980px;
           margin-top: 8px;
         }
-        .pain-list li {
-          padding: 7px 10px;
-          gap: 8px;
+        .behavior-arrow {
+          display: grid;
+          font-size: 0.8rem;
         }
-        .pain-icon {
-          font-size: 0.85rem;
+        .behavior-stage {
+          padding: 7px 9px;
         }
-        .pain-list li > div > strong {
+        .behavior-kicker {
+          font-size: 0.48rem;
+        }
+        .behavior-stage strong {
           font-size: 0.75rem;
         }
-        .pain-list span {
-          font-size: 0.63rem;
-          line-height: 1.25;
+        .behavior-stage p {
+          display: none;
+        }
+        .behavior-thesis {
+          margin-top: 6px;
+          padding: 6px 9px;
+        }
+        .behavior-context {
+          margin-top: 4px;
+          font-size: 0.54rem;
         }
         .flow,
         .card-grid,
@@ -2293,52 +2405,43 @@
           />
         </div>
 
-        <div class="eyebrow">The Missing Action Layer</div>
+        <div class="eyebrow">Think About Your Own Behavior</div>
         <h2>
-          Agents can reason. <span class="em">Real workflows still stop.</span>
+          Five years ago, you Googled it.
+          <span class="em">Today, you ask ChatGPT.</span>
         </h2>
-        <ul class="pain-list">
-          <li>
-            <span class="pain-icon">@</span>
-            <div>
-              <strong>No identity of their own</strong>
-              <span
-                >An agent must borrow a person's inbox, credentials, and history
-                just to register or receive a code.</span
-              >
-            </div>
-          </li>
-          <li>
-            <span class="pain-icon">01</span>
-            <div>
-              <strong>Verification breaks the workflow</strong>
-              <span
-                >OTPs, confirmation links, invoices, and receipts arrive outside
-                the agent's working context.</span
-              >
-            </div>
-          </li>
-          <li>
-            <span class="pain-icon">$</span>
-            <div>
-              <strong>Payment requires a custody handoff</strong>
-              <span
-                >Users either stop to pay manually or give software a reusable
-                credential with too much authority.</span
-              >
-            </div>
-          </li>
-          <li>
-            <span class="pain-icon">↳</span>
-            <div>
-              <strong>The user has to take the task back</strong>
-              <span
-                >The agent recommends the next step; the human still completes
-                checkout, billing, or booking.</span
-              >
-            </div>
-          </li>
-        </ul>
+        <div class="behavior-reflection">
+          <p class="behavior-quote">
+            “I used to search, open tabs, and compare everything myself.
+            <strong>Now I use ChatGPT every day.</strong>”
+          </p>
+        </div>
+        <div class="behavior-journey">
+          <article class="behavior-stage">
+            <span class="behavior-kicker">Five years ago</span>
+            <strong>Google it yourself</strong>
+            <p>Search → open tabs → compare → decide.</p>
+          </article>
+          <span class="behavior-arrow" aria-hidden="true">→</span>
+          <article class="behavior-stage current">
+            <span class="behavior-kicker">Today</span>
+            <strong>Ask AI for the answer</strong>
+            <p>One prompt turns browsing into a conversation.</p>
+          </article>
+          <span class="behavior-arrow" aria-hidden="true">→</span>
+          <article class="behavior-stage next">
+            <span class="behavior-kicker">What comes next</span>
+            <strong>Delegate the outcome</strong>
+            <p>The agent searches, signs up, pays, and reports back.</p>
+          </article>
+        </div>
+        <div class="behavior-thesis">
+          <span>The shift</span>
+          <strong>Traffic is moving from people browsing pages to agents completing tasks.</strong>
+        </div>
+        <p class="behavior-context">
+          MCP, agent identity, and payment rails are the enabling infrastructure. The behavior change is the market.
+        </p>
       </div>
 
       <!-- 03 · SOLUTION -->
@@ -3151,7 +3254,10 @@
         "h1",
         "h2",
         ".subtitle",
-        ".pain-list li",
+        ".behavior-reflection",
+        ".behavior-stage",
+        ".behavior-thesis",
+        ".behavior-context",
         ".flow-step",
         ".venn-stat",
         ".cagr-banner",
