@@ -1,7 +1,7 @@
 # Pitch Deck Project
 
 ## Project
-Mermail (mermail.app) — AI-powered retention email workflow platform for SMB SaaS.
+Mermail (mermail.app) — agent identity and policy-controlled payments for AI agents.
 
 ## Primary File
 `mermail-pitch-deck.html` — single self-contained HTML pitch deck (logo base64-embedded, no external asset dependencies except Google Fonts CDN).
@@ -16,16 +16,17 @@ Dark neutral + emerald accent. Tokens defined in `:root`:
 
 Full design system doc: `DESIGN-SYSTEM-MERMAIL.md`
 
-## Slides (9 total)
+## Slides (10 total)
 1. Cover — one-liner + hero stats
-2. Problem — churn pain points
-3. Solution — 3-step workflow (Integrate → Detect → Automate)
-4. Market — animated Venn diagram (TAM/SAM/SOM)
-5. Traction — timeline (problem validation → MVP beta)
-6. Competition — comparison table
-7. Business Model — pricing tiers + unit economics
-8. Team — Nathan Nguyen & Toan Nhu (Co-founders)
-9. Ask — raise amount + use of funds
+2. Problem — the missing action layer
+3. Solution — one identity from message to payment
+4. Agent Wallet — autonomy without custody
+5. Differentiation — agent-native identity versus borrowed access
+6. Why Now — agentic-commerce rails and network pilots
+7. Traction — product, wallet, and community metrics as of 19 August 2026
+8. Business Model & GTM — pricing tests, design partners, and paid activation
+9. Funding Allocation — $250K pre-seed, eight-month runway, and use of funds
+10. Team & Ask — Nathan Nguyen, Toan Nhu, milestones, and the $250K ask
 
 ## Founders
 - **Nathan Nguyen** — Co-founder. Data Scientist at Webjet.com.au.

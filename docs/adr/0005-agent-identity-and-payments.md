@@ -35,5 +35,6 @@ not named in investor materials. Do not claim controls beyond those implemented 
 - The Sui/Harbor/zkLogin/MemWal technology story is removed from the primary deck.
 - Subscription remains the core business model; transaction revenue is labeled as planned
   upside subject to processor and network economics.
-- Product progress must distinguish built email/MCP foundations from the Agent Wallet flow
-  that is still being completed.
+- Traction reporting must distinguish built email/MCP foundations from Agent Wallet adoption
+  and from the policy-controlled payment flow still being completed. See ADR 0006 for the
+  current traction, GTM, and funding slide decisions.
