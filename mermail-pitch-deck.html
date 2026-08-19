@@ -2288,6 +2288,361 @@
         }
       }
 
+      /* ── Go-to-market power-user wedge ── */
+      .gtm-power-stage {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        max-width: 1040px;
+        margin-top: 18px;
+      }
+      .gtm-audience-band {
+        display: grid;
+        grid-template-columns: 0.82fr 1.75fr;
+        overflow: hidden;
+        border: 1px solid var(--border-accent);
+        border-radius: var(--r-lg);
+        background: var(--surface);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.16);
+      }
+      .gtm-audience-copy {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-width: 0;
+        padding: 20px 22px;
+        border-right: 1px solid var(--border-accent);
+        background: radial-gradient(circle at 18% 20%, rgba(112, 238, 238, 0.13), transparent 68%);
+      }
+      .gtm-audience-kicker,
+      .gtm-platform-label {
+        font-size: 0.58rem;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--success-strong);
+      }
+      .gtm-audience-copy h3 {
+        margin-top: 7px;
+        font-size: 1.5rem;
+        line-height: 1.05;
+        color: var(--text-primary);
+      }
+      .gtm-audience-copy p {
+        margin-top: 8px;
+        font-size: 0.7rem;
+        line-height: 1.4;
+        color: var(--text-secondary);
+      }
+      .gtm-platform-panel {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-width: 0;
+        padding: 16px 18px;
+      }
+      .gtm-platform-label {
+        margin-bottom: 10px;
+        color: var(--text-muted);
+      }
+      .gtm-platform-grid {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 8px;
+      }
+      .gtm-platform {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        min-width: 0;
+        min-height: 72px;
+        padding: 9px 5px;
+        border: 1px solid var(--border);
+        border-radius: var(--r-md);
+        background: var(--surface-2);
+        text-align: center;
+      }
+      .gtm-platform-mark {
+        display: grid;
+        place-items: center;
+        width: 30px;
+        height: 30px;
+        border: 1px solid rgba(112, 238, 238, 0.34);
+        border-radius: 9px;
+        background: rgba(112, 238, 238, 0.045);
+        font-size: 0.58rem;
+        font-weight: 850;
+        color: var(--success-strong);
+      }
+      .gtm-platform strong {
+        overflow-wrap: anywhere;
+        font-size: 0.57rem;
+        line-height: 1.1;
+        color: var(--text-primary);
+      }
+      .gtm-motion-row {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+      .gtm-motion {
+        position: relative;
+        min-width: 0;
+        min-height: 116px;
+        padding: 15px 17px;
+        border: 1px solid var(--border);
+        border-radius: var(--r-md);
+        background: linear-gradient(135deg, rgba(10, 29, 42, 0.95), rgba(4, 16, 25, 0.92));
+      }
+      .gtm-motion::before {
+        content: attr(data-step);
+        display: grid;
+        place-items: center;
+        width: 27px;
+        height: 27px;
+        margin-bottom: 9px;
+        border: 1px solid rgba(112, 238, 238, 0.28);
+        border-radius: 50%;
+        font-size: 0.52rem;
+        font-weight: 800;
+        color: var(--success-strong);
+      }
+      .gtm-motion:not(:last-child)::after {
+        content: "→";
+        position: absolute;
+        z-index: 2;
+        top: 50%;
+        right: -19px;
+        width: 24px;
+        transform: translateY(-50%);
+        font-size: 0.9rem;
+        font-weight: 800;
+        color: var(--success-strong);
+        text-align: center;
+      }
+      .gtm-motion h3 {
+        font-size: 0.88rem;
+        line-height: 1.2;
+        color: var(--text-primary);
+      }
+      .gtm-motion p {
+        margin-top: 6px;
+        font-size: 0.62rem;
+        line-height: 1.4;
+        color: var(--text-secondary);
+      }
+      .gtm-close {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+        padding: 10px 16px;
+        border-top: 1px solid var(--border-accent);
+        border-bottom: 1px solid var(--border-accent);
+        font-size: 0.72rem;
+        color: var(--text-secondary);
+        text-align: center;
+      }
+      .gtm-close strong {
+        color: var(--success-strong);
+      }
+
+      @media (max-width: 800px) and (min-height: 501px) {
+        .gtm-power-stage {
+          gap: 9px;
+          margin-top: 12px;
+        }
+        .gtm-audience-band {
+          grid-template-columns: 0.78fr 1.22fr;
+        }
+        .gtm-audience-copy {
+          padding: 15px;
+        }
+        .gtm-audience-copy h3 {
+          font-size: 1.15rem;
+        }
+        .gtm-platform-panel {
+          padding: 12px;
+        }
+        .gtm-platform-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 6px;
+        }
+        .gtm-platform {
+          flex-direction: row;
+          gap: 6px;
+          min-height: 42px;
+          padding: 6px;
+        }
+        .gtm-platform-mark {
+          width: 24px;
+          height: 24px;
+          border-radius: 7px;
+        }
+        .gtm-motion-row {
+          gap: 8px;
+        }
+        .gtm-motion {
+          min-height: 128px;
+          padding: 12px;
+        }
+      }
+
+      @media (max-width: 600px) and (min-height: 501px) {
+        #slide-6 h2 {
+          font-size: clamp(1.45rem, 7vw, 1.8rem);
+          line-height: 1.08;
+        }
+        .gtm-audience-band {
+          grid-template-columns: 1fr;
+        }
+        .gtm-audience-copy {
+          padding: 11px 13px;
+          border-right: 0;
+          border-bottom: 1px solid var(--border-accent);
+        }
+        .gtm-audience-copy h3 {
+          margin-top: 4px;
+          font-size: 1rem;
+        }
+        .gtm-audience-copy p {
+          margin-top: 4px;
+          font-size: 0.6rem;
+        }
+        .gtm-platform-panel {
+          padding: 9px 10px 10px;
+        }
+        .gtm-platform-label {
+          margin-bottom: 6px;
+          font-size: 0.48rem;
+        }
+        .gtm-platform {
+          min-height: 36px;
+          padding: 5px;
+        }
+        .gtm-platform-mark {
+          width: 22px;
+          height: 22px;
+          font-size: 0.46rem;
+        }
+        .gtm-platform strong {
+          font-size: 0.5rem;
+        }
+        .gtm-motion-row {
+          grid-template-columns: 1fr;
+          gap: 6px;
+        }
+        .gtm-motion {
+          display: grid;
+          grid-template-columns: 28px 0.8fr 1.2fr;
+          align-items: center;
+          gap: 8px;
+          min-height: 0;
+          padding: 8px 10px;
+        }
+        .gtm-motion::before {
+          margin: 0;
+        }
+        .gtm-motion:not(:last-child)::after {
+          display: none;
+        }
+        .gtm-motion h3 {
+          font-size: 0.7rem;
+        }
+        .gtm-motion p {
+          margin: 0;
+          font-size: 0.54rem;
+          line-height: 1.25;
+        }
+        .gtm-close {
+          padding: 7px 9px;
+          font-size: 0.58rem;
+        }
+      }
+
+      @media (max-height: 500px) and (min-width: 601px) {
+        .gtm-power-stage {
+          gap: 6px;
+          margin-top: 7px;
+        }
+        .gtm-audience-band {
+          grid-template-columns: 0.7fr 1.7fr;
+        }
+        .gtm-audience-copy {
+          padding: 8px 11px;
+        }
+        .gtm-audience-kicker,
+        .gtm-platform-label {
+          font-size: 0.4rem;
+        }
+        .gtm-audience-copy h3 {
+          margin-top: 3px;
+          font-size: 0.8rem;
+        }
+        .gtm-audience-copy p {
+          margin-top: 3px;
+          font-size: 0.46rem;
+        }
+        .gtm-platform-panel {
+          padding: 7px 9px;
+        }
+        .gtm-platform-label {
+          margin-bottom: 5px;
+        }
+        .gtm-platform-grid {
+          gap: 5px;
+        }
+        .gtm-platform {
+          flex-direction: row;
+          gap: 4px;
+          min-height: 34px;
+          padding: 4px;
+        }
+        .gtm-platform-mark {
+          width: 20px;
+          height: 20px;
+          border-radius: 6px;
+          font-size: 0.4rem;
+        }
+        .gtm-platform strong {
+          font-size: 0.42rem;
+        }
+        .gtm-motion-row {
+          gap: 6px;
+        }
+        .gtm-motion {
+          min-height: 70px;
+          padding: 7px 8px;
+        }
+        .gtm-motion::before {
+          width: 20px;
+          height: 20px;
+          margin-bottom: 4px;
+          font-size: 0.4rem;
+        }
+        .gtm-motion:not(:last-child)::after {
+          right: -15px;
+          width: 18px;
+          font-size: 0.62rem;
+        }
+        .gtm-motion h3 {
+          font-size: 0.58rem;
+        }
+        .gtm-motion p {
+          margin-top: 3px;
+          font-size: 0.44rem;
+          line-height: 1.25;
+        }
+        .gtm-close {
+          padding: 5px 8px;
+          font-size: 0.48rem;
+        }
+      }
+
       /* ── Funding allocation ── */
       .funding-layout {
         display: grid;
@@ -2708,6 +3063,10 @@
         .metric-card,
         .social-stat,
         .gtm-step,
+        .gtm-audience-band,
+        .gtm-platform,
+        .gtm-motion,
+        .gtm-close,
         .funding-summary,
         .funding-item,
         .milestone-strip,
@@ -4500,63 +4859,46 @@
 
         <div class="eyebrow">Go-to-Market</div>
         <h2>
-          Meet agents <span class="em">where they already live.</span>
+          Start with <span class="em">AI power users</span> where they already work.
         </h2>
-        <div class="gtm-orbit-stage">
-          <svg class="gtm-orbit-map" viewBox="0 0 1040 340" preserveAspectRatio="none" aria-hidden="true">
-            <defs>
-              <linearGradient id="gtm-route-gradient" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#70eeee" stop-opacity="0.08" />
-                <stop offset="0.5" stop-color="#70eeee" stop-opacity="0.72" />
-                <stop offset="1" stop-color="#70eeee" stop-opacity="0.12" />
-              </linearGradient>
-            </defs>
-            <ellipse class="orbit-ring" cx="520" cy="170" rx="300" ry="132" />
-            <path class="orbit-route" d="M 322 170 C 370 170, 398 170, 425 170" />
-            <path class="orbit-route" d="M 610 110 C 670 66, 696 60, 718 66" />
-            <path class="orbit-route" d="M 610 230 C 670 274, 696 280, 718 274" />
-            <circle class="orbit-dot" cx="322" cy="170" r="4" />
-            <circle class="orbit-dot" cx="718" cy="66" r="4" />
-            <circle class="orbit-dot" cx="718" cy="274" r="4" />
-          </svg>
-          <div class="gtm-core">
-            <span class="gtm-core-orbit" aria-hidden="true"></span>
-            <div class="gtm-core-kicker">GTM engine</div>
-            <strong>Mermail plugin</strong>
-            <span>Identity + payment for agents</span>
-          </div>
-          <div class="gtm-orbit-node distribute">
-            <div class="gtm-node-head"><span>01</span>Distribute</div>
-            <h3>Provision where agents live</h3>
-            <div class="gtm-node-tags">
-              <span>Grok Bot</span>
-              <span>Hermes</span>
-              <span>OpenClaw marketplace</span>
+        <div class="gtm-power-stage">
+          <div class="gtm-audience-band">
+            <div class="gtm-audience-copy">
+              <div class="gtm-audience-kicker">Early adopter wedge</div>
+              <h3>AI power users</h3>
+              <p>Builders, founders, operators, and researchers already delegating work to AI.</p>
+            </div>
+            <div class="gtm-platform-panel">
+              <div class="gtm-platform-label">Already using</div>
+              <div class="gtm-platform-grid">
+                <div class="gtm-platform"><span class="gtm-platform-mark">G</span><strong>Grok Bot</strong></div>
+                <div class="gtm-platform"><span class="gtm-platform-mark">C</span><strong>Claude</strong></div>
+                <div class="gtm-platform"><span class="gtm-platform-mark">&lt;/&gt;</span><strong>Codex</strong></div>
+                <div class="gtm-platform"><span class="gtm-platform-mark">↗</span><strong>Cursor</strong></div>
+                <div class="gtm-platform"><span class="gtm-platform-mark">H</span><strong>Hermes</strong></div>
+                <div class="gtm-platform"><span class="gtm-platform-mark">OC</span><strong>OpenClaw</strong></div>
+              </div>
             </div>
           </div>
-          <div class="gtm-orbit-node activate">
-            <div class="gtm-node-head"><span>02</span>Activate</div>
-            <h3>Turn builders into a skills community</h3>
-            <div class="gtm-node-tags">
-              <span>Skill contests</span>
-              <span>Bounties</span>
-              <span>Templates</span>
+          <div class="gtm-motion-row">
+            <div class="gtm-motion" data-step="01">
+              <h3>Distribute in their workflow</h3>
+              <p>Provision the Mermail skill or plugin inside the tools they already open every day.</p>
+            </div>
+            <div class="gtm-motion" data-step="02">
+              <h3>Activate through community</h3>
+              <p>Run skill contests, bounties, and repeatable agentic-payment use cases.</p>
+            </div>
+            <div class="gtm-motion" data-step="03">
+              <h3>Turn outcomes into proof</h3>
+              <p>Share agents completing signups, subscriptions, and real-world transactions.</p>
             </div>
           </div>
-          <div class="gtm-orbit-node prove">
-            <div class="gtm-node-head"><span>03</span>Prove</div>
-            <h3>Show agents completing real tasks</h3>
-            <div class="gtm-node-tags">
-              <span>Signups</span>
-              <span>Subscriptions</span>
-              <span>Agentic payments</span>
-            </div>
+          <div class="gtm-close">
+            <strong>Land with the power users.</strong>
+            <span>Expand as their agents complete more real-world tasks.</span>
           </div>
         </div>
-        <div class="gtm-loop-strip" aria-label="Install, build, prove, and share loop">
-          <span>INSTALL</span><b>→</b><span>BUILD</span><b>→</b><span>PROVE</span><b>→</b><span>SHARE</span><b>↺</b>
-        </div>
-        <div class="gtm-thesis"><strong>Every successful skill becomes distribution.</strong> Every completed task becomes proof.</div>
       </div>
 
       <!-- 08 · FUNDING ALLOCATION -->
@@ -4815,6 +5157,10 @@
         ".metric-card",
         ".social-stat",
         ".gtm-step",
+        ".gtm-audience-band",
+        ".gtm-platform",
+        ".gtm-motion",
+        ".gtm-close",
         ".funding-summary",
         ".funding-item",
         ".milestone-strip",
