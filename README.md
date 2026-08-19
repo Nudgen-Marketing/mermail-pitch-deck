@@ -18,7 +18,7 @@ The investor pitch deck (`mermail-pitch-deck.html`) is fully self-contained with
 
 1. **Cover** — “Give your AI a way to act” through its own inbox, Agent Wallet, and one MCP connection.
 2. **The Web Is No Longer Human-First** — From searching the web, to asking AI, to delegating outcomes to agents.
-3. **The Product** — One agent identity from message to payment.
+3. **The Product** — Agent traffic needs identity to communicate and payment to transact.
 4. **Agent Wallet** — Per-action approval or policy-bound autonomy, protected credentials, and receipt history.
 5. **Why Mermail** — Dedicated agent identity versus borrowing a person's inbox and reusable credentials.
 6. **Why Now** — MCP, network payment programs, and the arrival of live agentic-commerce rails.

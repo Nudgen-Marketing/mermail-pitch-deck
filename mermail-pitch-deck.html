@@ -447,57 +447,144 @@
         color: var(--text-muted);
       }
 
-      /* ── Flow ── */
-      .flow {
-        display: flex;
-        align-items: stretch;
-        max-width: 1060px;
+      /* ── Agent traffic product map ── */
+      .product-subtitle {
         width: 100%;
+        max-width: 1040px;
+        margin-top: var(--s3);
+        font-size: clamp(0.88rem, 1.55vw, 1.08rem);
+        color: var(--text-secondary);
+      }
+      .product-subtitle strong {
+        color: var(--success-strong);
+      }
+      .agent-traffic-map {
+        display: grid;
+        grid-template-columns: 118px minmax(72px, 1fr) minmax(430px, 520px) minmax(72px, 1fr) 118px;
+        align-items: center;
+        width: 100%;
+        max-width: 1080px;
         margin-top: var(--s6);
       }
-      .flow-step {
-        flex: 1;
-        background: var(--surface);
-        border: 1px solid var(--border);
-        padding: var(--s8) var(--s6);
+      .traffic-node {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--s3);
         text-align: center;
       }
-      .flow-step:first-child {
-        border-radius: var(--r-md) 0 0 var(--r-md);
-      }
-      .flow-step:last-child {
-        border-radius: 0 var(--r-md) var(--r-md) 0;
-      }
-      .flow-step + .flow-step {
-        border-left: none;
-      }
-      .step-num {
-        font-size: 14px;
-        font-weight: 500;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
+      .traffic-node-icon {
+        display: grid;
+        place-items: center;
+        width: 82px;
+        height: 82px;
+        border: 1px solid var(--border-accent);
+        border-radius: 50%;
         color: var(--success-strong);
-        margin-bottom: var(--s2);
+        background: rgba(112, 238, 238, 0.045);
+        box-shadow: 0 0 36px rgba(112, 238, 238, 0.05);
       }
-      .flow-step h3 {
-        font-size: 1.05rem;
-        margin-bottom: var(--s2);
+      .traffic-node-icon svg {
+        width: 48px;
+        height: 48px;
       }
-      .flow-step p {
+      .traffic-node strong {
         font-size: 0.88rem;
-        color: var(--text-secondary);
-        line-height: 1.55;
+        color: var(--text-primary);
       }
-      .flow-arrow {
+      .traffic-connector {
+        position: relative;
+        height: 1px;
+        margin: 0 var(--s3);
+        background: var(--border-accent);
+      }
+      .traffic-connector::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 8px;
+        height: 8px;
+        border-top: 1px solid var(--success-strong);
+        border-right: 1px solid var(--success-strong);
+        transform: translateY(-50%) rotate(45deg);
+      }
+      .traffic-connector span {
+        position: absolute;
+        left: 50%;
+        bottom: 10px;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        font-size: 0.66rem;
+        color: var(--text-secondary);
+      }
+      .mermail-layer {
+        padding: var(--s5);
+        border: 1px solid var(--border-accent);
+        border-radius: var(--r-lg);
+        background: var(--surface);
+        box-shadow: 0 18px 60px rgba(112, 238, 238, 0.055);
+      }
+      .mermail-layer-title {
         display: flex;
         align-items: center;
+        justify-content: center;
+        gap: var(--s2);
+        margin-bottom: var(--s4);
+        font-size: 1.08rem;
+        font-weight: 750;
+        color: var(--text-primary);
+      }
+      .mermail-layer-title span {
+        color: var(--success-strong);
+      }
+      .layer-modules {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--s3);
+      }
+      .layer-module {
+        padding: var(--s5) var(--s4);
+        border: 1px solid var(--border);
+        border-radius: var(--r-md);
+        text-align: center;
+        background: rgba(255, 255, 255, 0.018);
+      }
+      .layer-module-icon {
+        display: grid;
+        place-items: center;
+        width: 38px;
+        height: 38px;
+        margin: 0 auto var(--s3);
+        border: 1px solid var(--border-accent);
+        border-radius: 50%;
+        color: var(--success-strong);
+      }
+      .layer-module-icon svg {
+        width: 20px;
+        height: 20px;
+      }
+      .layer-module h3 {
+        margin: 0;
+        font-size: 0.94rem;
+      }
+      .layer-module p {
+        margin-top: 5px;
+        font-size: 0.66rem;
+        line-height: 1.35;
         color: var(--text-muted);
-        font-size: 1rem;
-        padding: 0 8px;
-        background: var(--surface);
-        border-top: 1px solid var(--border);
-        border-bottom: 1px solid var(--border);
-        flex-shrink: 0;
+      }
+      .product-thesis {
+        width: 100%;
+        max-width: 760px;
+        margin-top: var(--s5);
+        padding: 11px var(--s5);
+        border-left: 2px solid var(--success-strong);
+        border-right: 2px solid var(--success-strong);
+        text-align: center;
+        font-size: 0.84rem;
+        font-weight: 650;
+        color: var(--text-primary);
       }
 
       /* ── Market ── */
@@ -1278,7 +1365,10 @@
         .behavior-stage,
         .behavior-thesis,
         .behavior-context,
-        .flow-step,
+        .traffic-node,
+        .traffic-connector,
+        .mermail-layer,
+        .product-thesis,
         .venn-stat,
         .cagr-banner,
         .t-item,
@@ -1762,29 +1852,84 @@
           font-size: 0.58rem;
           line-height: 1.25;
         }
-        .flow {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
+        .product-subtitle {
+          margin-top: 6px;
+          font-size: 0.76rem;
+        }
+        .agent-traffic-map {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          margin-top: 10px;
+        }
+        .traffic-node {
+          flex-direction: row;
+          gap: 8px;
+        }
+        .traffic-node-icon {
+          width: 38px;
+          height: 38px;
+        }
+        .traffic-node-icon svg {
+          width: 24px;
+          height: 24px;
+        }
+        .traffic-node strong {
+          font-size: 0.68rem;
+        }
+        .traffic-connector {
+          width: 1px;
+          height: 20px;
+          margin: 0;
+          background: var(--border-accent);
+        }
+        .traffic-connector::after {
+          top: auto;
+          right: 50%;
+          bottom: 0;
+          transform: translateX(50%) rotate(135deg);
+        }
+        .traffic-connector span {
+          left: 10px;
+          bottom: 50%;
+          transform: translateY(50%);
+          font-size: 0.52rem;
+        }
+        .mermail-layer {
+          width: 100%;
+          padding: 9px;
+        }
+        .mermail-layer-title {
+          margin-bottom: 7px;
+          font-size: 0.76rem;
+        }
+        .layer-modules {
           gap: 7px;
-          margin-top: 12px;
         }
-        .flow-arrow {
-          display: none;
+        .layer-module {
+          padding: 8px 6px;
         }
-        .flow-step,
-        .flow-step:first-child,
-        .flow-step:last-child {
-          border: 1px solid var(--border);
-          border-radius: var(--r-md);
-          padding: 16px 10px;
-        }
-        .flow-step h3 {
-          font-size: 0.84rem;
-          margin-bottom: 0;
-        }
-        .step-num {
-          font-size: 10px;
+        .layer-module-icon {
+          width: 28px;
+          height: 28px;
           margin-bottom: 5px;
+        }
+        .layer-module-icon svg {
+          width: 15px;
+          height: 15px;
+        }
+        .layer-module h3 {
+          font-size: 0.72rem;
+        }
+        .layer-module p {
+          margin-top: 3px;
+          font-size: 0.5rem;
+        }
+        .product-thesis {
+          margin-top: 8px;
+          padding: 7px 9px;
+          font-size: 0.62rem;
+          line-height: 1.3;
         }
         .card-grid {
           gap: 7px;
@@ -2161,22 +2306,69 @@
           margin-top: 4px;
           font-size: 0.54rem;
         }
-        .flow,
+        .agent-traffic-map,
         .card-grid,
         .biz-row,
         .timeline {
           margin-top: 8px;
         }
-        .flow-step {
-          padding: 12px 8px;
+        .product-subtitle {
+          margin-top: 4px;
+          font-size: 0.64rem;
         }
-        .flow-step h3 {
-          font-size: 0.76rem;
-          margin-bottom: 0;
+        .agent-traffic-map {
+          grid-template-columns: 68px minmax(42px, 1fr) minmax(255px, 310px) minmax(42px, 1fr) 68px;
         }
-        .step-num {
-          font-size: 8px;
-          margin-bottom: 4px;
+        .traffic-node {
+          gap: 5px;
+        }
+        .traffic-node-icon {
+          width: 44px;
+          height: 44px;
+        }
+        .traffic-node-icon svg {
+          width: 27px;
+          height: 27px;
+        }
+        .traffic-node strong {
+          font-size: 0.58rem;
+        }
+        .traffic-connector {
+          margin: 0 5px;
+        }
+        .traffic-connector span {
+          bottom: 6px;
+          font-size: 0.48rem;
+        }
+        .mermail-layer {
+          padding: 7px;
+        }
+        .mermail-layer-title {
+          margin-bottom: 5px;
+          font-size: 0.72rem;
+        }
+        .layer-modules {
+          gap: 6px;
+        }
+        .layer-module {
+          padding: 6px;
+        }
+        .layer-module-icon {
+          width: 24px;
+          height: 24px;
+          margin-bottom: 3px;
+        }
+        .layer-module h3 {
+          font-size: 0.66rem;
+        }
+        .layer-module p {
+          margin-top: 2px;
+          font-size: 0.46rem;
+        }
+        .product-thesis {
+          margin-top: 6px;
+          padding: 5px 8px;
+          font-size: 0.56rem;
         }
         .card-grid {
           gap: 8px;
@@ -2452,28 +2644,64 @@
         </div>
 
         <div class="eyebrow">The Product</div>
-        <h2>One identity from <span class="em">message to payment.</span></h2>
-        <div class="flow">
-          <div class="flow-step">
-            <div class="step-num">Step 1</div>
-            <h3>Give the agent its own inbox</h3>
+        <h2>Agent traffic needs <span class="em">two new layers.</span></h2>
+        <p class="product-subtitle"><strong>Identity</strong> to communicate. <strong>Payment</strong> to transact.</p>
+
+        <div class="agent-traffic-map" aria-label="AI agent request passes through Mermail identity and payment layers before reaching an internet service verified and paid">
+          <div class="traffic-node">
+            <div class="traffic-node-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M24 9V4m-4 5h8" />
+                <rect x="8" y="12" width="32" height="27" rx="9" />
+                <path d="M8 22H4v9h4m32-9h4v9h-4M17 24h.01M31 24h.01M18 31c3.5 3 8.5 3 12 0" />
+              </svg>
+            </div>
+            <strong>AI Agent</strong>
           </div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-step">
-            <div class="step-num">Step 2</div>
-            <h3>Agent signs up and receives the code</h3>
+          <div class="traffic-connector">
+            <span>Request</span>
           </div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-step">
-            <div class="step-num">Step 3</div>
-            <h3>Fund the Agent Wallet and set limits</h3>
+
+          <div class="mermail-layer">
+            <div class="mermail-layer-title"><span>M</span> Mermail infrastructure</div>
+            <div class="layer-modules">
+              <article class="layer-module">
+                <div class="layer-module-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="5" width="18" height="14" rx="3" />
+                    <path d="m4 7 8 6 8-6" />
+                  </svg>
+                </div>
+                <h3>Identity</h3>
+                <p>Inbox · verification · receipts</p>
+              </article>
+              <article class="layer-module">
+                <div class="layer-module-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M15 8.5c-.8-.7-1.8-1-3-1-1.7 0-3 1-3 2.4 0 3.6 6 1.7 6 5.1 0 1.4-1.3 2.5-3.2 2.5-1.2 0-2.4-.4-3.3-1.2M12 5.5v2m0 10v1" />
+                  </svg>
+                </div>
+                <h3>Payment</h3>
+                <p>Policy · approval · settlement</p>
+              </article>
+            </div>
           </div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-step">
-            <div class="step-num">Step 4</div>
-            <h3>Agent pays and keeps the receipt</h3>
+
+          <div class="traffic-connector">
+            <span>Verified + paid</span>
+          </div>
+          <div class="traffic-node">
+            <div class="traffic-node-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="24" cy="24" r="18" />
+                <path d="M6 24h36M24 6c6 6 9 12 9 18s-3 12-9 18c-6-6-9-12-9-18s3-12 9-18ZM9.5 14h29M9.5 34h29M24 6v36" />
+              </svg>
+            </div>
+            <strong>Internet Service</strong>
           </div>
         </div>
+        <div class="product-thesis">Without identity and payment, agents can browse, but they cannot complete the task.</div>
       </div>
 
       <!-- 04 · AGENT WALLET -->
@@ -3255,7 +3483,10 @@
         ".behavior-stage",
         ".behavior-thesis",
         ".behavior-context",
-        ".flow-step",
+        ".traffic-node",
+        ".traffic-connector",
+        ".mermail-layer",
+        ".product-thesis",
         ".venn-stat",
         ".cagr-banner",
         ".t-item",
