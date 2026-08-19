@@ -1966,7 +1966,10 @@
       .gtm-orbit-node {
         position: absolute;
         z-index: 4;
+        display: flex;
+        flex-direction: column;
         width: 278px;
+        height: 110px;
         padding: var(--s4) var(--s5);
         border: 1px solid var(--border);
         border-left: 2px solid var(--success-strong);
@@ -2034,7 +2037,8 @@
         display: flex;
         flex-wrap: wrap;
         gap: 5px;
-        margin-top: 9px;
+        margin-top: auto;
+        padding-top: 9px;
       }
       .gtm-node-tags span {
         padding: 4px 7px;
@@ -2109,6 +2113,7 @@
           bottom: auto;
           left: auto;
           width: auto;
+          height: 93px;
           transform: none;
           padding: 9px 11px;
         }
@@ -2121,7 +2126,8 @@
           font-size: 0.78rem;
         }
         .gtm-node-tags {
-          margin-top: 6px;
+          margin-top: auto;
+          padding-top: 6px;
         }
         .gtm-node-tags span {
           padding: 3px 6px;
@@ -2174,17 +2180,29 @@
         .gtm-orbit-node.activate,
         .gtm-orbit-node.prove {
           display: grid;
-          grid-template-columns: auto 1fr;
+          grid-template-columns: 90px minmax(0, 1fr);
+          grid-template-rows: 1fr auto;
           align-items: center;
           gap: 5px 9px;
+          height: 72px;
           padding: 7px 9px;
+        }
+        .gtm-node-head {
+          grid-row: 1 / 3;
         }
         .gtm-orbit-node h3 {
           margin-top: 0;
+          align-self: end;
         }
         .gtm-node-tags {
           grid-column: 2;
+          align-self: start;
           margin-top: 0;
+          padding-top: 0;
+        }
+        .gtm-node-tags span {
+          padding: 3px 5px;
+          font-size: 0.48rem;
         }
         .gtm-loop-strip {
           gap: 7px;
@@ -2222,6 +2240,7 @@
         }
         .gtm-orbit-node {
           width: 218px;
+          height: 66px;
           padding: 7px 9px;
         }
         .gtm-node-head {
@@ -2238,6 +2257,7 @@
         .gtm-node-tags {
           gap: 3px;
           margin-top: 5px;
+          padding-top: 0;
         }
         .gtm-node-tags span {
           padding: 2px 4px;
@@ -4414,11 +4434,11 @@
             </defs>
             <ellipse class="orbit-ring" cx="520" cy="170" rx="300" ry="132" />
             <path class="orbit-route" d="M 280 170 C 350 170, 385 170, 425 170" />
-            <path class="orbit-route" d="M 610 110 C 680 62, 724 56, 774 66" />
-            <path class="orbit-route" d="M 610 230 C 680 278, 724 284, 774 274" />
+            <path class="orbit-route" d="M 610 110 C 680 62, 716 56, 760 66" />
+            <path class="orbit-route" d="M 610 230 C 680 278, 716 284, 760 274" />
             <circle class="orbit-dot" cx="280" cy="170" r="4" />
-            <circle class="orbit-dot" cx="774" cy="66" r="4" />
-            <circle class="orbit-dot" cx="774" cy="274" r="4" />
+            <circle class="orbit-dot" cx="760" cy="66" r="4" />
+            <circle class="orbit-dot" cx="760" cy="274" r="4" />
           </svg>
           <div class="gtm-core">
             <span class="gtm-core-orbit" aria-hidden="true"></span>
