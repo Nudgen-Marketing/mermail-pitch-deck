@@ -909,7 +909,25 @@
         letter-spacing: -0.07em;
         line-height: 0.92;
         color: var(--text-primary);
+        background: linear-gradient(105deg, #ffffff 18%, #ffffff 57%, var(--success-strong) 112%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
         text-shadow: 0 0 42px rgba(112, 238, 238, 0.12);
+      }
+      .market-horizon {
+        position: absolute;
+        z-index: 2;
+        top: var(--s4);
+        right: var(--s4);
+        padding: 5px 9px;
+        border: 1px solid rgba(112, 238, 238, 0.2);
+        border-radius: 999px;
+        background: rgba(0, 8, 14, 0.38);
+        font-size: 0.62rem;
+        font-weight: 750;
+        letter-spacing: 0.14em;
+        color: var(--success-strong);
       }
       .market-prize-copy {
         position: relative;
@@ -943,7 +961,7 @@
       .momentum-card {
         position: relative;
         overflow: hidden;
-        padding: var(--s4) var(--s5);
+        padding: var(--s4) var(--s6);
         border: 1px solid var(--border);
         border-radius: var(--r-md);
         background: var(--surface);
@@ -981,15 +999,42 @@
         width: 100%;
         max-width: 1000px;
         margin-top: var(--s4);
-        padding: var(--s3) var(--s5);
-        border-left: 2px solid var(--success-strong);
-        background: linear-gradient(90deg, rgba(112, 238, 238, 0.07), transparent 76%);
-        font-size: 0.9rem;
-        font-weight: 620;
+        padding: var(--s3) var(--s4);
+        border: 1px solid var(--border-accent);
+        border-radius: var(--r-md);
+        background: linear-gradient(90deg, rgba(112, 238, 238, 0.08), rgba(112, 238, 238, 0.025));
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--s4);
+      }
+      .market-thesis-copy span {
+        display: block;
+        margin-bottom: 2px;
+        font-size: 0.58rem;
+        font-weight: 750;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--success-strong);
+      }
+      .market-thesis-copy strong {
+        display: block;
+        font-size: 0.86rem;
         color: var(--text-primary);
       }
-      .market-thesis strong {
-        color: var(--success-strong);
+      .market-rail-tags {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+      }
+      .market-rail-tags span {
+        padding: 6px 10px;
+        border: 1px solid rgba(112, 238, 238, 0.22);
+        border-radius: 999px;
+        background: rgba(112, 238, 238, 0.045);
+        font-size: 0.68rem;
+        font-weight: 650;
+        color: var(--text-primary);
       }
       .legacy-market {
         display: none !important;
@@ -1039,7 +1084,17 @@
         .market-thesis {
           margin-top: 8px;
           padding: 8px 10px;
-          font-size: 0.68rem;
+          gap: 8px;
+        }
+        .market-thesis-copy strong {
+          font-size: 0.66rem;
+        }
+        .market-rail-tags {
+          gap: 4px;
+        }
+        .market-rail-tags span {
+          padding: 4px 6px;
+          font-size: 0.52rem;
         }
       }
 
@@ -1084,7 +1139,16 @@
         .market-thesis {
           margin-top: 7px;
           padding: 6px 10px;
-          font-size: 0.62rem;
+        }
+        .market-thesis-copy span {
+          display: none;
+        }
+        .market-thesis-copy strong {
+          font-size: 0.58rem;
+        }
+        .market-rail-tags span {
+          padding: 3px 6px;
+          font-size: 0.48rem;
         }
       }
 
@@ -3223,6 +3287,7 @@
         </h2>
         <div class="market-fomo">
           <div class="market-prize">
+            <div class="market-horizon">2030</div>
             <div class="market-prize-label">Global agentic commerce</div>
             <div class="market-prize-value">$3–5T</div>
             <p class="market-prize-copy">
@@ -3259,7 +3324,15 @@
           </div>
         </div>
         <div class="market-thesis">
-          The gap is the opportunity: every agent transaction still needs <strong>identity, permission and payment.</strong>
+          <div class="market-thesis-copy">
+            <span>The infrastructure gap</span>
+            <strong>Every transaction needs</strong>
+          </div>
+          <div class="market-rail-tags" aria-label="Identity, permission and payment">
+            <span>Identity</span>
+            <span>Permission</span>
+            <span>Payment</span>
+          </div>
         </div>
         <div class="venn-layout legacy-market">
           <div class="venn-rings">
