@@ -1413,6 +1413,256 @@
         color: var(--text-secondary);
       }
 
+      .traction-showcase {
+        display: grid;
+        grid-template-columns: 1.12fr 0.88fr;
+        gap: var(--s4);
+        width: 100%;
+        max-width: 1040px;
+        margin-top: var(--s6);
+      }
+      .traction-hero {
+        position: relative;
+        min-height: 286px;
+        overflow: hidden;
+        padding: var(--s8);
+        border: 1px solid var(--border-accent);
+        border-radius: var(--r-lg);
+        background: radial-gradient(circle at 75% 48%, rgba(112, 238, 238, 0.14), transparent 38%), linear-gradient(135deg, var(--surface-2), var(--surface));
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .traction-hero::after {
+        content: "";
+        position: absolute;
+        width: 250px;
+        height: 250px;
+        right: -55px;
+        top: 18px;
+        border: 1px solid rgba(112, 238, 238, 0.18);
+        border-radius: 50%;
+        box-shadow: 0 0 0 38px rgba(112, 238, 238, 0.035), 0 0 0 76px rgba(112, 238, 238, 0.018);
+      }
+      .traction-live {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 0.66rem;
+        font-weight: 750;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--success-strong);
+      }
+      .traction-live::before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--success-strong);
+        box-shadow: 0 0 0 5px rgba(112, 238, 238, 0.08), 0 0 18px rgba(112, 238, 238, 0.45);
+      }
+      .traction-hero-value {
+        position: relative;
+        z-index: 1;
+        margin-top: var(--s3);
+        font-family: "Inter", sans-serif;
+        font-size: clamp(4.6rem, 9vw, 7rem);
+        font-weight: 850;
+        letter-spacing: -0.07em;
+        line-height: 0.9;
+        background: linear-gradient(105deg, #ffffff 18%, #ffffff 58%, var(--success-strong) 112%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .traction-hero-label {
+        position: relative;
+        z-index: 1;
+        margin-top: var(--s3);
+        font-size: 1.08rem;
+        font-weight: 700;
+        color: var(--text-primary);
+      }
+      .traction-hero-copy {
+        position: relative;
+        z-index: 1;
+        max-width: 390px;
+        margin-top: 5px;
+        font-size: 0.78rem;
+        line-height: 1.4;
+        color: var(--text-secondary);
+      }
+      .traction-signal-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--s3);
+      }
+      .traction-signal {
+        min-width: 0;
+        padding: var(--s4);
+        border: 1px solid var(--border);
+        border-radius: var(--r-md);
+        background: var(--surface);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .traction-signal.hot {
+        border-color: var(--border-accent);
+        background: rgba(112, 238, 238, 0.055);
+      }
+      .traction-signal-tag {
+        font-size: 0.55rem;
+        font-weight: 750;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+      }
+      .traction-signal-value {
+        margin-top: var(--s2);
+        font-family: "Inter", sans-serif;
+        font-size: 2.35rem;
+        font-weight: 820;
+        letter-spacing: -0.05em;
+        line-height: 1;
+        color: var(--text-primary);
+      }
+      .traction-signal.hot .traction-signal-value {
+        color: var(--success-strong);
+      }
+      .traction-signal-label {
+        margin-top: 7px;
+        font-size: 0.72rem;
+        line-height: 1.3;
+        color: var(--text-secondary);
+      }
+      .traction-community {
+        display: grid;
+        grid-template-columns: auto repeat(3, 1fr);
+        align-items: center;
+        gap: var(--s3);
+        width: 100%;
+        max-width: 1040px;
+        margin-top: var(--s4);
+        padding: 10px var(--s4);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--r-md);
+        background: rgba(112, 238, 238, 0.025);
+      }
+      .traction-community-label {
+        padding-right: var(--s4);
+        border-right: 1px solid var(--border);
+        font-size: 0.58rem;
+        font-weight: 750;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--success-strong);
+      }
+      .traction-community-stat {
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        gap: 7px;
+        font-size: 0.68rem;
+        color: var(--text-muted);
+      }
+      .traction-community-stat strong {
+        font-size: 0.9rem;
+        color: var(--text-primary);
+      }
+
+      @media (max-width: 800px) and (min-height: 501px) {
+        .traction-showcase {
+          grid-template-columns: 1fr;
+          gap: 8px;
+          margin-top: 12px;
+        }
+        .traction-hero {
+          min-height: 0;
+          padding: 18px 20px;
+        }
+        .traction-hero-value {
+          font-size: 3.9rem;
+        }
+        .traction-hero-label {
+          margin-top: 7px;
+          font-size: 0.82rem;
+        }
+        .traction-hero-copy {
+          font-size: 0.66rem;
+        }
+        .traction-signal-grid {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+          gap: 7px;
+        }
+        .traction-signal {
+          padding: 10px;
+        }
+        .traction-signal-value {
+          font-size: 1.45rem;
+        }
+        .traction-signal-label {
+          margin-top: 5px;
+          font-size: 0.58rem;
+        }
+        .traction-community {
+          margin-top: 8px;
+          padding: 7px 9px;
+          gap: 6px;
+        }
+        .traction-community-stat {
+          display: block;
+          text-align: center;
+          font-size: 0.53rem;
+        }
+        .traction-community-stat strong {
+          display: block;
+          font-size: 0.7rem;
+        }
+      }
+
+      @media (max-height: 500px) and (min-width: 601px) {
+        .traction-showcase {
+          max-width: 1050px;
+          margin-top: 8px;
+          gap: 8px;
+        }
+        .traction-hero {
+          min-height: 174px;
+          padding: 14px 18px;
+        }
+        .traction-hero-value {
+          margin-top: 7px;
+          font-size: 3.6rem;
+        }
+        .traction-hero-label {
+          margin-top: 6px;
+          font-size: 0.74rem;
+        }
+        .traction-hero-copy {
+          font-size: 0.56rem;
+        }
+        .traction-signal-grid {
+          gap: 6px;
+        }
+        .traction-signal {
+          padding: 8px 10px;
+        }
+        .traction-signal-value {
+          font-size: 1.4rem;
+        }
+        .traction-signal-label {
+          margin-top: 4px;
+          font-size: 0.54rem;
+        }
+        .traction-community {
+          display: none;
+        }
+      }
+
       /* ── Business model + GTM ── */
       .gtm-row {
         display: grid;
@@ -3538,32 +3788,41 @@
           The identity layer is live.
           <span class="em">Agent Wallet adoption is starting.</span>
         </h2>
-        <div class="traction-grid">
-          <div class="metric-card">
-            <div class="metric-value">760</div>
-            <div class="metric-label">Total users</div>
+        <div class="traction-showcase">
+          <div class="traction-hero">
+            <div class="traction-live">Live product activity</div>
+            <div class="traction-hero-value">5,231</div>
+            <div class="traction-hero-label">Emails sent</div>
+            <p class="traction-hero-copy">The identity rail is already handling real agent communication.</p>
           </div>
-          <div class="metric-card highlight">
-            <div class="metric-value">643</div>
-            <div class="metric-label">Active workspaces</div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-value">5,231</div>
-            <div class="metric-label">Emails sent</div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-value">153</div>
-            <div class="metric-label">Wallets connected</div>
-          </div>
-          <div class="metric-card highlight">
-            <div class="metric-value">45</div>
-            <div class="metric-label">Agent Wallet users</div>
+          <div class="traction-signal-grid">
+            <div class="traction-signal">
+              <div class="traction-signal-tag">Reach</div>
+              <div class="traction-signal-value">760</div>
+              <div class="traction-signal-label">Total users</div>
+            </div>
+            <div class="traction-signal hot">
+              <div class="traction-signal-tag">Usage</div>
+              <div class="traction-signal-value">643</div>
+              <div class="traction-signal-label">Active workspaces</div>
+            </div>
+            <div class="traction-signal">
+              <div class="traction-signal-tag">Connected</div>
+              <div class="traction-signal-value">153</div>
+              <div class="traction-signal-label">Wallets connected</div>
+            </div>
+            <div class="traction-signal hot">
+              <div class="traction-signal-tag">Early wedge</div>
+              <div class="traction-signal-value">45</div>
+              <div class="traction-signal-label">Agent Wallet users</div>
+            </div>
           </div>
         </div>
-        <div class="social-strip">
-          <div class="social-stat"><span>X followers</span><strong>980</strong></div>
-          <div class="social-stat"><span>Discord users</span><strong>100+</strong></div>
-          <div class="social-stat"><span>LinkedIn users</span><strong>40</strong></div>
+        <div class="traction-community">
+          <div class="traction-community-label">Community</div>
+          <div class="traction-community-stat"><span>X</span><strong>980</strong></div>
+          <div class="traction-community-stat"><span>Discord</span><strong>100+</strong></div>
+          <div class="traction-community-stat"><span>LinkedIn</span><strong>40</strong></div>
         </div>
       </div>
 
