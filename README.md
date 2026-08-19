@@ -14,18 +14,19 @@ Investor pitch deck and brand design assets for [Mermail](https://mermail.app) �
 
 The investor pitch deck (`mermail-pitch-deck.html`) is fully self-contained with no external local dependencies. The canonical Mermail landing-page logo and image assets are embedded as base64 data, and fonts are loaded dynamically from the Google Fonts CDN. You can open it in any modern web browser without a local web server.
 
-### Slide Structure (10 Slides)
+### Slide Structure (11 Slides)
 
 1. **Cover** — “Give your AI a way to act” through its own inbox, Agent Wallet, and one MCP connection.
 2. **The Behavior Shift** — From searching the web, to asking AI, to delegating outcomes to agents.
-3. **The Product** — One agent identity from message to payment.
-4. **Agent Wallet** — Per-action approval or policy-bound autonomy, protected credentials, and receipt history.
-5. **Why Mermail** — Dedicated agent identity versus borrowing a person's inbox and reusable credentials.
-6. **Why Now** — MCP, network payment programs, and the arrival of live agentic-commerce rails.
-7. **Traction** — 760 users, 643 active workspaces, 5,231 emails sent, 153 connected wallets, 45 Agent Wallet users, and social reach.
-8. **Business Model & GTM** — Current Free / Developer / Enterprise pricing, design-partner acquisition, paid activation, and repeatability targets.
-9. **Funding Allocation** — $250K pre-seed, eight-month runway, six allocation buckets, and proof milestones.
-10. **Team & Ask** — Co-founders Nathan Nguyen and Toan Nhu, plus the $250K raise and month-eight outcomes.
+3. **The Traffic Shift** — Cloudflare, Akamai, and Pew data showing the rise of machine traffic and the collapse in referral value.
+4. **The Product** — One agent identity from message to payment.
+5. **Agent Wallet** — Per-action approval or policy-bound autonomy, protected credentials, and receipt history.
+6. **Why Mermail** — Dedicated agent identity versus borrowing a person's inbox and reusable credentials.
+7. **Why Now** — MCP, network payment programs, and the arrival of live agentic-commerce rails.
+8. **Traction** — 760 users, 643 active workspaces, 5,231 emails sent, 153 connected wallets, 45 Agent Wallet users, and social reach.
+9. **Business Model & GTM** — Current Free / Developer / Enterprise pricing, design-partner acquisition, paid activation, and repeatability targets.
+10. **Funding Allocation** — $250K pre-seed, eight-month runway, six allocation buckets, and proof milestones.
+11. **Team & Ask** — Co-founders Nathan Nguyen and Toan Nhu, plus the $250K raise and month-eight outcomes.
 
 ## About Mermail
 
