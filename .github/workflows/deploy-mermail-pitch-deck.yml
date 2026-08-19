@@ -35,20 +35,6 @@ jobs:
           # Default route (/) serves mermail-pitch-deck.html
           cp mermail-pitch-deck.html site/index.html
           cp mermail-pitch-deck.html site/mermail-pitch-deck.html
-          
-          # /yc route serves mermail-yc-deck.html
-          cp mermail-yc-deck.html site/yc.html
-          mkdir -p site/yc
-          cp mermail-yc-deck.html site/yc/index.html
-          
-          # Keep original filename for backward compatibility
-          cp mermail-yc-deck.html site/mermail-yc-deck.html
-
-          # /hackathon route serves mermail-hackathon.html
-          cp mermail-hackathon.html site/hackathon.html
-          mkdir -p site/hackathon
-          cp mermail-hackathon.html site/hackathon/index.html
-          cp mermail-hackathon.html site/mermail-hackathon.html
 
           # Copy assets directory so that favicon and og-image are deployed
           cp -r assets site/
