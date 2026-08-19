@@ -1865,296 +1865,391 @@
         }
       }
 
-      /* ── Go-to-market distribution flywheel ── */
-      .gtm-engine {
+      /* ── Go-to-market orbit ── */
+      .gtm-orbit-stage {
         position: relative;
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: var(--s4);
         width: 100%;
         max-width: 1040px;
-        margin-top: var(--s6);
+        height: clamp(280px, 38vh, 340px);
+        margin-top: var(--s5);
       }
-      .gtm-engine::before {
+      .gtm-orbit-stage::before {
         content: "";
         position: absolute;
-        top: 43px;
-        left: 16.5%;
-        right: 16.5%;
-        height: 1px;
-        background: linear-gradient(90deg, rgba(112, 238, 238, 0.14), var(--success-strong), rgba(112, 238, 238, 0.14));
+        inset: 8% 20%;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(112, 238, 238, 0.1), transparent 66%);
+        filter: blur(10px);
       }
-      .gtm-motion {
-        position: relative;
-        z-index: 1;
-        min-width: 0;
-        padding: var(--s6);
-        border: 1px solid var(--border);
-        border-radius: var(--r-lg);
-        background: linear-gradient(155deg, rgba(11, 29, 42, 0.96), rgba(4, 16, 25, 0.94));
+      .gtm-orbit-map {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        overflow: visible;
       }
-      .gtm-motion:nth-child(2) {
-        border-color: var(--border-accent);
-        background: linear-gradient(155deg, rgba(112, 238, 238, 0.09), rgba(4, 16, 25, 0.96));
-        transform: translateY(-8px);
+      .gtm-orbit-map .orbit-ring {
+        fill: none;
+        stroke: rgba(112, 238, 238, 0.2);
+        stroke-width: 1;
+        stroke-dasharray: 5 7;
       }
-      .gtm-motion-head {
+      .gtm-orbit-map .orbit-route {
+        fill: none;
+        stroke: url(#gtm-route-gradient);
+        stroke-width: 1.4;
+      }
+      .gtm-orbit-map .orbit-dot {
+        fill: var(--success-strong);
+        filter: drop-shadow(0 0 7px rgba(112, 238, 238, 0.75));
+      }
+      .gtm-core {
+        position: absolute;
+        z-index: 3;
+        top: 50%;
+        left: 50%;
+        width: 190px;
+        height: 190px;
+        transform: translate(-50%, -50%);
         display: flex;
+        flex-direction: column;
         align-items: center;
-        gap: var(--s3);
-      }
-      .gtm-motion-num {
-        display: grid;
-        place-items: center;
-        width: 38px;
-        height: 38px;
-        flex: 0 0 38px;
+        justify-content: center;
+        padding: var(--s6);
         border: 1px solid var(--border-accent);
         border-radius: 50%;
-        background: #06141d;
-        color: var(--success-strong);
-        font-size: 0.72rem;
-        font-weight: 800;
-        box-shadow: 0 0 22px rgba(112, 238, 238, 0.08);
+        background: radial-gradient(circle at 42% 35%, rgba(112, 238, 238, 0.16), rgba(4, 16, 25, 0.97) 62%);
+        box-shadow: 0 0 0 12px rgba(112, 238, 238, 0.025), 0 0 54px rgba(112, 238, 238, 0.13);
+        text-align: center;
       }
-      .gtm-motion-label {
-        font-size: 0.58rem;
-        font-weight: 750;
+      .gtm-core-orbit {
+        position: absolute;
+        inset: -18px;
+        border: 1px dashed rgba(112, 238, 238, 0.2);
+        border-radius: 50%;
+        animation: gtm-spin 22s linear infinite;
+      }
+      .gtm-core-orbit::after {
+        content: "";
+        position: absolute;
+        top: 13px;
+        right: 23px;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--success-strong);
+        box-shadow: 0 0 12px rgba(112, 238, 238, 0.8);
+      }
+      @keyframes gtm-spin {
+        to { transform: rotate(360deg); }
+      }
+      .gtm-core-kicker {
+        font-size: 0.56rem;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        color: var(--success-strong);
+      }
+      .gtm-core strong {
+        display: block;
+        margin-top: 7px;
+        font-size: 1.18rem;
+        color: var(--text-primary);
+      }
+      .gtm-core > span:last-child {
+        display: block;
+        margin-top: 5px;
+        max-width: 130px;
+        font-size: 0.66rem;
+        line-height: 1.35;
+        color: var(--text-secondary);
+      }
+      .gtm-orbit-node {
+        position: absolute;
+        z-index: 4;
+        width: 278px;
+        padding: var(--s4) var(--s5);
+        border: 1px solid var(--border);
+        border-left: 2px solid var(--success-strong);
+        border-radius: 4px var(--r-md) var(--r-md) 4px;
+        background: linear-gradient(100deg, rgba(10, 29, 42, 0.96), rgba(4, 16, 25, 0.88));
+        box-shadow: 0 14px 34px rgba(0, 0, 0, 0.18);
+      }
+      .gtm-orbit-node.distribute {
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+      }
+      .gtm-orbit-node.activate {
+        top: 1%;
+        right: 0;
+      }
+      .gtm-orbit-node.prove {
+        right: 0;
+        bottom: 1%;
+      }
+      .gtm-orbit-node::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -7px;
+        width: 6px;
+        height: 6px;
+        transform: translateY(-50%);
+        border: 2px solid #06141d;
+        border-radius: 50%;
+        background: var(--success-strong);
+        box-shadow: 0 0 9px rgba(112, 238, 238, 0.7);
+      }
+      .gtm-orbit-node.distribute::after {
+        right: -7px;
+        left: auto;
+      }
+      .gtm-node-head {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.56rem;
+        font-weight: 780;
         letter-spacing: 0.14em;
         text-transform: uppercase;
         color: var(--text-muted);
       }
-      .gtm-motion h3 {
-        margin-top: var(--s5);
-        font-size: 1.05rem;
+      .gtm-node-head span {
+        display: grid;
+        place-items: center;
+        width: 25px;
+        height: 25px;
+        border: 1px solid rgba(112, 238, 238, 0.25);
+        border-radius: 50%;
+        color: var(--success-strong);
+        letter-spacing: 0;
+      }
+      .gtm-orbit-node h3 {
+        margin-top: 8px;
+        font-size: 0.92rem;
         line-height: 1.2;
         color: var(--text-primary);
       }
-      .gtm-motion p {
-        margin-top: var(--s2);
-        min-height: 42px;
-        font-size: 0.72rem;
-        line-height: 1.45;
-        color: var(--text-secondary);
-      }
-      .gtm-chips {
+      .gtm-node-tags {
         display: flex;
         flex-wrap: wrap;
-        gap: 7px;
-        margin-top: var(--s5);
+        gap: 5px;
+        margin-top: 9px;
       }
-      .gtm-chips span {
-        padding: 6px 9px;
-        border: 1px solid rgba(112, 238, 238, 0.18);
+      .gtm-node-tags span {
+        padding: 4px 7px;
+        border: 1px solid rgba(112, 238, 238, 0.17);
         border-radius: 999px;
         background: rgba(112, 238, 238, 0.035);
-        font-size: 0.64rem;
+        font-size: 0.56rem;
         font-weight: 650;
-        color: var(--text-primary);
+        color: var(--text-secondary);
       }
-      .gtm-flywheel {
-        display: grid;
-        grid-template-columns: auto 1fr auto 1fr auto 1fr auto;
+      .gtm-loop-strip {
+        display: flex;
         align-items: center;
-        gap: var(--s3);
+        justify-content: center;
+        gap: var(--s4);
         width: 100%;
-        max-width: 1040px;
-        margin-top: var(--s5);
-        padding: var(--s4) var(--s6);
-        border: 1px solid var(--border-accent);
-        border-radius: var(--r-md);
-        background: linear-gradient(90deg, rgba(112, 238, 238, 0.07), rgba(112, 238, 238, 0.018));
-      }
-      .gtm-flywheel strong {
-        font-size: 0.72rem;
+        max-width: 760px;
+        margin-top: var(--s2);
+        padding: 9px var(--s5);
+        border-top: 1px solid var(--border-accent);
+        border-bottom: 1px solid var(--border-accent);
+        font-size: 0.62rem;
+        font-weight: 750;
+        letter-spacing: 0.12em;
         color: var(--text-primary);
-        white-space: nowrap;
       }
-      .gtm-flywheel-line {
-        height: 1px;
-        background: rgba(112, 238, 238, 0.24);
-      }
-      .gtm-flywheel-loop {
+      .gtm-loop-strip b {
         color: var(--success-strong);
-        font-size: 1rem;
+        font-size: 0.82rem;
       }
       .gtm-thesis {
-        margin-top: var(--s4);
-        font-size: 0.82rem;
+        margin-top: var(--s3);
+        font-size: 0.76rem;
         color: var(--text-secondary);
       }
       .gtm-thesis strong {
         color: var(--success-strong);
       }
-      .gtm-row {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: var(--s3);
-        max-width: 1020px;
-        width: 100%;
-        margin-top: var(--s4);
-      }
-      .gtm-step {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        gap: var(--s3);
-        align-items: start;
-        padding: var(--s4) var(--s6);
-        border: 1px solid var(--border-subtle);
-        border-radius: var(--r-md);
-        background: var(--surface);
-      }
-      .gtm-step-num {
-        width: 26px;
-        height: 26px;
-        display: grid;
-        place-items: center;
-        border-radius: 50%;
-        background: rgba(112, 238, 238, 0.12);
-        color: var(--success-strong);
-        font-size: 0.72rem;
-        font-weight: 800;
-      }
-      .gtm-step strong {
-        display: block;
-        color: var(--text-primary);
-        font-size: 0.84rem;
-        margin-bottom: 3px;
-      }
-      .gtm-step span {
-        display: block;
-        color: var(--text-secondary);
-        font-size: 0.74rem;
-        line-height: 1.4;
-      }
 
       @media (max-width: 800px) and (min-height: 501px) {
-        .gtm-engine {
-          grid-template-columns: 1fr;
+        .gtm-orbit-stage {
+          display: grid;
+          grid-template-columns: 0.72fr 1.28fr;
+          grid-template-rows: repeat(3, auto);
           gap: 7px;
+          height: auto;
           margin-top: 12px;
         }
-        .gtm-engine::before {
+        .gtm-orbit-stage::before,
+        .gtm-orbit-map,
+        .gtm-core-orbit {
           display: none;
         }
-        .gtm-motion,
-        .gtm-motion:nth-child(2) {
-          display: grid;
-          grid-template-columns: auto minmax(0, 1fr) auto;
-          column-gap: 10px;
-          align-items: center;
-          padding: 10px 12px;
+        .gtm-core {
+          position: relative;
+          grid-row: 1 / 4;
+          top: auto;
+          left: auto;
+          width: auto;
+          height: auto;
+          min-height: 100%;
           transform: none;
+          border-radius: var(--r-lg);
         }
-        .gtm-motion-head {
-          grid-column: 1;
-        }
-        .gtm-motion-label {
-          display: none;
-        }
-        .gtm-motion h3 {
-          grid-column: 2;
-          margin-top: 0;
-          font-size: 0.84rem;
-        }
-        .gtm-motion p {
-          display: none;
-        }
-        .gtm-chips {
-          grid-column: 3;
-          justify-content: flex-end;
-          margin-top: 0;
-        }
-        .gtm-chips span {
-          padding: 5px 7px;
-          font-size: 0.54rem;
-        }
-        .gtm-flywheel {
-          margin-top: 8px;
+        .gtm-orbit-node,
+        .gtm-orbit-node.distribute,
+        .gtm-orbit-node.activate,
+        .gtm-orbit-node.prove {
+          position: relative;
+          top: auto;
+          right: auto;
+          bottom: auto;
+          left: auto;
+          width: auto;
+          transform: none;
           padding: 9px 11px;
         }
-        .gtm-flywheel strong {
-          font-size: 0.58rem;
+        .gtm-orbit-node::after,
+        .gtm-orbit-node.distribute::after {
+          display: none;
+        }
+        .gtm-orbit-node h3 {
+          margin-top: 5px;
+          font-size: 0.78rem;
+        }
+        .gtm-node-tags {
+          margin-top: 6px;
+        }
+        .gtm-node-tags span {
+          padding: 3px 6px;
+          font-size: 0.5rem;
+        }
+        .gtm-loop-strip {
+          margin-top: 8px;
+          padding: 7px 10px;
+          font-size: 0.54rem;
         }
         .gtm-thesis {
-          margin-top: 8px;
-          font-size: 0.68rem;
+          margin-top: 7px;
+          font-size: 0.66rem;
         }
       }
 
       @media (max-width: 600px) and (min-height: 501px) {
-        .gtm-motion,
-        .gtm-motion:nth-child(2) {
-          grid-template-columns: auto minmax(0, 1fr);
-          row-gap: 7px;
+        .gtm-orbit-stage {
+          grid-template-columns: 1fr;
+          grid-template-rows: auto;
+          gap: 6px;
+          margin-top: 10px;
+        }
+        .gtm-core {
+          grid-row: auto;
+          display: grid;
+          grid-template-columns: auto auto;
+          justify-content: center;
+          column-gap: 8px;
+          min-height: 0;
           padding: 9px 11px;
+          border-radius: var(--r-md);
         }
-        .gtm-motion h3 {
-          grid-column: 2;
-          line-height: 1.15;
-        }
-        .gtm-chips {
+        .gtm-core-kicker {
           grid-column: 1 / -1;
-          justify-content: flex-start;
-          padding-left: 48px;
+          font-size: 0.46rem;
         }
-        .gtm-flywheel {
-          grid-template-columns: auto auto auto auto;
-          justify-content: space-between;
-          gap: 5px;
+        .gtm-core strong {
+          margin-top: 3px;
+          font-size: 0.82rem;
         }
-        .gtm-flywheel-line {
-          display: none;
+        .gtm-core > span:last-child {
+          align-self: end;
+          margin-top: 0;
+          max-width: none;
+          font-size: 0.52rem;
         }
-        .gtm-flywheel strong {
-          font-size: 0.5rem;
+        .gtm-orbit-node,
+        .gtm-orbit-node.distribute,
+        .gtm-orbit-node.activate,
+        .gtm-orbit-node.prove {
+          display: grid;
+          grid-template-columns: auto 1fr;
+          align-items: center;
+          gap: 5px 9px;
+          padding: 7px 9px;
+        }
+        .gtm-orbit-node h3 {
+          margin-top: 0;
+        }
+        .gtm-node-tags {
+          grid-column: 2;
+          margin-top: 0;
+        }
+        .gtm-loop-strip {
+          gap: 7px;
+          margin-top: 7px;
+          font-size: 0.47rem;
+        }
+        .gtm-thesis {
+          text-align: center;
         }
       }
 
       @media (max-height: 500px) and (min-width: 601px) {
-        .gtm-engine {
-          gap: 8px;
-          margin-top: 10px;
+        .gtm-orbit-stage {
+          height: 174px;
+          margin-top: 7px;
         }
-        .gtm-motion,
-        .gtm-motion:nth-child(2) {
-          padding: 10px 12px;
-          transform: none;
+        .gtm-core {
+          width: 116px;
+          height: 116px;
+          padding: 9px;
         }
-        .gtm-motion-num {
-          width: 28px;
-          height: 28px;
-          flex-basis: 28px;
-          font-size: 0.58rem;
+        .gtm-core-orbit {
+          inset: -10px;
         }
-        .gtm-engine::before {
-          top: 25px;
+        .gtm-core-kicker {
+          font-size: 0.4rem;
         }
-        .gtm-motion h3 {
-          margin-top: 8px;
+        .gtm-core strong {
+          margin-top: 4px;
           font-size: 0.78rem;
         }
-        .gtm-motion p {
-          display: none;
+        .gtm-core > span:last-child {
+          margin-top: 3px;
+          font-size: 0.46rem;
         }
-        .gtm-chips {
-          gap: 4px;
-          margin-top: 8px;
+        .gtm-orbit-node {
+          width: 218px;
+          padding: 7px 9px;
         }
-        .gtm-chips span {
-          padding: 4px 6px;
-          font-size: 0.48rem;
+        .gtm-node-head {
+          font-size: 0.42rem;
         }
-        .gtm-flywheel {
-          margin-top: 8px;
-          padding: 7px 10px;
+        .gtm-node-head span {
+          width: 19px;
+          height: 19px;
         }
-        .gtm-flywheel strong {
-          font-size: 0.54rem;
+        .gtm-orbit-node h3 {
+          margin-top: 4px;
+          font-size: 0.62rem;
+        }
+        .gtm-node-tags {
+          gap: 3px;
+          margin-top: 5px;
+        }
+        .gtm-node-tags span {
+          padding: 2px 4px;
+          font-size: 0.4rem;
+        }
+        .gtm-loop-strip {
+          margin-top: 4px;
+          padding: 5px 8px;
+          font-size: 0.46rem;
         }
         .gtm-thesis {
-          margin-top: 6px;
-          font-size: 0.62rem;
+          display: none;
         }
       }
 
@@ -4308,55 +4403,59 @@
         <h2>
           Meet agents <span class="em">where they already live.</span>
         </h2>
-        <div class="gtm-engine">
-          <div class="gtm-motion">
-            <div class="gtm-motion-head">
-              <div class="gtm-motion-num">01</div>
-              <div class="gtm-motion-label">Distribute</div>
-            </div>
-            <h3>Provision the Mermail plugin</h3>
-            <p>Ship inside agent ecosystems where builders already discover and install capabilities.</p>
-            <div class="gtm-chips">
+        <div class="gtm-orbit-stage">
+          <svg class="gtm-orbit-map" viewBox="0 0 1040 340" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="gtm-route-gradient" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#70eeee" stop-opacity="0.08" />
+                <stop offset="0.5" stop-color="#70eeee" stop-opacity="0.72" />
+                <stop offset="1" stop-color="#70eeee" stop-opacity="0.12" />
+              </linearGradient>
+            </defs>
+            <ellipse class="orbit-ring" cx="520" cy="170" rx="300" ry="132" />
+            <path class="orbit-route" d="M 280 170 C 350 170, 385 170, 425 170" />
+            <path class="orbit-route" d="M 610 110 C 680 62, 724 56, 774 66" />
+            <path class="orbit-route" d="M 610 230 C 680 278, 724 284, 774 274" />
+            <circle class="orbit-dot" cx="280" cy="170" r="4" />
+            <circle class="orbit-dot" cx="774" cy="66" r="4" />
+            <circle class="orbit-dot" cx="774" cy="274" r="4" />
+          </svg>
+          <div class="gtm-core">
+            <span class="gtm-core-orbit" aria-hidden="true"></span>
+            <div class="gtm-core-kicker">GTM engine</div>
+            <strong>Mermail plugin</strong>
+            <span>Identity + payment for agents</span>
+          </div>
+          <div class="gtm-orbit-node distribute">
+            <div class="gtm-node-head"><span>01</span>Distribute</div>
+            <h3>Provision where agents live</h3>
+            <div class="gtm-node-tags">
               <span>Grok Bot</span>
               <span>Hermes</span>
               <span>OpenClaw marketplace</span>
             </div>
           </div>
-          <div class="gtm-motion">
-            <div class="gtm-motion-head">
-              <div class="gtm-motion-num">02</div>
-              <div class="gtm-motion-label">Activate</div>
-            </div>
+          <div class="gtm-orbit-node activate">
+            <div class="gtm-node-head"><span>02</span>Activate</div>
             <h3>Turn builders into a skills community</h3>
-            <p>Run contests and bounties that produce reusable skills, demos, and workflows.</p>
-            <div class="gtm-chips">
+            <div class="gtm-node-tags">
               <span>Skill contests</span>
-              <span>Community bounties</span>
+              <span>Bounties</span>
               <span>Templates</span>
             </div>
           </div>
-          <div class="gtm-motion">
-            <div class="gtm-motion-head">
-              <div class="gtm-motion-num">03</div>
-              <div class="gtm-motion-label">Prove</div>
-            </div>
+          <div class="gtm-orbit-node prove">
+            <div class="gtm-node-head"><span>03</span>Prove</div>
             <h3>Show agents completing real tasks</h3>
-            <p>Publish concrete use cases where identity and agentic payment unlock the outcome.</p>
-            <div class="gtm-chips">
+            <div class="gtm-node-tags">
               <span>Signups</span>
               <span>Subscriptions</span>
               <span>Agentic payments</span>
             </div>
           </div>
         </div>
-        <div class="gtm-flywheel" aria-label="Go-to-market flywheel">
-          <strong>More ecosystems</strong>
-          <span class="gtm-flywheel-line"></span>
-          <strong>More builders</strong>
-          <span class="gtm-flywheel-line"></span>
-          <strong>More working skills</strong>
-          <span class="gtm-flywheel-line"></span>
-          <span class="gtm-flywheel-loop">↺</span>
+        <div class="gtm-loop-strip" aria-label="Install, build, prove, and share loop">
+          <span>INSTALL</span><b>→</b><span>BUILD</span><b>→</b><span>PROVE</span><b>→</b><span>SHARE</span><b>↺</b>
         </div>
         <div class="gtm-thesis"><strong>Every successful skill becomes distribution.</strong> Every completed task becomes proof.</div>
       </div>
