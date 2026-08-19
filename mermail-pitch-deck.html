@@ -855,6 +855,239 @@
         color: var(--text-secondary);
       }
 
+      .market-fomo {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: var(--s4);
+        width: 100%;
+        max-width: 1000px;
+        margin-top: var(--s6);
+      }
+      .market-prize {
+        position: relative;
+        min-height: 300px;
+        overflow: hidden;
+        padding: var(--s8);
+        border: 1px solid var(--border-accent);
+        border-radius: var(--r-lg);
+        background:
+          radial-gradient(circle at 30% 50%, rgba(112, 238, 238, 0.13), transparent 46%),
+          var(--surface-2);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .market-prize::after {
+        content: "";
+        position: absolute;
+        width: 280px;
+        height: 280px;
+        right: -110px;
+        top: 10px;
+        border: 1px solid rgba(112, 238, 238, 0.15);
+        border-radius: 50%;
+        box-shadow:
+          0 0 0 42px rgba(112, 238, 238, 0.035),
+          0 0 0 84px rgba(112, 238, 238, 0.02);
+      }
+      .market-prize-label {
+        position: relative;
+        z-index: 1;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--success-strong);
+      }
+      .market-prize-value {
+        position: relative;
+        z-index: 1;
+        margin-top: var(--s2);
+        font-family: "Inter", sans-serif;
+        font-size: clamp(4.8rem, 9vw, 7.2rem);
+        font-weight: 850;
+        letter-spacing: -0.07em;
+        line-height: 0.92;
+        color: var(--text-primary);
+        text-shadow: 0 0 42px rgba(112, 238, 238, 0.12);
+      }
+      .market-prize-copy {
+        position: relative;
+        z-index: 1;
+        max-width: 430px;
+        margin-top: var(--s4);
+        font-size: 1rem;
+        line-height: 1.45;
+        color: var(--text-secondary);
+      }
+      .market-prize-copy strong {
+        color: var(--text-primary);
+      }
+      .market-source {
+        position: relative;
+        z-index: 1;
+        margin-top: var(--s3);
+        font-size: 0.66rem;
+        color: var(--text-muted);
+      }
+      .market-source a {
+        color: inherit;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+      .momentum-stack {
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        gap: var(--s3);
+      }
+      .momentum-card {
+        position: relative;
+        overflow: hidden;
+        padding: var(--s4) var(--s5);
+        border: 1px solid var(--border);
+        border-radius: var(--r-md);
+        background: var(--surface);
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+        gap: var(--s4);
+      }
+      .momentum-card.hot {
+        border-color: var(--border-accent);
+        background: rgba(112, 238, 238, 0.055);
+      }
+      .momentum-value {
+        min-width: 94px;
+        font-family: "Inter", sans-serif;
+        font-size: 2.2rem;
+        font-weight: 820;
+        letter-spacing: -0.045em;
+        line-height: 1;
+        color: var(--success-strong);
+      }
+      .momentum-copy strong {
+        display: block;
+        font-size: 0.84rem;
+        color: var(--text-primary);
+      }
+      .momentum-copy span {
+        display: block;
+        margin-top: 3px;
+        font-size: 0.68rem;
+        line-height: 1.35;
+        color: var(--text-muted);
+      }
+      .market-thesis {
+        width: 100%;
+        max-width: 1000px;
+        margin-top: var(--s4);
+        padding: var(--s3) var(--s5);
+        border-left: 2px solid var(--success-strong);
+        background: linear-gradient(90deg, rgba(112, 238, 238, 0.07), transparent 76%);
+        font-size: 0.9rem;
+        font-weight: 620;
+        color: var(--text-primary);
+      }
+      .market-thesis strong {
+        color: var(--success-strong);
+      }
+      .legacy-market {
+        display: none !important;
+      }
+
+      @media (max-width: 800px) and (min-height: 501px) {
+        .market-fomo {
+          grid-template-columns: 1fr;
+          gap: 8px;
+          margin-top: 12px;
+        }
+        .market-prize {
+          min-height: 0;
+          padding: 18px 20px;
+        }
+        .market-prize-value {
+          font-size: 3.8rem;
+        }
+        .market-prize-copy {
+          margin-top: 8px;
+          font-size: 0.78rem;
+        }
+        .market-source {
+          margin-top: 6px;
+          font-size: 0.56rem;
+        }
+        .momentum-stack {
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: 1fr;
+          gap: 7px;
+        }
+        .momentum-card {
+          display: block;
+          padding: 10px;
+        }
+        .momentum-value {
+          min-width: 0;
+          font-size: 1.35rem;
+        }
+        .momentum-copy strong {
+          margin-top: 5px;
+          font-size: 0.62rem;
+        }
+        .momentum-copy span {
+          font-size: 0.52rem;
+        }
+        .market-thesis {
+          margin-top: 8px;
+          padding: 8px 10px;
+          font-size: 0.68rem;
+        }
+      }
+
+      @media (max-height: 500px) and (min-width: 601px) {
+        .market-fomo {
+          max-width: 1050px;
+          margin-top: 8px;
+          gap: 8px;
+        }
+        .market-prize {
+          min-height: 170px;
+          padding: 14px 18px;
+        }
+        .market-prize-value {
+          font-size: 3.6rem;
+        }
+        .market-prize-copy {
+          margin-top: 7px;
+          font-size: 0.7rem;
+        }
+        .market-source {
+          margin-top: 5px;
+          font-size: 0.5rem;
+        }
+        .momentum-stack {
+          gap: 6px;
+        }
+        .momentum-card {
+          padding: 7px 10px;
+          gap: 8px;
+        }
+        .momentum-value {
+          min-width: 65px;
+          font-size: 1.45rem;
+        }
+        .momentum-copy strong {
+          font-size: 0.6rem;
+        }
+        .momentum-copy span {
+          font-size: 0.49rem;
+        }
+        .market-thesis {
+          margin-top: 7px;
+          padding: 6px 10px;
+          font-size: 0.62rem;
+        }
+      }
+
       /* ── Traction timeline ── */
       .timeline {
         max-width: 980px;
@@ -2986,9 +3219,49 @@
 
         <div class="eyebrow">Why Now</div>
         <h2>
-          The rails for <span class="em">agentic commerce</span> are arriving.
+          Agentic commerce is moving faster than <span class="em">its infrastructure.</span>
         </h2>
-        <div class="venn-layout">
+        <div class="market-fomo">
+          <div class="market-prize">
+            <div class="market-prize-label">Global agentic commerce</div>
+            <div class="market-prize-value">$3–5T</div>
+            <p class="market-prize-copy">
+              AI agents could mediate this much consumer commerce by 2030.
+              <strong>Goods only. Services and B2B are additional.</strong>
+            </p>
+            <div class="market-source">
+              Moderate adoption scenario ·
+              <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-agentic-commerce-opportunity-how-ai-agents-are-ushering-in-a-new-era-for-consumers-and-merchants" target="_blank">McKinsey, 2025</a>
+            </div>
+          </div>
+          <div class="momentum-stack">
+            <div class="momentum-card hot">
+              <div class="momentum-value">200%↑</div>
+              <div class="momentum-copy">
+                <strong>Agentic search, year over year</strong>
+                <span>Measured across 1.5B global shoppers · Salesforce, 2026</span>
+              </div>
+            </div>
+            <div class="momentum-card">
+              <div class="momentum-value">86%</div>
+              <div class="momentum-copy">
+                <strong>Say LLMs will be essential</strong>
+                <span>To product discovery within the next year · Salesforce</span>
+              </div>
+            </div>
+            <div class="momentum-card">
+              <div class="momentum-value">&lt;⅓</div>
+              <div class="momentum-copy">
+                <strong>Use agentic AI today</strong>
+                <span>Nearly half of non-adopters plan to deploy within 6 months · <a href="https://www.salesforce.com/in/news/stories/agentic-search-growth/" target="_blank" style="color: inherit; text-decoration: underline; text-underline-offset: 2px">Salesforce, 2026</a></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="market-thesis">
+          The gap is the opportunity: every agent transaction still needs <strong>identity, permission and payment.</strong>
+        </div>
+        <div class="venn-layout legacy-market">
           <div class="venn-rings">
             <div class="v-ring tam"><span class="v-ring-tag">TOOLS</span></div>
             <div class="v-ring sam"></div>
@@ -3153,7 +3426,7 @@
             </div>
           </div>
         </div>
-        <div class="cagr-banner">
+        <div class="cagr-banner legacy-market">
           <div class="cagr-num">A$670B</div>
           <div class="cagr-text">
             <strong
