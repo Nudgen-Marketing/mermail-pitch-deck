@@ -535,7 +535,7 @@
         color: var(--text-secondary);
       }
       .mermail-layer {
-        padding: var(--s6);
+        padding: var(--s5);
         border: 1px solid var(--border-accent);
         border-radius: var(--r-lg);
         background: var(--surface);
@@ -546,7 +546,7 @@
         align-items: center;
         justify-content: center;
         gap: var(--s2);
-        margin-bottom: var(--s4);
+        margin-bottom: var(--s3);
         font-size: 1.08rem;
         font-weight: 750;
         color: var(--text-primary);
@@ -554,10 +554,10 @@
       .layer-modules {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: var(--s3);
+        gap: 9px;
       }
       .layer-module {
-        padding: var(--s4);
+        padding: 11px 9px;
         border: 1px solid var(--border);
         border-radius: var(--r-md);
         text-align: center;
@@ -566,24 +566,24 @@
       .layer-module-icon {
         display: grid;
         place-items: center;
-        width: 38px;
-        height: 38px;
-        margin: 0 auto var(--s3);
+        width: 30px;
+        height: 30px;
+        margin: 0 auto 6px;
         border: 1px solid var(--border-accent);
         border-radius: 50%;
         color: var(--success-strong);
       }
       .layer-module-icon svg {
-        width: 20px;
-        height: 20px;
+        width: 17px;
+        height: 17px;
       }
       .layer-module h3 {
         margin: 0;
-        font-size: 0.94rem;
+        font-size: 0.82rem;
       }
       .layer-module p {
-        margin-top: 5px;
-        font-size: 0.66rem;
+        margin-top: 3px;
+        font-size: 0.58rem;
         line-height: 1.35;
         color: var(--text-muted);
       }
@@ -598,6 +598,206 @@
         font-size: 0.84rem;
         font-weight: 650;
         color: var(--text-primary);
+      }
+
+      /* ── Product control plane ── */
+      #slide-2 h2 {
+        font-size: clamp(2.45rem, 4.25vw, 4.15rem);
+        letter-spacing: -0.045em;
+      }
+      .product-control-plane {
+        position: relative;
+        width: min(980px, 92vw);
+        height: clamp(390px, 46vh, 520px);
+        margin-top: clamp(20px, 2.5vh, 34px);
+        flex: 0 0 auto;
+      }
+      .control-orbit {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: clamp(390px, 35vw, 520px);
+        aspect-ratio: 1;
+        border: 1.5px solid rgba(126, 239, 242, 0.86);
+        border-radius: 50%;
+        background:
+          radial-gradient(circle at 50% 48%, rgba(112, 238, 238, 0.1) 0%, rgba(112, 238, 238, 0.035) 34%, transparent 68%),
+          radial-gradient(circle at 48% 45%, rgba(45, 99, 122, 0.11), transparent 62%);
+        box-shadow:
+          inset 0 0 90px rgba(112, 238, 238, 0.035),
+          0 0 60px rgba(83, 221, 226, 0.055);
+        transform: translate(-50%, -50%);
+      }
+      .control-account-label {
+        position: absolute;
+        inset: 7% 17% auto;
+        width: 66%;
+        height: 25%;
+        overflow: visible;
+        color: var(--success-strong);
+      }
+      .control-account-label text {
+        fill: currentColor;
+        font-family: inherit;
+        font-size: 6px;
+        font-weight: 760;
+        letter-spacing: 1.7px;
+        text-transform: uppercase;
+      }
+      .control-lines {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        color: rgba(112, 238, 238, 0.34);
+      }
+      .control-lines path {
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 0.35;
+        stroke-dasharray: 1.5 1.5;
+      }
+      .control-lines circle {
+        fill: var(--success-strong);
+        stroke: var(--background);
+        stroke-width: 0.65;
+      }
+      .control-core {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: grid;
+        place-items: center;
+        width: clamp(142px, 14vw, 190px);
+        aspect-ratio: 1;
+        border: 1.5px solid var(--success-strong);
+        border-radius: 50%;
+        color: var(--success-strong);
+        background:
+          linear-gradient(145deg, rgba(122, 238, 242, 0.14), transparent 22%),
+          radial-gradient(circle at 50% 43%, rgba(27, 61, 75, 0.54), rgba(3, 14, 19, 0.97) 68%);
+        box-shadow:
+          0 0 42px rgba(112, 238, 238, 0.12),
+          inset 0 0 34px rgba(112, 238, 238, 0.07),
+          inset 0 5px 0 rgba(192, 255, 255, 0.23);
+        transform: translate(-50%, -50%);
+      }
+      .control-core svg {
+        width: 48%;
+        height: 48%;
+      }
+      .control-core strong {
+        margin-top: -22%;
+        font-size: clamp(0.62rem, 0.9vw, 0.78rem);
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--text-primary);
+      }
+      .control-point {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        white-space: nowrap;
+      }
+      .control-point.left {
+        left: 0;
+        flex-direction: row-reverse;
+        transform: translate(calc(-100% + 39px), -50%);
+      }
+      .control-point.right {
+        left: 100%;
+        transform: translate(-39px, -50%);
+      }
+      .control-point.top {
+        top: 31%;
+      }
+      .control-point.bottom {
+        top: 69%;
+      }
+      .control-point-icon {
+        display: grid;
+        place-items: center;
+        width: clamp(62px, 5.8vw, 78px);
+        aspect-ratio: 1;
+        flex: 0 0 auto;
+        border: 1.35px solid rgba(112, 238, 238, 0.88);
+        border-radius: 50%;
+        color: var(--success-strong);
+        background: var(--background);
+        box-shadow: 0 0 30px rgba(112, 238, 238, 0.085), inset 0 0 20px rgba(112, 238, 238, 0.035);
+      }
+      .control-point-icon svg {
+        width: 46%;
+        height: 46%;
+      }
+      .control-point strong {
+        font-size: clamp(0.86rem, 1.35vw, 1.08rem);
+        color: var(--text-primary);
+      }
+      .product-mantra {
+        margin-top: var(--s1);
+        font-size: clamp(1.05rem, 1.9vw, 1.45rem);
+        font-weight: 560;
+        letter-spacing: 0.03em;
+        color: var(--success-strong);
+      }
+
+      @media (max-width: 600px) and (min-height: 501px) {
+        #slide-2 h2 {
+          font-size: clamp(2rem, 8.5vw, 2.55rem);
+        }
+        .product-control-plane {
+          width: 100%;
+          height: 330px;
+          margin-top: 12px;
+        }
+        .control-orbit {
+          width: 230px;
+        }
+        .control-point {
+          gap: 4px;
+        }
+        .control-point-icon {
+          width: 42px;
+        }
+        .control-point strong {
+          max-width: 46px;
+          white-space: normal;
+          font-size: 0.56rem;
+          line-height: 1.1;
+        }
+        .control-point.left {
+          transform: translate(calc(-100% + 21px), -50%);
+        }
+        .control-point.right {
+          transform: translate(-21px, -50%);
+        }
+      }
+      @media (max-height: 500px) and (min-width: 601px) {
+        .product-control-plane {
+          height: 210px;
+          margin-top: 7px;
+        }
+        .control-orbit {
+          width: 205px;
+        }
+        .control-point {
+          gap: 7px;
+        }
+        .control-point-icon {
+          width: 38px;
+        }
+        .control-core {
+          width: 82px;
+        }
+        .control-account-label {
+          top: 6%;
+        }
+        .control-point strong,
+        .product-mantra {
+          font-size: 0.56rem;
+        }
       }
 
       @media (max-width: 900px) and (min-height: 501px) {
@@ -5360,11 +5560,12 @@
           />
         </div>
         <div class="rule center"></div>
+        <div class="eyebrow">Infrastructure for AiFi</div>
         <h1>
-          Make agent pay, <span class="em">help people earn.</span>
+          Give your AI a way <span class="em">to act.</span>
         </h1>
         <p class="subtitle">
-          Starting with agent-owned inbox and wallet for real world tasks
+          Identity. Communication. Controlled payments.
         </p>
       </div>
 
@@ -5425,64 +5626,77 @@
         </div>
 
         <div class="eyebrow">The Product</div>
-        <h2>Agent traffic needs <span class="em">two new layers.</span></h2>
-        <p class="product-subtitle"><strong>Identity</strong> to communicate. <strong>Payment</strong> to transact.</p>
+        <h2>One account for agents <span class="em">to act.</span></h2>
 
-        <div class="agent-traffic-map" aria-label="AI agent request passes through Mermail identity and payment layers before reaching an internet service verified and paid">
-          <div class="traffic-node">
-            <div class="traffic-node-icon" aria-hidden="true">
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <div class="product-control-plane" aria-label="A Mermail account surrounds an AI agent with identity, payment, audit trail, and revoke controls">
+          <div class="control-orbit">
+            <svg class="control-account-label" viewBox="0 0 100 28" aria-hidden="true">
+              <defs>
+                <path id="mermail-account-arc" d="M12 24 Q50 -2 88 24" />
+              </defs>
+              <text text-anchor="middle">
+                <textPath href="#mermail-account-arc" startOffset="50%">Mermail account</textPath>
+              </text>
+            </svg>
+            <svg class="control-lines" viewBox="0 0 100 100" aria-hidden="true">
+              <path d="M50 50 0 31M50 50 100 31M50 50 0 69M50 50 100 69M50 27V73" />
+              <circle cx="1.5" cy="31.6" r="1.15" />
+              <circle cx="98.5" cy="31.6" r="1.15" />
+              <circle cx="1.5" cy="68.4" r="1.15" />
+              <circle cx="98.5" cy="68.4" r="1.15" />
+            </svg>
+
+            <div class="control-core">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M24 9V4m-4 5h8" />
                 <rect x="8" y="12" width="32" height="27" rx="9" />
                 <path d="M8 22H4v9h4m32-9h4v9h-4M17 24h.01M31 24h.01M18 31c3.5 3 8.5 3 12 0" />
               </svg>
+              <strong>AI agent</strong>
             </div>
-            <strong>AI Agent</strong>
-          </div>
-          <div class="traffic-connector">
-            <span>Request</span>
-          </div>
 
-          <div class="mermail-layer">
-            <div class="mermail-layer-title">Mermail Infra</div>
-            <div class="layer-modules">
-              <article class="layer-module">
-                <div class="layer-module-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="3" y="5" width="18" height="14" rx="3" />
-                    <path d="m4 7 8 6 8-6" />
-                  </svg>
-                </div>
-                <h3>Identity</h3>
-                <p>Inbox · verification · receipts</p>
-              </article>
-              <article class="layer-module">
-                <div class="layer-module-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="9" />
-                    <path d="M15 8.5c-.8-.7-1.8-1-3-1-1.7 0-3 1-3 2.4 0 3.6 6 1.7 6 5.1 0 1.4-1.3 2.5-3.2 2.5-1.2 0-2.4-.4-3.3-1.2M12 5.5v2m0 10v1" />
-                  </svg>
-                </div>
-                <h3>Payment</h3>
-                <p>Policy · approval · settlement</p>
-              </article>
-            </div>
-          </div>
-
-          <div class="traffic-connector">
-            <span>Verified + paid</span>
-          </div>
-          <div class="traffic-node">
-            <div class="traffic-node-icon" aria-hidden="true">
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="24" cy="24" r="18" />
-                <path d="M6 24h36M24 6c6 6 9 12 9 18s-3 12-9 18c-6-6-9-12-9-18s3-12 9-18ZM9.5 14h29M9.5 34h29M24 6v36" />
-              </svg>
-            </div>
-            <strong>Internet Service</strong>
+            <article class="control-point left top">
+              <div class="control-point-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="16" rx="2" />
+                  <circle cx="8" cy="10" r="2.2" />
+                  <path d="M5.5 16c.7-2 4.3-2 5 0M13.5 8H18m-4.5 4H18m-4.5 4H17" />
+                </svg>
+              </div>
+              <strong>Identity</strong>
+            </article>
+            <article class="control-point right top">
+              <div class="control-point-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="5" width="18" height="14" rx="2" />
+                  <path d="M3 9h18M7 15h3" />
+                </svg>
+              </div>
+              <strong>Payment</strong>
+            </article>
+            <article class="control-point left bottom">
+              <div class="control-point-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="4" y="3" width="14" height="18" rx="2" />
+                  <path d="M7.5 7H15M7.5 11H15M7.5 15H12" />
+                  <circle cx="18" cy="17" r="3.5" />
+                  <path d="m16.5 17 1 1 2-2" />
+                </svg>
+              </div>
+              <strong>Audit trail</strong>
+            </article>
+            <article class="control-point right bottom">
+              <div class="control-point-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="5" y="10" width="14" height="10" rx="2" />
+                  <path d="M8 10V7a4 4 0 0 1 8 0v3m-6 3 4 4m0-4-4 4" />
+                </svg>
+              </div>
+              <strong>Revoke</strong>
+            </article>
           </div>
         </div>
-        <div class="product-thesis">Without identity and payment, agents can browse, but they cannot complete the task.</div>
+        <div class="product-mantra">Communicate. Pay. Record. Stop.</div>
       </div>
 
       <!-- 04 · USE CASE -->
@@ -5888,59 +6102,59 @@
           />
         </div>
 
-        <div class="eyebrow">Traction · Founder-reported · 19 Aug 2026</div>
+        <div class="eyebrow">Traction · Founder-reported · 04 Sep 2026</div>
         <h2>
-          The identity layer is live.
-          <span class="em">Agent Wallet adoption is starting.</span>
+          The account starts with identity.
+          <span class="em">Now prove repeated action.</span>
         </h2>
         <div class="traction-lanes">
-          <section class="traction-lane identity" aria-label="Identity layer traction">
+          <section class="traction-lane identity" aria-label="Persistent account traction">
             <div class="traction-lane-head">
               <div>
-                <span class="traction-lane-index">01 · Identity layer</span>
-                <h3>Already in motion</h3>
+                <span class="traction-lane-index">01 · Persistent account</span>
+                <h3>Communication is live</h3>
               </div>
               <span class="traction-lane-state">Live</span>
             </div>
             <div class="traction-lane-metrics">
               <div class="traction-lane-metric featured">
-                <strong class="traction-lane-value">5,231</strong>
+                <strong class="traction-lane-value">8,072</strong>
                 <span class="traction-lane-label">Emails sent</span>
               </div>
               <div class="traction-lane-metric">
-                <strong class="traction-lane-value">760</strong>
+                <strong class="traction-lane-value">958</strong>
                 <span class="traction-lane-label">Total users</span>
               </div>
               <div class="traction-lane-metric">
-                <strong class="traction-lane-value">643</strong>
-                <span class="traction-lane-label">Active workspaces</span>
+                <strong class="traction-lane-value">823</strong>
+                <span class="traction-lane-label">Activated workspaces</span>
               </div>
             </div>
-            <p class="traction-lane-note"><strong>Product proof:</strong> agents are already communicating through Mermail.</p>
+            <p class="traction-lane-note"><strong>Product proof:</strong> agents already communicate through one persistent account.</p>
           </section>
           <div class="traction-lane-arrow" aria-hidden="true"><span>→</span></div>
-          <section class="traction-lane wallet" aria-label="Agent Wallet traction">
+          <section class="traction-lane wallet" aria-label="Controlled action traction">
             <div class="traction-lane-head">
               <div>
-                <span class="traction-lane-index">02 · Agent Wallet</span>
-                <h3>The expansion starts</h3>
+                <span class="traction-lane-index">02 · Controlled action</span>
+                <h3>Payments are early</h3>
               </div>
               <span class="traction-lane-state">Early</span>
             </div>
             <div class="traction-lane-metrics">
               <div class="traction-lane-metric">
                 <strong class="traction-lane-value">153</strong>
-                <span class="traction-lane-label">Wallets connected</span>
+                <span class="traction-lane-label">Payment accounts connected</span>
               </div>
               <div class="traction-lane-metric">
                 <strong class="traction-lane-value">45</strong>
-                <span class="traction-lane-label">Agent Wallet users</span>
+                <span class="traction-lane-label">Early action users</span>
               </div>
             </div>
-            <p class="traction-lane-note"><strong>Next proof:</strong> repeatable, controlled agent transactions.</p>
+            <p class="traction-lane-note"><strong>Next proof:</strong> repeat jobs, own-money top-ups, and paid accounts.</p>
           </section>
         </div>
-        <div class="traction-community">
+        <div class="traction-community" hidden aria-hidden="true">
           <div class="traction-community-label">Community</div>
           <div class="traction-community-stat"><span>X followers</span><strong>980</strong></div>
           <div class="traction-community-stat"><span>Discord users</span><strong>100+</strong></div>
@@ -6258,6 +6472,7 @@
         ".traffic-connector",
         ".mermail-layer",
         ".product-thesis",
+        ".product-mantra",
         ".venn-stat",
         ".cagr-banner",
         ".t-item",

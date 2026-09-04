@@ -16,12 +16,12 @@ The investor pitch deck (`mermail-pitch-deck.html`) is fully self-contained with
 
 ### Slide Structure (9 Slides)
 
-1. **Cover** — “Make agent pay, help people earn” through an agent-owned inbox and wallet.
+1. **Cover** — “Give your AI a way to act” as infrastructure for AiFi.
 2. **The Web Is No Longer Human-First** — From searching the web, to asking AI, to delegating outcomes to agents.
-3. **The Product** — Agent traffic needs identity to communicate and payment to transact.
+3. **The Product** — One Mermail account combines identity, payment, an audit trail, and instant revocation.
 4. **Sales Outreach Use Case** — An agent finds prospects, buys enrichment, sends personalized outreach from its own inbox, and returns warm leads.
 5. **Why Now** — MCP, network payment programs, and the arrival of live agentic-commerce rails.
-6. **Traction** — 760 users, 643 active workspaces, 5,231 emails sent, 153 connected wallets, 45 Agent Wallet users, and social reach.
+6. **Traction** — Identity is live; the next proof is repeat jobs, own-money top-ups, and paid accounts.
 7. **Go-to-Market** — Reach AI power users, embed in their existing tools, drive real transactions, and turn completed tasks into growth.
 8. **Funding Allocation** — $250K pre-seed, eight-month runway, six allocation buckets, and proof milestones.
 9. **Team & Connect** — Infrastructure builders for AiFi, co-founders Nathan Nguyen and Toan Nhu, and a QR code to try Mermail.
