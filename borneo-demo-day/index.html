@@ -5708,6 +5708,26 @@
         #slide-6 thead th { font-size: 10px; letter-spacing: 0; }
         #slide-6 .borneo-table-takeaway { padding: 20px; }
       }
+      /* Embedded demo keeps its controls accessible on smaller screens. */
+      #slide-3 { overflow-y: auto; }
+      #slide-3 h2 { font-size: clamp(26px, 3vw, 44px); margin-bottom: 22px; text-align: center; }
+      #slide-3 .demo-video-frame { width: min(1100px, 100%, calc((100dvh - 340px) * 16 / 9)); min-width: min(100%, 356px); min-height: 202px; aspect-ratio: 16 / 9; flex-shrink: 0; background: #000; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+      #slide-3 iframe { display: block; width: 100%; height: 100%; border: 0; }
+      #slide-3 .demo-video-footer { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px 24px; margin-top: 16px; font-size: 13px; color: var(--text-secondary); text-align: center; }
+      #slide-3 .demo-video-footer a { color: var(--success); }
+      @media (max-height: 600px) { #slide-3 { justify-content: flex-start; padding-top: 70px; padding-bottom: 100px; } }
+      @media print { #slide-3 .demo-video-frame { display: none; } }
+      /* A concise closing ask for the spoken pitch. */
+      #slide-9 .borneo-ask-grid { margin-top: 36px; }
+      #slide-9 .borneo-ask-grid article { padding: 32px; }
+      #slide-9 .borneo-ask-grid h3 { font-size: clamp(22px, 2.2vw, 30px); margin: 18px 0 12px; }
+      #slide-9 .borneo-ask-grid p { font-size: 18px; }
+      @media (max-width: 700px) {
+        #slide-9 .borneo-ask-grid { margin-top: 24px; gap: 12px; }
+        #slide-9 .borneo-ask-grid article { padding: 20px; }
+        #slide-9 .borneo-ask-grid h3 { margin: 10px 0 8px; }
+        #slide-9 .borneo-ask-grid p { font-size: 16px; }
+      }
     </style>
   </head>
   <body>
@@ -5863,145 +5883,18 @@
         <div class="product-mantra">Communicate. Pay. Record. Stop.</div>
       </div>
 
-      <!-- 04 · USE CASE -->
+      <!-- 04 · PRODUCT DEMO -->
       <div class="slide" id="slide-3">
         <div class="slide-num">04 / 10</div>
-        <div class="slide-brand">
-          <img
-            src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM6c2VyaWY9Imh0dHA6Ly93d3cuc2VyaWYuY29tLyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDI4MTggNzAxIiB2ZXJzaW9uPSIxLjEiIHhtbDpzcGFjZT0icHJlc2VydmUiIHN0eWxlPSJmaWxsLXJ1bGU6ZXZlbm9kZDtjbGlwLXJ1bGU6ZXZlbm9kZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MjsiPgogIDxzdHlsZT5wYXRoIHsgZmlsbDogIzA3MTkxYyAhaW1wb3J0YW50OyB9PC9zdHlsZT4KICA8ZyBpZD0iQXJ0Ym9hcmQxIj4KICAgIDxwYXRoIGQ9Ik0xNjYuOTIxLDIyNC41OTljNjguOTU1LDMuODcxIDE1OS45NzMsMTIuNzA4IDIxMi44NTcsNzIuMDljNy42NzEsOC42MTMgMTEuOTIzLDE2LjY1NSAxNS42NSwxNS4xMjFjNC4zNjUsLTEuNzk3IDkuNTM0LC0xMi41MzUgMzAuNjgyLC0zMC4xNTdjMjkuOTIsLTI0LjkzMSA4My44MDQsLTUwLjUgMTQwLjc0NiwtNTQuNDYyYzQ3Ljg2LC0zLjMzIDQ3Ljk3NywtMC45MjggOTUuNjc1LC02LjAxM2MyMC42MiwtMi4xOTggMjQuODMxLC0yLjEwNiAyNS4wNjYsOS4yNzhjMC4zMDMsMTQuNjY0IDAuMTYxLDE0LjYyMiAwLjMxMSwxODMuMzM1YzAuMDY3LDc1LjU1NSAtMC40NzMsODAuNDI4IC0xLjI0NCw4Ny4zNzZjLTIuMzQ4LDIxLjE3MyAtOC42NzEsNDguNjMxIC0zNS42Niw3Mi4wMjRjLTM0Ljg4NiwzMC4yMzggLTcyLjc2MSwyNC44OTcgLTEzMC4wMzQsMjUuMzA3Yy0yOS4zNDgsMC4yMSAtMzguMjcsMy4zNDMgLTM4LjU3NywtMTguMDIzYy0wLjY2MSwtNDUuOTY4IDAuNDk4LC02Mi40NzEgMTcuMDAzLC03OS44NjljMjEuNzksLTIyLjk2OSA1NS4yNzksLTE4LjQxIDgzLjA5OCwtNzAuNjUyYzEyLjEsLTIyLjcyMyAxMS45NzIsLTUzLjA5NyAxMS45NTMsLTU3LjgyMWMtMC4wMjMsLTUuNDI5IC0wLjMsLTI0LjI2MiAtMC40MjksLTI0LjU3OGMtMi40ODIsLTYuMDk3IC05LjA5NiwtMy4yMTggLTkuODQ5LC0yLjg5MWMtMjMuODgxLDEwLjM5MSAtMjcuNjI4LDEwLjUyMSAtNTkuMjA1LDEzLjQ4NWMtNDUuNzQ3LDQuMjk0IC03OS4zMzQsMTEuMjg0IC0xMDkuNjk0LDU0LjY2MWMtNi43NzcsOS42ODIgLTE0LjY2NiwyNS42MjYgLTE2LjM2OCwzOC4wOTRjLTAuMTI4LDAuOTM4IC0xLjM4MiwxMC4xMjggLTMuODMzLDExLjE5N2MtMS44ODQsMC44MjIgLTUuNTIyLC0zLjIyMSAtNS41MjYsLTMuMjM3Yy0wLjIwOSwtMC42ODcgMC42MjcsLTEuMzY5IDAuNTUzLC0yLjA4M2MtMC4wNjcsLTAuNjQ4IC0wLjgyMiwtMS4wNzIgLTAuOTQ2LC0xLjcxMWMtMS43LC04Ljc5NCAxLjY4NCwtOS44MjUgLTkuNzM5LC0zMy4wMWMtNi4zNjksLTEyLjkyNiAtMjcuNTE2LC00Mi45NDkgLTY2LjMyMywtNTUuNDcyYy0zNC42NTcsLTExLjE4NCAtNzAuNjM1LC01LjQzMSAtMTA0LjE3MiwtMjAuNjE4Yy0xLjM2NiwtMC42MTkgLTExLjIwNSwtNy40NzQgLTEyLjExMiw1LjQyYy03LjYyMiwxMDguMzQ0IDU3Ljk0MiwxMjMuNzk1IDgxLjMxNSwxMzkuMjE3YzE1LjIzOSwxMC4wNTYgMjAuNzIsMjAuOTcyIDIxLjg2NiwyMy4yNTRjNi41MSwxMi45NjUgOC4yMzcsMTUuNzU4IDcuNTUsNjYuNTZjLTAuMjc3LDIwLjQ0NiAtNy43OTQsMTguMDA4IC0yOC4yMjcsMTguMDIzYy04MS4wNzEsMC4wNTcgLTg5LjAyOCwwLjU1MSAtMTEyLjUwNiwtOS42NzljLTAuNTE3LC0wLjIyNSAtMjcuNjUsLTkuMTY4IC00OC4zNDgsLTQyLjY2Yy0xMC43MTksLTE3LjM0NCAtMTMuODk1LC00MS4wNTcgLTE0LjM5NCwtNDQuNzg3Yy0yLjAzOCwtMTUuMjEyIC0xLjIyNCwtNDQuMDIyIC0xLjMsLTIzMy4zNjRjLTAuMDE5LC00Ni44MjEgMC4wMDcsLTQ3LjM4IDIuMTQ2LC00OS4zMTRjMy42OTgsLTMuMzQyIDQuNDI4LDAuNTYgNjIuMDE1LDUuOTZaIiBzdHlsZT0iZmlsbDp1cmwoI19MaW5lYXIxKTsiLz4KICAgIDxwYXRoIGQ9Ik0yMjA0LjU3OCwyMjguMDk1YzIuOTQ5LC0wLjM1OCAzOS40NDksLTYuNzY5IDc4Ljk0NywyLjAzOWMyOS44NTEsNi42NTcgNDIuNjEsMTQuOTk3IDU0LjE3OSwyMS4wMThjNDMuNDgzLDIyLjYzIDY3LjI2Myw2NC4yNjEgNjkuNTkxLDY3LjU5YzIzLjAzNywzMi45MzIgMjUuNjQxLDc3LjE1NiAyNS43NDYsNzguNDEzYzEuMjA1LDE0LjQ5MSAwLjY0NSwxNjAuOTY2IDAuNTkxLDE3NC45NjNjLTAuMDgzLDIxLjYxIC0zLjU1OCwyNC4zMTEgLTIwLjk5OCwyNC4yMzljLTUxLjk3NiwtMC4yMTUgLTU5LjIwMywxLjgyIC02NS42MDEsLTQuNTY2Yy0xMC44MDksLTEwLjc4OCAtMi4wNzUsLTI1LjkyOCAtOS4yNywtMjYuMTRjLTQuNDQ1LC0wLjEzMSAtMjguMDA0LDM0LjAwNSAtOTUuOTY5LDM1LjcyNWMtOTAuMDI5LDIuMjc5IC0xMzQuNjIzLC00OC45ODYgLTE0Ni4yMTYsLTYyLjI2NGMtOS4yMDYsLTEwLjU0MyAtNDUuODc4LC00OC41NzcgLTQ1Ljc0NCwtMTI5LjQ5NmMwLjA1NiwtMzQuMDgyIDE0LjY0NiwtNzMuNTE0IDIyLjIwMywtODYuOTE3YzQ1LjgwMSwtODEuMjM2IDEyOC4wMTYsLTkzLjU4IDEzMi41NCwtOTQuNjA1Wm0zNy4yMjEsMjgzLjEzM2M4MC4wODMsLTMuNTQ4IDExNy4zODMsLTgyLjk1NiA4NS44NzMsLTE0Mi4zNzljLTI5LjA1NCwtNTQuNzkxIC0xMDcuODE5LC03MC40NDUgLTE1NS42MTQsLTI0Ljc2M2MtNDMuODUyLDQxLjkxMiAtMjkuMDY2LDk1LjEwNCAtMjAuNjMsMTEwLjY4OWMxMy44MzYsMjUuNTU5IDMxLjYyNSwzNy40MTkgMzUuMTU5LDM5Ljc3NWMyNy42MTQsMTguNDA5IDUyLjk5NSwxNi42MzggNTUuMjEzLDE2LjY3OFoiIHN0eWxlPSJmaWxsOnVybCgjX0xpbmVhcjIpOyIvPgogICAgPHBhdGggZD0iTTE3NjQuNTE1LDU3Ni4zMTZjLTAuMDYyLDEuMzk4IDEuNjA2LDEyIC01LjMyNSwxNy42MzFjLTQuMTkxLDMuNDA1IC00Ljg2OCwxLjk4MiAtNTQuOTExLDIuNDY3Yy0xNi4xMDQsMC4xNTYgLTMwLjI0OSwyLjUyMiAtMzAuODEsLTE1LjkxNGMtMC42NTIsLTIxLjQwMyAtMC41MDksLTEzMC4zNiAtMC40OTQsLTE0MS42OTZjMC4wNjUsLTQ5LjUxIDYuMTQsLTg0LjA1NCAtMzQuNzkyLC0xMDkuMzUxYy0zMS4xMTEsLTE5LjIyOCAtOTEuMDgzLC0xMS42MjUgLTEwMy4yNjMsNTEuMjU3Yy0yLjUyNiwxMy4wNDMgMC42NzIsMTkyLjE0NiAtMS43NTksMjAzLjg0NmMtMi44NTYsMTMuNzQ0IC0xMy41MTUsMTEuNjk1IC00OS43MTEsMTEuNzc4Yy0yMi45NCwwLjA1MyAtMzQuNjE4LDEuNjY5IC0zOC4xOTUsLTcuMjJjLTIuMjUsLTUuNTkyIC0xLjY0NiwtNS44MjUgLTEuNjMyLC03NS4zMjdjMC4wMjgsLTEzNS4zMTggLTAuMTc2LC0xNDMuNjg0IDEuNzk3LC0xNTQuMjU1YzkuMTcsLTQ5LjEyOCAzMy41MDQsLTk3LjAwOSA5OS43OTgsLTEyMi42NTZjNjYuODY4LC0yNS44NjkgMTMwLjA1NywtMi41OTQgMTY2LjA5MSwzMi41NWM5LjcyNyw5LjQ4NyAxMC4zOCwtMC41OTQgMzUuMjMsLTE3LjIyOWM2Ni4xMjUsLTQ0LjI2NiAxNTguMTIzLC0zMS41NTQgMjEwLjQwNywyOS41MTZjNDUuNTkxLDUzLjI1MSAzOS42OTcsMTEzLjE4NCAzOS43NDgsMTUyLjg5OGMwLjE4OSwxNDguNTc5IDAuMzUzLDE0OC43OTQgLTEuNjczLDE1My43N2MtNC4wNjYsOS45ODcgLTE2LjM3Niw3LjYyNyAtNTcuNDAzLDcuOTI5Yy0xOS40OCwwLjE0MyAtMjUuMDQ4LDEuNDQ2IC0zMC40NzEsLTYuODA2Yy0xLjYwOSwtMi40NDggLTIuMzM1LC0yLjYyNyAtMi4xNzcsLTc5Ljg4YzAuMjU5LC0xMjYuMzIzIDAuOTk0LC0xMjkuMTE2IC02LjA2NywtMTQ1LjMyOWMtMzAuODEsLTcwLjc1MyAtMTI2Ljc4MSwtNTEuMjQ4IC0xMzMuNzkyLDIwLjA5OWMtMS41MiwxNS40NjggLTAuMDE2LDE3NC4xMDEgLTAuNTk3LDE5MS45MjNaIiBzdHlsZT0iZmlsbDp1cmwoI19MaW5lYXIzKTsiLz4KICAgIDxwYXRoIGQ9Ik05NTAuMTc5LDUxMS4wNjVjNC45NTcsLTAuNDQxIDMzLjgzNCwtMy4wMTIgNTcuOTAzLC0yMi43NDJjMTkuNTMzLC0xNi4wMTIgMTcuMTU3LC0yMy45OTkgMzMuODE4LC0yMC45NGM4LjUyOCwxLjU2NiA0My42NzUsMTIuNTYxIDQ1LjY2NCwxMy4yNDFjOS4xOTcsMy4xNDEgMjMuNDYxLDEyLjg0NCAyNS4xMjQsMTYuNDU4YzEuMjU0LDIuNzI1IDQuMjUyLDkuMjM5IC0xNi4xNjEsMzMuODMzYy02Ljc5OSw4LjE5MiAtNjEuOTEyLDg0LjM1MiAtMTc5LjUxOCw2OC43OGMtMTA0LjgwMiwtMTMuODc3IC0xNjEuNjQzLC0xMDEuNjEyIC0xNjMuNzY1LC0xNzcuNTMzYy0xLjgsLTY0LjM3NSAyMC42NjgsLTEwMC4wMTQgMzguODA1LC0xMjQuODU0YzQwLjUyMywtNTUuNDk5IDExOC45MjUsLTg1Ljg3MiAxOTEuNDQyLC03MS4xOWM4Ny45MzQsMTcuODAzIDEyNC4wNTcsODMuNzA0IDEyNC4yMzMsODMuOTY4YzQuMjMxLDYuMzYgMjYuODk0LDQwLjQyOSAyOC4wNTksOTEuMjY4YzAuNDY2LDIwLjMzOSAyLjIzMiwzNy4wNDUgLTE1LjAyNSw0MC4wODFjLTUuOTgxLDEuMDUyIC0yNTQuNjI2LDAuMjc2IC0yNTguMjg3LDAuNTY1Yy01LjkwMSwwLjQ2NiAtNi41NjMsNC40OTkgLTYuNjcyLDUuMTY1Yy0wLjI1MywxLjU0MiAxMS4yNzgsNDEuOTc3IDU3LjEyOCw1Ny40NTdjMTcuMjE4LDUuODEzIDIxLjU5LDYuMzAyIDM3LjI1MSw2LjQ0NFptLTI1LjM2NSwtMTk0LjkwOGMtMzIuOTQyLDcuMzYyIC00Ni4yOTIsMTkuOTggLTYwLjcwOSw0MC4yN2MtMy44MSw1LjM2MiAtNi4xNTUsOC43NDMgLTIuMzc4LDEyLjY4NWMxLjk2NCwyLjA1IDIuMzE4LDEuMjY4IDUuMTczLDEuMjc0Yzc0Ljk2NywwLjE1NyA3NC45MDUsMC4wODUgMTQ5Ljg4LC0wLjIwNWM3LjQxNCwtMC4wMjkgMTEuNzcxLDAuOTk5IDEzLjA5OCwtMS42NjVjMy40ODQsLTYuOTkyIDAuMTU0LC03IC00LjI3NSwtMTMuMzk0Yy0zLjkyMSwtNS42NjIgLTI2LjYxMSwtMzguNDIzIC03NS40NzMsLTQxLjQxNWMtMTEuNzMzLC0wLjcxOCAtMjQuMzc4LDIuMjgyIC0yNS4zMTYsMi40NVoiIHN0eWxlPSJmaWxsOnVybCgjX0xpbmVhcjQpOyIvPgogICAgPHBhdGggZD0iTTI3MzUuMzQ3LDQ1OS42MThjMS4wNDUsNTIuMDY4IC0wLjY1MSw1MS45NzkgMC4zMjQsMTA0LjE1YzAuNDAxLDIxLjQ1MSAwLjI4LDMyLjA2NiAtMTguOTAzLDMyLjQ2Yy02NC44MDksMS4zMjkgLTY2LjA1NSwtMC4wMjYgLTY5Ljg0NCwtNC4xNDZjLTYuMDE5LC02LjU0NSAtMi45NjEsLTguMTA5IC0zLjU1NSwtMjM2LjYyOWMtMC4wNzYsLTI5LjI0MiAwLjA5OCwtMjE5LjY3NCAwLjIzMiwtMjIwLjcwM2MxLjkwOSwtMTQuNTcyIDEwLjAzOSwtMTMuMTUgNTYuNTIzLC0xMy4wNzZjMTcuOTYsMC4wMjggMzQuODYsLTIuMDU0IDM1LjI1OCwyMS4yMzdjMC41MDYsMjkuNjEyIDAuMzg3LDExMi4xNzMgLTAuMDM2LDMxNi43MDhaIiBzdHlsZT0iZmlsbDp1cmwoI19MaW5lYXI1KTsiLz4KICAgIDxwYXRoIGQ9Ik0xMzU0LjMwNywyMjguNzc1YzUzLjg0MywtMC4wMDMgNTcuNTMxLC0wLjg3OCA2MS43MzQsNi4zMWMzLjAyLDUuMTY1IDEuODY4LDYuNTQgMi4wOTQsNTMuNjkxYzAuMTA2LDIyLjE5OSAyLjExLDMxLjk4OSAtMTguMDEyLDMyLjE1M2MtNDkuMDMsMC40MDEgLTU5LjQ0MSwtMi40NzcgLTg3LjYxMSwxNy43MjFjLTUuODg4LDQuMjIyIC0xOC44MTMsMTguOTU0IC0yMy45MTUsMzcuODkxYy01LjIyMiwxOS4zODUgLTIuOTMzLDMxLjU3OSAtMywxMjguOTEzYy0wLjA1Myw3Ny4wNjQgMC43Niw3Ny4zMjcgLTEuNzM1LDgzLjUyOGMtMy41NzMsOC44ODQgLTE0Ljg1NSw3LjIyOCAtNDIuMDgyLDcuNTEzYy0zMi43NDcsMC4zNDQgLTQzLjMxMSwxLjc2NiAtNDYuNjE0LC03LjM3OWMtMy4xMTgsLTguNjMyIC0wLjEwNiwtMzguMTI0IC0xLjQzNCwtMTA0LjQ5OWMtMC4xNTgsLTcuOTExIC0wLjAzMywtNTMuNjU3IC0wLjAyMSwtNTguMzIzYzAuMTE3LC00Mi43ODIgLTUuNTAzLC0xMTcuNzE2IDY5LjQxMywtMTcwLjA5MWMxMi41ODEsLTguNzk1IDMwLjIzOSwtMTUuOTE5IDMyLjk5MywtMTcuMDNjMjcuMDE4LC0xMC44OTkgNDMuNzMxLC0xMC4yMDUgNTguMTg5LC0xMC4zOTlaIiBzdHlsZT0iZmlsbDp1cmwoI19MaW5lYXI2KTsiLz4KICAgIDxwYXRoIGQ9Ik0yNTgwLjIyOSwyMzguMDc2YzQuNTc1LDguMzU3IDQuMDI4LDguNzAyIDQuMDI5LDM0LjA0OWMwLjAxMywzMDcuNzI0IDAuNTU0LDMwNy43OTggLTAuNDUxLDMxMi41NjJjLTMuMDAxLDE0LjIyMiAtMTcuOTY1LDExLjkyMSAtNDIuMDEyLDExLjhjLTMzLjk4NiwtMC4xNzEgLTQ0LjM3NSwxLjkwNSAtNDcuNjU3LC0xMS4zOTNjLTAuOTQ3LC0zLjgzNCAtMC44NTIsLTMuODMzIC0wLjgwNCwtMzEyLjk5MWMwLjAwNSwtMzAuNjU1IC0yLjc2MiwtNDEuMTk1IDIzLjQ2NywtNDEuMjkxYzQ5LjY3MSwtMC4xODMgNDkuNzc0LC0wLjU2MSA1My44OTQsMC43MTFjNS42OTIsMS43NTcgNS4yODQsMi40MzkgOS41MzYsNi41NTNaIiBzdHlsZT0iZmlsbDp1cmwoI19MaW5lYXI3KTsiLz4KICAgIDxwYXRoIGQ9Ik0yNTIwLjk2NSwxMjAuODI5YzQ5LjU2NiwwLjM3NCA1NS41OTMsLTEuNjk1IDYxLjM3MywxMC4xMjZjMi4zMjksNC43NjQgMy40MTEsNTguNDQ2IC0wLjc0OCw2NS4wOTdjLTUuNzg1LDkuMjUxIC04LjU0Niw5LjEyMiAtNTYuNDUzLDguNTY0Yy0xMS42MTYsLTAuMTM1IC0zMC4zMjksMi4zNjEgLTMxLjYzNywtMjAuMDgyYy0wLjE2LC0yLjc0MyAtMC41MzMsLTQ3LjI0IC0wLjAzNCwtNDkuNjg1YzMuNTU0LC0xNy40MTEgMjMuMDIyLC0xMy45NjggMjcuNDk5LC0xNC4wMloiIHN0eWxlPSJmaWxsOnVybCgjX0xpbmVhcjgpOyIvPgogICAgPHBhdGggZD0iTTM4NC4zNDksNDI2LjQ4Nmw5LjYwMSw2MC41MTNsMTIuMjc3LC03Mi40MDRsLTIxLjg3OSwxMS44OVoiIHN0eWxlPSJmaWxsOnVybCgjX0xpbmVhcjkpOyIvPgogIDwvZz4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iX0xpbmVhcjEiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCgwLDcwMC44MDgyMTMsLTcwMC44MDgyMTMsMCwxNDU4LjQ3MzYxNywtMCkiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0eWxlPSJzdG9wLWNvbG9yOiM3MGVlZWU7c3RvcC1vcGFjaXR5OjEiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIwLjUiIHN0eWxlPSJzdG9wLWNvbG9yOiMzYzkxZmY7c3RvcC1vcGFjaXR5OjEiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdHlsZT0ic3RvcC1jb2xvcjojYTk4N2ZmO3N0b3Atb3BhY2l0eToxIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJfTGluZWFyMiIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjAiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiBncmFkaWVudFRyYW5zZm9ybT0ibWF0cml4KDAsNzAwLjgwODIxMywtNzAwLjgwODIxMywwLDE0NTguNDczNjE3LC0wKSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCIgc3R5bGU9InN0b3AtY29sb3I6IzcwZWVlZTtzdG9wLW9wYWNpdHk6MSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuNSIgc3R5bGU9InN0b3AtY29sb3I6IzNjOTFmZjtzdG9wLW9wYWNpdHk6MSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0eWxlPSJzdG9wLWNvbG9yOiNhOTg3ZmY7c3RvcC1vcGFjaXR5OjEiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9Il9MaW5lYXIzIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoMCw3MDAuODA4MjEzLC03MDAuODA4MjEzLDAsMTQ1OC40NzM2MTcsLTApIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdHlsZT0ic3RvcC1jb2xvcjojNzBlZWVlO3N0b3Atb3BhY2l0eToxIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC41IiBzdHlsZT0ic3RvcC1jb2xvcjojM2M5MWZmO3N0b3Atb3BhY2l0eToxIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3R5bGU9InN0b3AtY29sb3I6I2E5ODdmZjtzdG9wLW9wYWNpdHk6MSIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iX0xpbmVhcjQiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCgwLDcwMC44MDgyMTMsLTcwMC44MDgyMTMsMCwxNDU4LjQ3MzYxNywtMCkiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0eWxlPSJzdG9wLWNvbG9yOiM3MGVlZWU7c3RvcC1vcGFjaXR5OjEiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIwLjUiIHN0eWxlPSJzdG9wLWNvbG9yOiMzYzkxZmY7c3RvcC1vcGFjaXR5OjEiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdHlsZT0ic3RvcC1jb2xvcjojYTk4N2ZmO3N0b3Atb3BhY2l0eToxIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJfTGluZWFyNSIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjAiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiBncmFkaWVudFRyYW5zZm9ybT0ibWF0cml4KDAsNzAwLjgwODIxMywtNzAwLjgwODIxMywwLDE0NTguNDczNjE3LC0wKSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCIgc3R5bGU9InN0b3AtY29sb3I6IzcwZWVlZTtzdG9wLW9wYWNpdHk6MSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuNSIgc3R5bGU9InN0b3AtY29sb3I6IzNjOTFmZjtzdG9wLW9wYWNpdHk6MSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0eWxlPSJzdG9wLWNvbG9yOiNhOTg3ZmY7c3RvcC1vcGFjaXR5OjEiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9Il9MaW5lYXI2IiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoMCw3MDAuODA4MjEzLC03MDAuODA4MjEzLDAsMTQ1OC40NzM2MTcsLTApIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdHlsZT0ic3RvcC1jb2xvcjojNzBlZWVlO3N0b3Atb3BhY2l0eToxIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC41IiBzdHlsZT0ic3RvcC1jb2xvcjojM2M5MWZmO3N0b3Atb3BhY2l0eToxIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3R5bGU9InN0b3AtY29sb3I6I2E5ODdmZjtzdG9wLW9wYWNpdHk6MSIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iX0xpbmVhcjciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCgwLDcwMC44MDgyMTMsLTcwMC44MDgyMTMsMCwxNDU4LjQ3MzYxNywtMCkiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0eWxlPSJzdG9wLWNvbG9yOiM3MGVlZWU7c3RvcC1vcGFjaXR5OjEiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIwLjUiIHN0eWxlPSJzdG9wLWNvbG9yOiMzYzkxZmY7c3RvcC1vcGFjaXR5OjEiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdHlsZT0ic3RvcC1jb2xvcjojYTk4N2ZmO3N0b3Atb3BhY2l0eToxIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJfTGluZWFyOCIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjAiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiBncmFkaWVudFRyYW5zZm9ybT0ibWF0cml4KDAsNzAwLjgwODIxMywtNzAwLjgwODIxMywwLDE0NTguNDczNjE3LC0wKSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCIgc3R5bGU9InN0b3AtY29sb3I6IzcwZWVlZTtzdG9wLW9wYWNpdHk6MSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuNSIgc3R5bGU9InN0b3AtY29sb3I6IzNjOTFmZjtzdG9wLW9wYWNpdHk6MSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0eWxlPSJzdG9wLWNvbG9yOiNhOTg3ZmY7c3RvcC1vcGFjaXR5OjEiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9Il9MaW5lYXI5IiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoMCw3MDAuODA4MjEzLC03MDAuODA4MjEzLDAsMTQ1OC40NzM2MTcsMCkiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0eWxlPSJzdG9wLWNvbG9yOiM3MGVlZWU7c3RvcC1vcGFjaXR5OjEiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIwLjUiIHN0eWxlPSJzdG9wLWNvbG9yOiMzYzkxZmY7c3RvcC1vcGFjaXR5OjEiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdHlsZT0ic3RvcC1jb2xvcjojYTk4N2ZmO3N0b3Atb3BhY2l0eToxIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KPC9zdmc+Cg=="
-            alt=""
-          />
+        <div class="slide-brand"><img alt="" /></div>
+        <div class="eyebrow">Product demo</div>
+        <h2>See Mermail <span class="em">in action.</span></h2>
+        <div class="demo-video-frame">
+          <iframe id="borneo-demo-player" title="Mermail sales outreach demo on YouTube"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
-
-        <div class="outreach-usecase">
-          <div class="eyebrow">Sales Outreach</div>
-          <h2>The agent buys the data it needs, <span class="em">then acts.</span></h2>
-
-          <div class="outreach-map" aria-label="A human delegates a sales goal. The AI agent pays prospecting and enrichment services, receives qualified lead data, then sends personalized outreach that produces warm replies.">
-            <svg class="outreach-map-desktop" viewBox="0 0 1080 320" role="img" aria-labelledby="outreach-map-title outreach-map-desc">
-              <title id="outreach-map-title">Agent-paid sales outreach workflow</title>
-              <desc id="outreach-map-desc">The agent uses a controlled wallet to pay prospecting and enrichment services, receives qualified lead data, and uses its inbox to send personalized outreach.</desc>
-              <defs>
-                <marker id="outreach-arrowhead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                  <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
-                </marker>
-              </defs>
-
-              <text class="map-label accent" x="20" y="169">Human delegates</text>
-              <text class="map-copy" x="20" y="199">Find and contact</text>
-              <text class="map-copy" x="20" y="227">qualified leads</text>
-              <path class="map-line subtle" d="M 210 205 H 315" marker-end="url(#outreach-arrowhead)" />
-
-              <rect class="map-node" x="330" y="160" width="255" height="94" rx="47" />
-              <circle cx="376" cy="207" r="18" fill="none" stroke="var(--success-strong)" stroke-width="2" />
-              <path d="M369 207h14M376 200v14M371 202l10 10M381 202l-10 10" fill="none" stroke="var(--success-strong)" stroke-width="1.5" stroke-linecap="round" />
-              <text class="map-agent" x="490" y="214">AI AGENT</text>
-              <text class="map-agent-sub" x="458" y="278">Controlled wallet + Agent-owned inbox</text>
-
-              <path class="map-line" d="M 465 160 V 91 Q 465 70 486 70 H 785" marker-end="url(#outreach-arrowhead)" />
-              <text class="map-label accent" x="574" y="55">Pay per request</text>
-              <text class="map-copy" x="815" y="63">Prospecting +</text>
-              <text class="map-copy" x="815" y="91">enrichment</text>
-              <text class="map-label" x="815" y="112">Provider earns</text>
-
-              <path class="map-line subtle" d="M 920 124 V 131 Q 920 143 908 143 H 650" marker-end="url(#outreach-arrowhead)" />
-              <text class="map-label accent" x="681" y="132">Qualified lead data</text>
-
-              <path class="map-line" d="M 585 207 H 873" marker-end="url(#outreach-arrowhead)" />
-              <text class="map-label accent" x="628" y="232">Send personalized outreach</text>
-              <text class="map-label" x="900" y="187">Result</text>
-              <text class="map-copy result" x="900" y="220">Warm</text>
-              <text class="map-copy result" x="900" y="255">replies</text>
-            </svg>
-
-            <div class="outreach-map-mobile" aria-hidden="true">
-              <div class="map-mobile-copy">Find and contact qualified leads</div>
-              <div class="map-mobile-line">↓ Human delegates</div>
-              <div class="map-mobile-agent">AI agent</div>
-              <div class="map-mobile-loop">Pay per request → Prospecting + enrichment<br />← Qualified lead data</div>
-              <div class="map-mobile-line">↓ Send personalized outreach</div>
-              <div class="map-mobile-result">Warm replies</div>
-              <div class="map-mobile-line">Controlled wallet + Agent-owned inbox</div>
-            </div>
-          </div>
-        </div>
-
-        <div hidden aria-hidden="true">
-        <div class="eyebrow">Why Mermail</div>
-        <h2>Your identity <span class="em">stays yours.</span></h2>
-        <p class="why-subtitle">
-          <strong>No personal inbox. No card details. No wallet keys</strong> handed to the agent.
-        </p>
-
-        <div class="access-contrast">
-          <section class="access-side borrowed" aria-label="Borrowed access requires a human's personal accounts and credentials">
-            <div class="access-side-head">
-              <h3>Borrowed access</h3>
-              <p>Human accounts → agent</p>
-            </div>
-            <div class="access-visual" aria-hidden="true">
-              <svg viewBox="0 0 440 180" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <g class="access-svg-muted">
-                  <circle cx="52" cy="62" r="18" />
-                  <path d="M20 128c3-27 15-42 32-42s29 15 32 42" />
-                  <circle cx="392" cy="91" r="37" />
-                  <rect x="372" y="76" width="40" height="30" rx="9" />
-                  <path d="M392 76v-8m-4 0h8M380 88h.01M404 88h.01M382 98c6 5 14 5 20 0" />
-                </g>
-                <g class="access-svg-bad">
-                  <path d="M86 86c42-60 67 61 112 0s57 63 103 0 47 24 54 8" />
-                  <path d="M86 98c41 48 74-58 118-4s65-50 105 2 31-4 46-1" stroke-dasharray="7 8" />
-                  <circle class="access-svg-surface" cx="176" cy="52" r="25" />
-                  <circle class="access-svg-surface" cx="220" cy="126" r="25" />
-                  <circle class="access-svg-surface" cx="286" cy="47" r="25" />
-                  <rect x="163" y="43" width="26" height="18" rx="3" />
-                  <path d="m165 46 11 8 11-8" />
-                  <rect x="207" y="118" width="26" height="17" rx="3" />
-                  <path d="M209 123h22m-18 7h6" />
-                  <path d="M280 54v-14m0 0 7 7m-7-7-7 7" />
-                  <circle cx="286" cy="47" r="8" />
-                  <path d="M264 32 308 62M308 32l-44 30" stroke-width="2.6" />
-                </g>
-              </svg>
-            </div>
-          </section>
-
-          <div class="contrast-arrow" aria-hidden="true">→</div>
-
-          <section class="access-side native" aria-label="Mermail gives the agent its own inbox and a user-controlled wallet">
-            <div class="access-side-head">
-              <h3>Mermail</h3>
-              <p>Agent inbox + controlled wallet</p>
-            </div>
-            <div class="access-visual" aria-hidden="true">
-              <svg viewBox="0 0 520 180" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <g class="access-svg-good">
-                  <circle cx="70" cy="88" r="43" />
-                  <rect x="47" y="70" width="46" height="35" rx="10" />
-                  <path d="M70 70V59m-5 0h10M57 83h.01M83 83h.01M59 95c7 6 15 6 22 0" />
-                  <path d="M113 88h94" />
-                  <path d="M207 88c34 0 32-50 67-50M207 88h67M207 88c34 0 32 50 67 50" />
-                  <circle class="access-svg-surface" cx="300" cy="38" r="25" />
-                  <circle class="access-svg-surface" cx="300" cy="88" r="25" />
-                  <circle class="access-svg-surface" cx="300" cy="138" r="25" />
-                  <path d="M288 38h24m-20-7h16v14h-16z" />
-                  <rect x="289" y="80" width="22" height="16" rx="3" />
-                  <path d="m291 83 9 7 9-7" />
-                  <circle cx="300" cy="138" r="10" />
-                  <path d="M304 133c-1-1-2-2-4-2-3 0-5 2-5 4 0 5 10 2 10 7 0 2-2 4-5 4-2 0-4-1-5-2m5-16v3m0 15v3" />
-                  <path d="M325 38c37 0 43 50 80 50M325 88h80M325 138c37 0 43-50 80-50" />
-                  <rect class="access-svg-surface" x="405" y="51" width="74" height="78" rx="8" />
-                  <path d="M420 69h43m-43 14h43m-43 14h24" />
-                  <circle class="access-svg-surface" cx="463" cy="116" r="25" />
-                  <path d="m452 116 8 8 15-18" stroke-width="3" />
-                </g>
-              </svg>
-            </div>
-          </section>
-        </div>
-
-        <p class="why-outcome">From assistant to agent that <strong>finishes the job.</strong></p>
-        </div>
+        <span id="demo-playback-status" hidden></span>
       </div>
 
       <!-- 05 · WHY NOW -->
@@ -6468,14 +6361,13 @@
         <div class="slide-num">10 / 10</div>
         <div class="slide-brand"><img alt="" /></div>
         <div class="eyebrow">The Ask</div>
-        <h2>Connect us to <span class="em">our next believers.</span></h2>
-        <p class="borneo-lede">We’re looking for warm introductions to angel investors, users, and ecosystem partners.</p>
+        <h2>Help us meet <span class="em">the right people.</span></h2>
         <div class="borneo-ask-grid">
-          <article><span class="borneo-kicker">01 · Angel investors</span><h3>Angels who understand agents</h3><p>Connect us with investors in AI tools and agent commerce who can help shape our next stage.</p></article>
-          <article><span class="borneo-kicker">02 · Design partners</span><h3>Real work. Repeated use.</h3><p>Introduce founders and operators ready to test recurring agent workflows and give direct feedback.</p></article>
-          <article><span class="borneo-kicker">03 · Ecosystem connections</span><h3>Bring Mermail into more tools</h3><p>Connect us with agent builders and communities to explore integrations and reach active users.</p></article>
+          <article><span class="borneo-kicker">01</span><h3>Angel investors</h3><p>Who believe in AI agents.</p></article>
+          <article><span class="borneo-kicker">02</span><h3>Pilot users</h3><p>With real tasks to test.</p></article>
+          <article><span class="borneo-kicker">03</span><h3>Agent builders</h3><p>To build with us.</p></article>
         </div>
-        <div class="borneo-connect"><p>Know someone we should meet? <strong>Let’s talk after the demo.</strong></p><a href="https://mermail.app" target="_blank" rel="noopener noreferrer">Try Mermail ↗</a></div>
+        <div class="borneo-connect"><p><strong>One introduction can open the next door.</strong></p><a href="https://mermail.app" target="_blank" rel="noopener noreferrer">Try Mermail ↗</a></div>
       </div>
     </div>
     <!-- /deck -->
@@ -6660,8 +6552,62 @@
         });
       }
 
+
+      /* YouTube playback speed is set through the supported IFrame API. */
+      let demoPlayer = null;
+      let demoPlayerReady = false;
+      const demoStatus = document.getElementById("demo-playback-status");
+      const demoFrame = document.getElementById("borneo-demo-player");
+      const demoUrl = new URL("https://www.youtube.com/embed/RsQPHgKApHw");
+      demoUrl.search = "enablejsapi=1&playsinline=1&rel=0";
+      if (/^https?:$/.test(location.protocol)) {
+        demoUrl.searchParams.set("origin", location.origin);
+      } else {
+        demoStatus.textContent = "For embedded playback, open this deck through a web server.";
+      }
+      demoFrame.src = demoUrl.href;
+
+      function requestDemoSpeed(player) {
+        player.setPlaybackRate(1.5);
+      }
+      window.onYouTubeIframeAPIReady = function () {
+        demoPlayer = new YT.Player("borneo-demo-player", {
+          events: {
+            onReady(event) {
+              demoPlayerReady = true;
+              requestDemoSpeed(event.target);
+            },
+            onStateChange(event) {
+              if (event.data === YT.PlayerState.PLAYING) {
+                if (!document.getElementById("slide-3").classList.contains("active")) {
+                  event.target.pauseVideo();
+                  return;
+                }
+                requestDemoSpeed(event.target);
+                demoStatus.textContent = "Playback · " + event.target.getPlaybackRate() + "×";
+              }
+            },
+            onPlaybackRateChange(event) {
+              demoStatus.textContent = "Playback · " + event.data + "×";
+            },
+            onError() {
+              demoStatus.textContent = "Video unavailable here — use Watch on YouTube.";
+            }
+          }
+        });
+      };
+      const demoApiScript = document.createElement("script");
+      demoApiScript.src = "https://www.youtube.com/iframe_api";
+      demoApiScript.onerror = () => {
+        demoStatus.textContent = "Use the player’s speed menu to select 1.5×.";
+      };
+      document.head.appendChild(demoApiScript);
+
       /* ── Navigation ── */
       function goTo(n) {
+        if (demoPlayerReady && cur === 3 && (n + slides.length) % slides.length !== 3) {
+          demoPlayer.pauseVideo();
+        }
         resetSlide(slides[cur]);
         slides[cur].classList.remove("active");
         slides[cur].classList.add("prev");

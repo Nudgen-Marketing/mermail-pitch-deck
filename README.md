@@ -28,7 +28,7 @@ The investor pitch deck (`mermail-pitch-deck.html`) is fully self-contained with
 
 ## Borneo Demo Day
 
-[`borneo-demo-day/index.html`](borneo-demo-day/index.html) is the event deck, served at `/borneo-demo-day/` after deployment. Its ten slides cover the product, problem, demo, timing, traction, competition and moat thesis, go-to-market, team, and a closing ask for angel investor introductions, design partners, and ecosystem connections. It omits the fundraising amount and allocation; the main investor deck remains separate.
+[`borneo-demo-day/index.html`](borneo-demo-day/index.html) is the event deck, served at `/borneo-demo-day/` after deployment. Its ten slides cover the product, problem, demo, timing, traction, competition and moat thesis, go-to-market, team, and a closing ask for angel investor introductions, design partners, and ecosystem connections. It omits the fundraising amount and allocation; the main investor deck remains separate. Slide 4 embeds the YouTube product demo and requests 1.5× playback through the IFrame API. Serve the deck over HTTP(S) for video playback; the embedded demo requires internet access and pauses when leaving the slide.
 
 ## About Mermail
 
