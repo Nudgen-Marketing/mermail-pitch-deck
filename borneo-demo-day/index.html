@@ -5890,8 +5890,10 @@
         <div class="eyebrow">Product demo</div>
         <h2>See Mermail <span class="em">in action.</span></h2>
         <div class="demo-video-frame">
-          <iframe id="borneo-demo-player" title="Mermail sales outreach demo on YouTube"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+          <iframe id="borneo-demo-player" width="560" height="315"
+            src="https://www.youtube.com/embed/RsQPHgKApHw?si=CBM0D2WDHvN1t0Bc&amp;enablejsapi=1&amp;playsinline=1&amp;rel=0"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
         <span id="demo-playback-status" hidden></span>
@@ -6558,8 +6560,7 @@
       let demoPlayerReady = false;
       const demoStatus = document.getElementById("demo-playback-status");
       const demoFrame = document.getElementById("borneo-demo-player");
-      const demoUrl = new URL("https://www.youtube.com/embed/RsQPHgKApHw");
-      demoUrl.search = "enablejsapi=1&playsinline=1&rel=0";
+      const demoUrl = new URL(demoFrame.src);
       if (/^https?:$/.test(location.protocol)) {
         demoUrl.searchParams.set("origin", location.origin);
       } else {
