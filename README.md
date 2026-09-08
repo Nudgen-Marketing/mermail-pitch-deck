@@ -26,6 +26,10 @@ The investor pitch deck (`mermail-pitch-deck.html`) is fully self-contained with
 8. **Funding Allocation** — $250K pre-seed, eight-month runway, six allocation buckets, and proof milestones.
 9. **Team & Connect** — Infrastructure builders for AiFi, co-founders Nathan Nguyen and Toan Nhu, and a QR code to try Mermail.
 
+## Borneo Demo Day
+
+[`borneo-demo-day/index.html`](borneo-demo-day/index.html) is the event deck, served at `/borneo-demo-day/` after deployment. Its ten slides cover the product, problem, demo, timing, traction, competition and moat thesis, go-to-market, team, and a closing ask for angel investor introductions, design partners, and ecosystem connections. It omits the fundraising amount and allocation; the main investor deck remains separate.
+
 ## About Mermail
 
 Mermail gives an AI agent its own email inbox and a user-controlled Agent Wallet. Through MCP, agents can register, verify, buy, book, manage billing, and preserve confirmations without borrowing the user's inbox or handing reusable payment credentials to the agent.
