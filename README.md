@@ -7,6 +7,7 @@ Investor pitch deck and brand design assets for [Mermail](https://mermail.app) �
 | File / Folder | Description |
 | :--- | :--- |
 | [`mermail-pitch-deck.html`](file:///Users/mac/Projects/mermail-pitch-deck/mermail-pitch-deck.html) | Single-file, self-contained interactive investor pitch deck. |
+| [`one-pager.html`](one-pager.html) | Responsive investor one-pager based on the Borneo Demo Day deck, with a single-sheet print layout. |
 | [`DESIGN-SYSTEM-MERMAIL.md`](file:///Users/mac/Projects/mermail-pitch-deck/DESIGN-SYSTEM-MERMAIL.md) | Mermail brand and UI design system token reference. |
 | [`assets/`](file:///Users/mac/Projects/mermail-pitch-deck/assets) | Canonical landing-page logo and mark, founder headshots, avatars, and OpenGraph sharing images. |
 
@@ -29,6 +30,14 @@ The investor pitch deck (`mermail-pitch-deck.html`) is fully self-contained with
 ## Borneo Demo Day
 
 [`borneo-demo-day/index.html`](borneo-demo-day/index.html) is the event deck, served at `/borneo-demo-day/` after deployment. Its ten slides cover the product, problem, demo, timing, traction, competition and moat thesis, go-to-market, team, and a closing ask for angel investor introductions, design partners, and ecosystem connections. It omits the fundraising amount and allocation; the main investor deck remains separate. Slide 4 embeds the YouTube product demo and requests 1.5× playback through the IFrame API. Serve the deck over HTTP(S) for video playback; the embedded demo requires internet access and pauses when leaving the slide.
+
+## Investor One-Pager
+
+Open [`one-pager.html`](one-pager.html) directly in a browser. It uses an embedded logo and system font fallbacks; Google Fonts enhances typography when online. Print or save to PDF using A4 paper, 100% scale, and browser headers/footers disabled for a single-sheet overview.
+
+The content follows the Borneo Demo Day deck: traction is a company-reported first-25-days snapshot, and the ask is for investor introductions, pilot users, and community builders. The market forecast is commerce volume, not a Mermail revenue estimate. The one-pager does not import the main deck’s fundraising amount.
+
+The GitHub Pages workflow triggers when this HTML changes on `main` and includes it in the deployed artifact at `/one-pager.html`. It also remains available through the workflow’s manual trigger.
 
 ## About Mermail
 

@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mermail — Investor One-Pager</title>
+    <meta name="description" content="An inbox and wallet for AI agents. Mermail's investor overview: product, early traction, business model, team, and Borneo Demo Day ask." />
+    <meta name="theme-color" content="#01070d" />
+    <link rel="canonical" href="https://pitching.mermail.app/one-pager.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Mermail — Investor One-Pager" />
+    <meta property="og:description" content="Identity, communication, and controlled payments for AI agents. An investor overview based on Mermail's Borneo Demo Day deck." />
+    <meta property="og:url" content="https://pitching.mermail.app/one-pager.html" />
+    <meta property="og:image" content="https://pitching.mermail.app/assets/og-image.png" />
+    <meta property="og:image:alt" content="Mermail: Email Identity and Agent Wallet for AI Agents" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        color-scheme: dark;
+        --background: #01070d;
+        --foreground: #ffffff;
+        --accent: #70eeee;
+        --surface: #06111f;
+        --border: #244052;
+        --muted: #b6c7d5;
+        --font-inter: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+      }
+      * { box-sizing: border-box; }
+      html { font-size: 120%; }
+      body { margin: 0; background: var(--background); color: var(--foreground); font-family: var(--font-inter); -webkit-font-smoothing: antialiased; }
+      a { color: inherit; text-underline-offset: 4px; }
+      a:hover { color: var(--accent); }
+      a:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; border-radius: 2px; }
+      p, h1, h2, h3, dl, dd { margin: 0; }
+      p { color: var(--muted); font-size: .74rem; line-height: 1.55; }
+      strong { color: var(--foreground); font-weight: 600; }
+      .sheet { max-width: 1100px; margin: 0 auto; padding: 36px 52px 24px; }
+      .masthead, .footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+      .logo { display: block; width: 155px; height: auto; filter: brightness(0) invert(1); }
+      .edition, .eyebrow, h2 { font-size: .56rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+      .edition { color: var(--muted); text-align: right; line-height: 1.6; }
+      .edition span { display: block; font-weight: 400; letter-spacing: .03em; }
+      .hero { margin: 30px 0 24px; }
+      .eyebrow { color: var(--accent); margin-bottom: 12px; }
+      h1 { max-width: 850px; font-size: clamp(2rem, 4.4vw, 3.15rem); letter-spacing: -.06em; line-height: 1.03; font-weight: 700; }
+      h1 span { color: var(--accent); }
+      .intro { margin-top: 15px; max-width: 760px; font-size: .88rem; line-height: 1.5; }
+      .traction { padding: 18px 22px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
+      .traction-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+      h2 { color: var(--accent); }
+      .caption { color: var(--muted); font-size: .55rem; line-height: 1.5; }
+      .metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+      .metric { display: flex; flex-direction: column; }
+      .metric + .metric { border-left: 1px solid var(--border); padding-left: 24px; }
+      .metric dt { order: 2; color: var(--muted); font-size: .66rem; margin-top: 4px; }
+      .metric dd { font-size: 2rem; font-weight: 600; letter-spacing: -.045em; line-height: 1; font-variant-numeric: tabular-nums; }
+      .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin: 24px 0; }
+      .column { display: grid; align-content: start; gap: 20px; }
+      .column + .column { border-left: 1px solid var(--border); padding-left: 32px; }
+      section h2 { margin-bottom: 8px; }
+      .traction h2 { margin: 0; }
+      h3 { font-size: .82rem; line-height: 1.3; letter-spacing: -.02em; margin-bottom: 6px; }
+      .market-number { color: var(--foreground); font-size: 1.18rem; font-weight: 700; letter-spacing: -.03em; }
+      .source { display: inline-block; margin-top: 5px; font-size: .55rem; color: var(--muted); line-height: 1.5; }
+      .team-member + .team-member { margin-top: 9px; }
+      .team-member h3 { font-size: .74rem; margin-bottom: 2px; }
+      .role { font-size: .58rem; font-weight: 400; color: var(--muted); white-space: nowrap; }
+      .team-member p { font-size: .66rem; }
+      .ask { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 24px; padding: 18px 22px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; }
+      .ask h3 { margin: 0 0 5px; font-size: 1.1rem; }
+      .ask p { max-width: 620px; font-size: .69rem; }
+      .cta { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; padding: 11px 16px; border: 1px solid var(--accent); border-radius: 7px; background: var(--accent); color: var(--background); font-size: .7rem; font-weight: 700; text-decoration: none; white-space: nowrap; }
+      .cta:hover { color: var(--background); background: var(--foreground); border-color: var(--foreground); }
+      .footer { margin-top: 16px; font-size: .55rem; color: var(--muted); }
+      .footer nav { display: flex; flex-wrap: wrap; gap: 18px; }
+      .footer nav a { display: inline-flex; align-items: center; min-height: 32px; }
+      @media (max-width: 700px) {
+        .sheet { padding: 24px; }
+        .logo { width: 130px; }
+        .hero { margin-top: 26px; }
+        h1 { font-size: 2.35rem; }
+        .intro { font-size: .8rem; }
+        .traction-heading { align-items: start; flex-direction: column; gap: 5px; }
+        .columns { grid-template-columns: 1fr; gap: 22px; }
+        .column + .column { border-left: 0; padding-left: 0; }
+        .column { gap: 22px; }
+        .ask { grid-template-columns: 1fr; gap: 16px; }
+        .cta { justify-self: start; }
+        .footer { align-items: start; flex-direction: column; gap: 5px; }
+      }
+      @media (max-width: 420px) {
+        .sheet { padding: 20px 18px; }
+        .logo { width: 112px; }
+        .edition { font-size: .48rem; }
+        h1 { font-size: 2rem; }
+        .traction { padding: 16px 14px; }
+        .metrics { gap: 12px; }
+        .metric + .metric { padding-left: 12px; }
+        .metric dd { font-size: 1.55rem; }
+        .metric dt { font-size: .57rem; }
+      }
+      @page { size: A4; margin: 12mm; }
+      @media print {
+        :root { color-scheme: light; --background: #ffffff; --foreground: #10202c; --muted: #425565; --accent: #086161; --surface: #f3f7f8; --border: #c9d5dc; }
+        html { font-size: 16px; }
+        body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+        .sheet { max-width: none; margin: 0; padding: 0; }
+        .logo { width: 130px; filter: brightness(0); }
+        .hero { margin: 22px 0 20px; }
+        h1 { font-size: 2.85rem; }
+        .intro { font-size: .87rem; }
+        .traction { padding: 15px 18px; }
+        .columns { grid-template-columns: 1fr 1fr; gap: 25px; margin: 20px 0; }
+        .column { gap: 18px; }
+        .column + .column { border-left: 1px solid var(--border); padding-left: 25px; }
+        .ask { grid-template-columns: 1fr auto; padding: 15px 18px; gap: 20px; }
+        .cta { min-height: auto; color: var(--accent); background: transparent; }
+        .footer { flex-direction: row; margin-top: 12px; }
+        section, .team-member, .footer { break-inside: avoid; }
+        a { text-decoration-thickness: .5pt; }
+        a:focus-visible { outline: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="sheet">
+      <header class="masthead">
+        <a href="https://mermail.app" target="_blank" rel="noopener noreferrer" aria-label="Mermail website">
+          <img class="logo" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM6c2VyaWY9Imh0dHA6Ly93d3cuc2VyaWYuY29tLyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDI4MTggNzAxIiB2ZXJzaW9uPSIxLjEiIHhtbDpzcGFjZT0icHJlc2VydmUiIHN0eWxlPSJmaWxsLXJ1bGU6ZXZlbm9kZDtjbGlwLXJ1bGU6ZXZlbm9kZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MjsiPgogIDxzdHlsZT5wYXRoIHsgZmlsbDogIzA3MTkxYyAhaW1wb3J0YW50OyB9PC9zdHlsZT4KICA8ZyBpZD0iQXJ0Ym9hcmQxIj4KICAgIDxwYXRoIGQ9Ik0xNjYuOTIxLDIyNC41OTljNjguOTU1LDMuODcxIDE1OS45NzMsMTIuNzA4IDIxMi44NTcsNzIuMDljNy42NzEsOC42MTMgMTEuOTIzLDE2LjY1NSAxNS42NSwxNS4xMjFjNC4zNjUsLTEuNzk3IDkuNTM0LC0xMi41MzUgMzAuNjgyLC0zMC4xNTdjMjkuOTIsLTI0LjkzMSA4My44MDQsLTUwLjUgMTQwLjc0NiwtNTQuNDYyYzQ3Ljg2LC0zLjMzIDQ3Ljk3NywtMC45MjggOTUuNjc1LC02LjAxM2MyMC42MiwtMi4xOTggMjQuODMxLC0yLjEwNiAyNS4wNjYsOS4yNzhjMC4zMDMsMTQuNjY0IDAuMTYxLDE0LjYyMiAwLjMxMSwxODMuMzM1YzAuMDY3LDc1LjU1NSAtMC40NzMsODAuNDI4IC0xLjI0NCw4Ny4zNzZjLTIuMzQ4LDIxLjE3MyAtOC42NzEsNDguNjMxIC0zNS42Niw3Mi4wMjRjLTM0Ljg4NiwzMC4yMzggLTcyLjc2MSwyNC44OTcgLTEzMC4wMzQsMjUuMzA3Yy0yOS4zNDgsMC4yMSAtMzguMjcsMy4zNDMgLTM4LjU3NywtMTguMDIzYy0wLjY2MSwtNDUuOTY4IDAuNDk4LC02Mi40NzEgMTcuMDAzLC03OS44NjljMjEuNzksLTIyLjk2OSA1NS4yNzksLTE4LjQxIDgzLjA5OCwtNzAuNjUyYzEyLjEsLTIyLjcyMyAxMS45NzIsLTUzLjA5NyAxMS45NTMsLTU3LjgyMWMtMC4wMjMsLTUuNDI5IC0wLjMsLTI0LjI2MiAtMC40MjksLTI0LjU3OGMtMi40ODIsLTYuMDk3IC05LjA5NiwtMy4yMTggLTkuODQ5LC0yLjg5MWMtMjMuODgxLDEwLjM5MSAtMjcuNjI4LDEwLjUyMSAtNTkuMjA1LDEzLjQ4NWMtNDUuNzQ3LDQuMjk0IC03OS4zMzQsMTEuMjg0IC0xMDkuNjk0LDU0LjY2MWMtNi43NzcsOS42ODIgLTE0LjY2NiwyNS42MjYgLTE2LjM2OCwzOC4wOTRjLTAuMTI4LDAuOTM4IC0xLjM4MiwxMC4xMjggLTMuODMzLDExLjE5N2MtMS44ODQsMC44MjIgLTUuNTIyLC0zLjIyMSAtNS41MjYsLTMuMjM3Yy0wLjIwOSwtMC42ODcgMC42MjcsLTEuMzY5IDAuNTUzLC0yLjA4M2MtMC4wNjcsLTAuNjQ4IC0wLjgyMiwtMS4wNzIgLTAuOTQ2LC0xLjcxMWMtMS43LC04Ljc5NCAxLjY4NCwtOS44MjUgLTkuNzM5LC0zMy4wMWMtNi4zNjksLTEyLjkyNiAtMjcuNTE2LC00Mi45NDkgLTY2LjMyMywtNTUuNDcyYy0zNC42NTcsLTExLjE4NCAtNzAuNjM1LC01LjQzMSAtMTA0LjE3MiwtMjAuNjE4Yy0xLjM2NiwtMC42MTkgLTExLjIwNSwtNy40NzQgLTEyLjExMiw1LjQyYy03LjYyMiwxMDguMzQ0IDU3Ljk0MiwxMjMuNzk1IDgxLjMxNSwxMzkuMjE3YzE1LjIzOSwxMC4wNTYgMjAuNzIsMjAuOTcyIDIxLjg2NiwyMy4yNTRjNi41MSwxMi45NjUgOC4yMzcsMTUuNzU4IDcuNTUsNjYuNTZjLTAuMjc3LDIwLjQ0NiAtNy43OTQsMTguMDA4IC0yOC4yMjcsMTguMDIzYy04MS4wNzEsMC4wNTcgLTg5LjAyOCwwLjU1MSAtMTEyLjUwNiwtOS42NzljLTAuNTE3LC0wLjIyNSAtMjcuNjUsLTkuMTY4IC00OC4zNDgsLTQyLjY2Yy0xMC43MTksLTE3LjM0NCAtMTMuODk1LC00MS4wNTcgLTE0LjM5NCwtNDQuNzg3Yy0yLjAzOCwtMTUuMjEyIC0xLjIyNCwtNDQuMDIyIC0xLjMsLTIzMy4zNjRjLTAuMDE5LC00Ni44MjEgMC4wMDcsLTQ3LjM4IDIuMTQ2LC00OS4zMTRjMy42OTgsLTMuMzQyIDQuNDI4LDAuNTYgNjIuMDE1LDUuOTZaIiBzdHlsZT0iZmlsbDp1cmwoI19MaW5lYXIxKTsiLz4KICAgIDxwYXRoIGQ9Ik0yMjA0LjU3OCwyMjguMDk1YzIuOTQ5LC0wLjM1OCAzOS40NDksLTYuNzY5IDc4Ljk0NywyLjAzOWMyOS44NTEsNi42NTcgNDIuNjEsMTQuOTk3IDU0LjE3OSwyMS4wMThjNDMuNDgzLDIyLjYzIDY3LjI2Myw2NC4yNjEgNjkuNTkxLDY3LjU5YzIzLjAzNywzMi45MzIgMjUuNjQxLDc3LjE1NiAyNS43NDYsNzguNDEzYzEuMjA1LDE0LjQ5MSAwLjY0NSwxNjAuOTY2IDAuNTkxLDE3NC45NjNjLTAuMDgzLDIxLjYxIC0zLjU1OCwyNC4zMTEgLTIwLjk5OCwyNC4yMzljLTUxLjk3NiwtMC4yMTUgLTU5LjIwMywxLjgyIC02NS42MDEsLTQuNTY2Yy0xMC44MDksLTEwLjc4OCAtMi4wNzUsLTI1LjkyOCAtOS4yNywtMjYuMTRjLTQuNDQ1LC0wLjEzMSAtMjguMDA0LDM0LjAwNSAtOTUuOTY5LDM1LjcyNWMtOTAuMDI5LDIuMjc5IC0xMzQuNjIzLC00OC45ODYgLTE0Ni4yMTYsLTYyLjI2NGMtOS4yMDYsLTEwLjU0MyAtNDUuODc4LC00OC41NzcgLTQ1Ljc0NCwtMTI5LjQ5NmMwLjA1NiwtMzQuMDgyIDE0LjY0NiwtNzMuNTE0IDIyLjIwMywtODYuOTE3YzQ1LjgwMSwtODEuMjM2IDEyOC4wMTYsLTkzLjU4IDEzMi41NCwtOTQuNjA1Wm0zNy4yMjEsMjgzLjEzM2M4MC4wODMsLTMuNTQ4IDExNy4zODMsLTgyLjk1NiA4NS44NzMsLTE0Mi4zNzljLTI5LjA1NCwtNTQuNzkxIC0xMDcuODE5LC03MC40NDUgLTE1NS42MTQsLTI0Ljc2M2MtNDMuODUyLDQxLjkxMiAtMjkuMDY2LDk1LjEwNCAtMjAuNjMsMTEwLjY4OWMxMy44MzYsMjUuNTU5IDMxLjYyNSwzNy40MTkgMzUuMTU5LDM5Ljc3NWMyNy42MTQsMTguNDA5IDUyLjk5NSwxNi42MzggNTUuMjEzLDE2LjY3OFoiIHN0eWxlPSJmaWxsOnVybCgjX0xpbmVhcjIpOyIvPgogICAgPHBhdGggZD0iTTE3NjQuNTE1LDU3Ni4zMTZjLTAuMDYyLDEuMzk4IDEuNjA2LDEyIC01LjMyNSwxNy42MzFjLTQuMTkxLDMuNDA1IC00Ljg2OCwxLjk4MiAtNTQuOTExLDIuNDY3Yy0xNi4xMDQsMC4xNTYgLTMwLjI0OSwyLjUyMiAtMzAuODEsLTE1LjkxNGMtMC42NTIsLTIxLjQwMyAtMC41MDksLTEzMC4zNiAtMC40OTQsLTE0MS42OTZjMC4wNjUsLTQ5LjUxIDYuMTQsLTg0LjA1NCAtMzQuNzkyLC0xMDkuMzUxYy0zMS4xMTEsLTE5LjIyOCAtOTEuMDgzLC0xMS42MjUgLTEwMy4yNjMsNTEuMjU3Yy0yLjUyNiwxMy4wNDMgMC42NzIsMTkyLjE0NiAtMS43NTksMjAzLjg0NmMtMi44NTYsMTMuNzQ0IC0xMy41MTUsMTEuNjk1IC00OS43MTEsMTEuNzc4Yy0yMi45NCwwLjA1MyAtMzQuNjE4LDEuNjY5IC0zOC4xOTUsLTcuMjJjLTIuMjUsLTUuNTkyIC0xLjY0NiwtNS44MjUgLTEuNjMyLC03NS4zMjdjMC4wMjgsLTEzNS4zMTggLTAuMTc2LC0xNDMuNjg0IDEuNzk3LC0xNTQuMjU1YzkuMTcsLTQ5LjEyOCAzMy41MDQsLTk3LjAwOSA5OS43OTgsLTEyMi42NTZjNjYuODY4LC0yNS44NjkgMTMwLjA1NywtMi41OTQgMTY2LjA5MSwzMi41NWM5LjcyNyw5LjQ4NyAxMC4zOCwtMC41OTQgMzUuMjMsLTE3LjIyOWM2Ni4xMjUsLTQ0LjI2NiAxNTguMTIzLC0zMS41NTQgMjEwLjQwNywyOS41MTZjNDUuNTkxLDUzLjI1MSAzOS42OTcsMTEzLjE4NCAzOS43NDgsMTUyLjg5OGMwLjE4OSwxNDguNTc5IDAuMzUzLDE0OC43OTQgLTEuNjczLDE1My43N2MtNC4wNjYsOS45ODcgLTE2LjM3Niw3LjYyNyAtNTcuNDAzLDcuOTI5Yy0xOS40OCwwLjE0MyAtMjUuMDQ4LDEuNDQ2IC0zMC40NzEsLTYuODA2Yy0xLjYwOSwtMi40NDggLTIuMzM1LC0yLjYyNyAtMi4xNzcsLTc5Ljg4YzAuMjU5LC0xMjYuMzIzIDAuOTk0LC0xMjkuMTE2IC02LjA2NywtMTQ1LjMyOWMtMzAuODEsLTcwLjc1MyAtMTI2Ljc4MSwtNTEuMjQ4IC0xMzMuNzkyLDIwLjA5OWMtMS41MiwxNS40NjggLTAuMDE2LDE3NC4xMDEgLTAuNTk3LDE5MS45MjNaIiBzdHlsZT0iZmlsbDp1cmwoI19MaW5lYXIzKTsiLz4KICAgIDxwYXRoIGQ9Ik05NTAuMTc5LDUxMS4wNjVjNC45NTcsLTAuNDQxIDMzLjgzNCwtMy4wMTIgNTcuOTAzLC0yMi43NDJjMTkuNTMzLC0xNi4wMTIgMTcuMTU3LC0yMy45OTkgMzMuODE4LC0yMC45NGM4LjUyOCwxLjU2NiA0My42NzUsMTIuNTYxIDQ1LjY2NCwxMy4yNDFjOS4xOTcsMy4xNDEgMjMuNDYxLDEyLjg0NCAyNS4xMjQsMTYuNDU4YzEuMjU0LDIuNzI1IDQuMjUyLDkuMjM5IC0xNi4xNjEsMzMuODMzYy02Ljc5OSw4LjE5MiAtNjEuOTEyLDg0LjM1MiAtMTc5LjUxOCw2OC43OGMtMTA0LjgwMiwtMTMuODc3IC0xNjEuNjQzLC0xMDEuNjEyIC0xNjMuNzY1LC0xNzcuNTMzYy0xLjgsLTY0LjM3NSAyMC42NjgsLTEwMC4wMTQgMzguODA1LC0xMjQuODU0YzQwLjUyMywtNTUuNDk5IDExOC45MjUsLTg1Ljg3MiAxOTEuNDQyLC03MS4xOWM4Ny45MzQsMTcuODAzIDEyNC4wNTcsODMuNzA0IDEyNC4yMzMsODMuOTY4YzQuMjMxLDYuMzYgMjYuODk0LDQwLjQyOSAyOC4wNTksOTEuMjY4YzAuNDY2LDIwLjMzOSAyLjIzMiwzNy4wNDUgLTE1LjAyNSw0MC4wODFjLTUuOTgxLDEuMDUyIC0yNTQuNjI2LDAuMjc2IC0yNTguMjg3LDAuNTY1Yy01LjkwMSwwLjQ2NiAtNi41NjMsNC40OTkgLTYuNjcyLDUuMTY1Yy0wLjI1MywxLjU0MiAxMS4yNzgsNDEuOTc3IDU3LjEyOCw1Ny40NTdjMTcuMjE4LDUuODEzIDIxLjU5LDYuMzAyIDM3LjI1MSw2LjQ0NFptLTI1LjM2NSwtMTk0LjkwOGMtMzIuOTQyLDcuMzYyIC00Ni4yOTIsMTkuOTggLTYwLjcwOSw0MC4yN2MtMy44MSw1LjM2MiAtNi4xNTUsOC43NDMgLTIuMzc4LDEyLjY4NWMxLjk2NCwyLjA1IDIuMzE4LDEuMjY4IDUuMTczLDEuMjc0Yzc0Ljk2NywwLjE1NyA3NC45MDUsMC4wODUgMTQ5Ljg4LC0wLjIwNWM3LjQxNCwtMC4wMjkgMTEuNzcxLDAuOTk5IDEzLjA5OCwtMS42NjVjMy40ODQsLTYuOTkyIDAuMTU0LC03IC00LjI3NSwtMTMuMzk0Yy0zLjkyMSwtNS42NjIgLTI2LjYxMSwtMzguNDIzIC03NS40NzMsLTQxLjQxNWMtMTEuNzMzLC0wLjcxOCAtMjQuMzc4LDIuMjgyIC0yNS4zMTYsMi40NVoiIHN0eWxlPSJmaWxsOnVybCgjX0xpbmVhcjQpOyIvPgogICAgPHBhdGggZD0iTTI3MzUuMzQ3LDQ1OS42MThjMS4wNDUsNTIuMDY4IC0wLjY1MSw1MS45NzkgMC4zMjQsMTA0LjE1YzAuNDAxLDIxLjQ1MSAwLjI4LDMyLjA2NiAtMTguOTAzLDMyLjQ2Yy02NC44MDksMS4zMjkgLTY2LjA1NSwtMC4wMjYgLTY5Ljg0NCwtNC4xNDZjLTYuMDE5LC02LjU0NSAtMi45NjEsLTguMTA5IC0zLjU1NSwtMjM2LjYyOWMtMC4wNzYsLTI5LjI0MiAwLjA5OCwtMjE5LjY3NCAwLjIzMiwtMjIwLjcwM2MxLjkwOSwtMTQuNTcyIDEwLjAzOSwtMTMuMTUgNTYuNTIzLC0xMy4wNzZjMTcuOTYsMC4wMjggMzQuODYsLTIuMDU0IDM1LjI1OCwyMS4yMzdjMC41MDYsMjkuNjEyIDAuMzg3LDExMi4xNzMgLTAuMDM2LDMxNi43MDhaIiBzdHlsZT0iZmlsbDp1cmwoI19MaW5lYXI1KTsiLz4KICAgIDxwYXRoIGQ9Ik0xMzU0LjMwNywyMjguNzc1YzUzLjg0MywtMC4wMDMgNTcuNTMxLC0wLjg3OCA2MS43MzQsNi4zMWMzLjAyLDUuMTY1IDEuODY4LDYuNTQgMi4wOTQsNTMuNjkxYzAuMTA2LDIyLjE5OSAyLjExLDMxLjk4OSAtMTguMDEyLDMyLjE1M2MtNDkuMDMsMC40MDEgLTU5LjQ0MSwtMi40NzcgLTg3LjYxMSwxNy43MjFjLTUuODg4LDQuMjIyIC0xOC44MTMsMTguOTU0IC0yMy45MTUsMzcuODkxYy01LjIyMiwxOS4zODUgLTIuOTMzLDMxLjU3OSAtMywxMjguOTEzYy0wLjA1Myw3Ny4wNjQgMC43Niw3Ny4zMjcgLTEuNzM1LDgzLjUyOGMtMy41NzMsOC44ODQgLTE0Ljg1NSw3LjIyOCAtNDIuMDgyLDcuNTEzYy0zMi43NDcsMC4zNDQgLTQzLjMxMSwxLjc2NiAtNDYuNjE0LC03LjM3OWMtMy4xMTgsLTguNjMyIC0wLjEwNiwtMzguMTI0IC0xLjQzNCwtMTA0LjQ5OWMtMC4xNTgsLTcuOTExIC0wLjAzMywtNTMuNjU3IC0wLjAyMSwtNTguMzIzYzAuMTE3LC00Mi43ODIgLTUuNTAzLC0xMTcuNzE2IDY5LjQxMywtMTcwLjA5MWMxMi41ODEsLTguNzk1IDMwLjIzOSwtMTUuOTE5IDMyLjk5MywtMTcuMDNjMjcuMDE4LC0xMC44OTkgNDMuNzMxLC0xMC4yMDUgNTguMTg5LC0xMC4zOTlaIiBzdHlsZT0iZmlsbDp1cmwoI19MaW5lYXI2KTsiLz4KICAgIDxwYXRoIGQ9Ik0yNTgwLjIyOSwyMzguMDc2YzQuNTc1LDguMzU3IDQuMDI4LDguNzAyIDQuMDI5LDM0LjA0OWMwLjAxMywzMDcuNzI0IDAuNTU0LDMwNy43OTggLTAuNDUxLDMxMi41NjJjLTMuMDAxLDE0LjIyMiAtMTcuOTY1LDExLjkyMSAtNDIuMDEyLDExLjhjLTMzLjk4NiwtMC4xNzEgLTQ0LjM3NSwxLjkwNSAtNDcuNjU3LC0xMS4zOTNjLTAuOTQ3LC0zLjgzNCAtMC44NTIsLTMuODMzIC0wLjgwNCwtMzEyLjk5MWMwLjAwNSwtMzAuNjU1IC0yLjc2MiwtNDEuMTk1IDIzLjQ2NywtNDEuMjkxYzQ5LjY3MSwtMC4xODMgNDkuNzc0LC0wLjU2MSA1My44OTQsMC43MTFjNS42OTIsMS43NTcgNS4yODQsMi40MzkgOS41MzYsNi41NTNaIiBzdHlsZT0iZmlsbDp1cmwoI19MaW5lYXI3KTsiLz4KICAgIDxwYXRoIGQ9Ik0yNTIwLjk2NSwxMjAuODI5YzQ5LjU2NiwwLjM3NCA1NS41OTMsLTEuNjk1IDYxLjM3MywxMC4xMjZjMi4zMjksNC43NjQgMy40MTEsNTguNDQ2IC0wLjc0OCw2NS4wOTdjLTUuNzg1LDkuMjUxIC04LjU0Niw5LjEyMiAtNTYuNDUzLDguNTY0Yy0xMS42MTYsLTAuMTM1IC0zMC4zMjksMi4zNjEgLTMxLjYzNywtMjAuMDgyYy0wLjE2LC0yLjc0MyAtMC41MzMsLTQ3LjI0IC0wLjAzNCwtNDkuNjg1YzMuNTU0LC0xNy40MTEgMjMuMDIyLC0xMy45NjggMjcuNDk5LC0xNC4wMloiIHN0eWxlPSJmaWxsOnVybCgjX0xpbmVhcjgpOyIvPgogICAgPHBhdGggZD0iTTM4NC4zNDksNDI2LjQ4Nmw5LjYwMSw2MC41MTNsMTIuMjc3LC03Mi40MDRsLTIxLjg3OSwxMS44OVoiIHN0eWxlPSJmaWxsOnVybCgjX0xpbmVhcjkpOyIvPgogIDwvZz4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iX0xpbmVhcjEiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCgwLDcwMC44MDgyMTMsLTcwMC44MDgyMTMsMCwxNDU4LjQ3MzYxNywtMCkiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0eWxlPSJzdG9wLWNvbG9yOiM3MGVlZWU7c3RvcC1vcGFjaXR5OjEiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIwLjUiIHN0eWxlPSJzdG9wLWNvbG9yOiMzYzkxZmY7c3RvcC1vcGFjaXR5OjEiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdHlsZT0ic3RvcC1jb2xvcjojYTk4N2ZmO3N0b3Atb3BhY2l0eToxIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJfTGluZWFyMiIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjAiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiBncmFkaWVudFRyYW5zZm9ybT0ibWF0cml4KDAsNzAwLjgwODIxMywtNzAwLjgwODIxMywwLDE0NTguNDczNjE3LC0wKSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCIgc3R5bGU9InN0b3AtY29sb3I6IzcwZWVlZTtzdG9wLW9wYWNpdHk6MSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuNSIgc3R5bGU9InN0b3AtY29sb3I6IzNjOTFmZjtzdG9wLW9wYWNpdHk6MSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0eWxlPSJzdG9wLWNvbG9yOiNhOTg3ZmY7c3RvcC1vcGFjaXR5OjEiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9Il9MaW5lYXIzIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoMCw3MDAuODA4MjEzLC03MDAuODA4MjEzLDAsMTQ1OC40NzM2MTcsLTApIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdHlsZT0ic3RvcC1jb2xvcjojNzBlZWVlO3N0b3Atb3BhY2l0eToxIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC41IiBzdHlsZT0ic3RvcC1jb2xvcjojM2M5MWZmO3N0b3Atb3BhY2l0eToxIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3R5bGU9InN0b3AtY29sb3I6I2E5ODdmZjtzdG9wLW9wYWNpdHk6MSIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iX0xpbmVhcjQiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCgwLDcwMC44MDgyMTMsLTcwMC44MDgyMTMsMCwxNDU4LjQ3MzYxNywtMCkiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0eWxlPSJzdG9wLWNvbG9yOiM3MGVlZWU7c3RvcC1vcGFjaXR5OjEiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIwLjUiIHN0eWxlPSJzdG9wLWNvbG9yOiMzYzkxZmY7c3RvcC1vcGFjaXR5OjEiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdHlsZT0ic3RvcC1jb2xvcjojYTk4N2ZmO3N0b3Atb3BhY2l0eToxIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJfTGluZWFyNSIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjAiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiBncmFkaWVudFRyYW5zZm9ybT0ibWF0cml4KDAsNzAwLjgwODIxMywtNzAwLjgwODIxMywwLDE0NTguNDczNjE3LC0wKSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCIgc3R5bGU9InN0b3AtY29sb3I6IzcwZWVlZTtzdG9wLW9wYWNpdHk6MSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuNSIgc3R5bGU9InN0b3AtY29sb3I6IzNjOTFmZjtzdG9wLW9wYWNpdHk6MSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0eWxlPSJzdG9wLWNvbG9yOiNhOTg3ZmY7c3RvcC1vcGFjaXR5OjEiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9Il9MaW5lYXI2IiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoMCw3MDAuODA4MjEzLC03MDAuODA4MjEzLDAsMTQ1OC40NzM2MTcsLTApIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdHlsZT0ic3RvcC1jb2xvcjojNzBlZWVlO3N0b3Atb3BhY2l0eToxIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC41IiBzdHlsZT0ic3RvcC1jb2xvcjojM2M5MWZmO3N0b3Atb3BhY2l0eToxIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3R5bGU9InN0b3AtY29sb3I6I2E5ODdmZjtzdG9wLW9wYWNpdHk6MSIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iX0xpbmVhcjciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCgwLDcwMC44MDgyMTMsLTcwMC44MDgyMTMsMCwxNDU4LjQ3MzYxNywtMCkiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0eWxlPSJzdG9wLWNvbG9yOiM3MGVlZWU7c3RvcC1vcGFjaXR5OjEiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIwLjUiIHN0eWxlPSJzdG9wLWNvbG9yOiMzYzkxZmY7c3RvcC1vcGFjaXR5OjEiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdHlsZT0ic3RvcC1jb2xvcjojYTk4N2ZmO3N0b3Atb3BhY2l0eToxIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJfTGluZWFyOCIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjAiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiBncmFkaWVudFRyYW5zZm9ybT0ibWF0cml4KDAsNzAwLjgwODIxMywtNzAwLjgwODIxMywwLDE0NTguNDczNjE3LC0wKSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCIgc3R5bGU9InN0b3AtY29sb3I6IzcwZWVlZTtzdG9wLW9wYWNpdHk6MSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuNSIgc3R5bGU9InN0b3AtY29sb3I6IzNjOTFmZjtzdG9wLW9wYWNpdHk6MSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0eWxlPSJzdG9wLWNvbG9yOiNhOTg3ZmY7c3RvcC1vcGFjaXR5OjEiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9Il9MaW5lYXI5IiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoMCw3MDAuODA4MjEzLC03MDAuODA4MjEzLDAsMTQ1OC40NzM2MTcsMCkiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0eWxlPSJzdG9wLWNvbG9yOiM3MGVlZWU7c3RvcC1vcGFjaXR5OjEiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIwLjUiIHN0eWxlPSJzdG9wLWNvbG9yOiMzYzkxZmY7c3RvcC1vcGFjaXR5OjEiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdHlsZT0ic3RvcC1jb2xvcjojYTk4N2ZmO3N0b3Atb3BhY2l0eToxIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KPC9zdmc+Cg==" width="155" height="39" alt="Mermail" />
+        </a>
+      </header>
+
+      <section class="hero" aria-labelledby="headline">
+        <p class="eyebrow">Identity · Communication · Controlled payments</p>
+        <h1 id="headline">An inbox and wallet<br /> for <span>AI agents.</span></h1>
+        <p class="intro">Mermail gives AI agents their own email identity and a user-controlled wallet to communicate, pay, and complete online tasks within limits you set.</p>
+      </section>
+
+      <section class="traction" aria-labelledby="traction-title">
+        <div class="traction-heading">
+          <h2 id="traction-title">First 25 days since launch</h2>
+        </div>
+        <dl class="metrics">
+          <div class="metric"><dt>Total users</dt><dd>1,021</dd></div>
+          <div class="metric"><dt>Emails sent</dt><dd>9,178</dd></div>
+          <div class="metric"><dt>Agent Wallet users</dt><dd>93</dd></div>
+        </dl>
+      </section>
+
+      <div class="columns">
+        <div class="column">
+          <section aria-labelledby="problem-title">
+            <h2 id="problem-title">01 / The problem</h2>
+            <h3>From answering questions to taking action.</h3>
+            <p>As people delegate tasks to AI, agents need an identity to communicate and a way to pay. Users need control over spending and visibility into what happened.</p>
+          </section>
+          <section aria-labelledby="product-title">
+            <h2 id="product-title">02 / Product &amp; differentiation</h2>
+            <h3>The agent’s everyday account.</h3>
+            <p>An inbox and wallet together connect communication, payments, and confirmations. <strong>Set spending limits, track every action, and revoke access anytime.</strong></p>
+          </section>
+          <section aria-labelledby="market-title">
+            <h2 id="market-title">03 / Why now &amp; opportunity</h2>
+            <p>AI is becoming a channel for completing purchases. McKinsey projects <span class="market-number">$3–5T</span> in global consumer commerce mediated by agents by 2030.</p>
+            <a class="source" href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-agentic-commerce-opportunity-how-ai-agents-are-ushering-in-a-new-era-for-consumers-and-merchants" target="_blank" rel="noopener noreferrer">McKinsey, 2025 ↗</a>
+          </section>
+        </div>
+        <div class="column">
+          <section aria-labelledby="model-title">
+            <h2 id="model-title">04 / Business model</h2>
+            <h3>Subscriptions + usage.</h3>
+            <p>Monthly plans, usage-based MPP pricing, and credit purchases for premium AI quota. The model combines recurring access with spend as agents use the product.</p>
+          </section>
+          <section aria-labelledby="gtm-title">
+            <h2 id="gtm-title">05 / Go-to-market</h2>
+            <h3>Start with AI power users.</h3>
+            <p>Reach builders, founders, and operators. Embed through skills and plugins, activate with challenges and bounties, then expand through repeat use and referrals.</p>
+          </section>
+          <section aria-labelledby="team-title">
+            <h2 id="team-title">06 / Team</h2>
+            <div class="team-member">
+              <h3>Nathan Nguyen <span class="role">/ Co-founder</span></h3>
+              <p>AI Engineer · MSc Data Science.<br />Product &amp; go-to-market.</p>
+            </div>
+            <div class="team-member">
+              <h3>Toan Nhu <span class="role">/ Co-founder</span></h3>
+              <p>Built Nimbus/LP Agent to $100K ARR.<br />Founding Engineer at Tiki.com.</p>
+            </div>
+            <div class="team-member">
+              <h3>Quang Nguyen <span class="role">/ Advisor</span></h3>
+              <p>Rest Super Fund Australia.<br />Capital raising, M&amp;A, and valuations.</p>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <section class="ask" aria-labelledby="ask-title">
+        <div>
+          <h2 id="ask-title">The ask</h2>
+          <h3>Help us meet the right people.</h3>
+          <p>Warm introductions to investors, pilot users with real tasks to test, and community builders to grow with us.</p>
+        </div>
+        <a class="cta" href="https://mermail.app" target="_blank" rel="noopener noreferrer">Try Mermail ↗</a>
+      </section>
+      <footer class="footer">
+        <a href="https://mermail.app" target="_blank" rel="noopener noreferrer">mermail.app ↗</a>
+        <nav aria-label="Investor resources">
+          <a href="borneo-demo-day/index.html" target="_blank" rel="noopener noreferrer">Source deck ↗</a>
+          <a href="https://www.youtube.com/watch?v=KlB4QFyLkdY" target="_blank" rel="noopener noreferrer">Watch the demo ↗</a>
+        </nav>
+      </footer>
+    </main>
+  </body>
+</html>

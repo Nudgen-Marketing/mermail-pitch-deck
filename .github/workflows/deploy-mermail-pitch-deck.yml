@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - mermail-pitch-deck.html
+      - one-pager.html
       - borneo-demo-day/**
       - .github/workflows/deploy-mermail-pitch-deck.yml
       - assets/**
@@ -36,6 +37,7 @@ jobs:
           # Default route (/) serves mermail-pitch-deck.html
           cp mermail-pitch-deck.html site/index.html
           cp mermail-pitch-deck.html site/mermail-pitch-deck.html
+          cp one-pager.html site/one-pager.html
           cp -r borneo-demo-day site/
 
           # Copy assets directory so that favicon and og-image are deployed
