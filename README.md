@@ -29,7 +29,7 @@ The investor pitch deck (`mermail-pitch-deck.html`) is fully self-contained with
 
 ## DS2S
 
-[`ds2s/index.html`](ds2s/index.html) is the 11-slide DS2S deck based on Borneo, with B2B/B2C customer segments and updated acquisition channels on the GTM slide. The Ask slide is removed. It is served at `/ds2s/` after deployment.
+[`ds2s/index.html`](ds2s/index.html) is the 12-slide DS2S deck based on Borneo, with B2B/B2C customer segments and updated acquisition channels on the GTM slide. The Ask follows Team and covers brand awareness, community, user-generated content, and customer research. It is served at `/ds2s/` after deployment.
 
 ## Borneo Demo Day
 
