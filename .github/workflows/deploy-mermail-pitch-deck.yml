@@ -8,6 +8,7 @@ on:
       - mermail-pitch-deck.html
       - one-pager.html
       - borneo-demo-day/**
+      - ds2s/**
       - .github/workflows/deploy-mermail-pitch-deck.yml
       - assets/**
   workflow_dispatch:
@@ -39,6 +40,7 @@ jobs:
           cp mermail-pitch-deck.html site/mermail-pitch-deck.html
           cp one-pager.html site/one-pager.html
           cp -r borneo-demo-day site/
+          cp -r ds2s site/
 
           # Copy assets directory so that favicon and og-image are deployed
           cp -r assets site/

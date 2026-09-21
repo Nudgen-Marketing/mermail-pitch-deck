@@ -27,6 +27,10 @@ The investor pitch deck (`mermail-pitch-deck.html`) is fully self-contained with
 8. **Funding Allocation** — $250K pre-seed, eight-month runway, six allocation buckets, and proof milestones.
 9. **Team & Connect** — Infrastructure builders for AiFi, co-founders Nathan Nguyen and Toan Nhu, and a QR code to try Mermail.
 
+## DS2S
+
+[`ds2s/index.html`](ds2s/index.html) is the 11-slide DS2S deck based on Borneo, with B2B/B2C customer segments and updated acquisition channels on the GTM slide. The Ask slide is removed. It is served at `/ds2s/` after deployment.
+
 ## Borneo Demo Day
 
 [`borneo-demo-day/index.html`](borneo-demo-day/index.html) is the event deck, served at `/borneo-demo-day/` after deployment. Its ten slides cover the product, problem, demo, timing, traction, competition and moat thesis, go-to-market, team, and a closing ask for angel investor introductions, design partners, and ecosystem connections. It omits the fundraising amount and allocation; the main investor deck remains separate. Slide 4 embeds the YouTube product demo and requests 1.5× playback through the IFrame API. Serve the deck over HTTP(S) for video playback; the embedded demo requires internet access and pauses when leaving the slide.
