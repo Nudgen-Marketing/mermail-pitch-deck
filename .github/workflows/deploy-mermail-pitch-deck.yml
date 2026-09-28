@@ -35,8 +35,8 @@ jobs:
       - name: Build static site artifact
         run: |
           mkdir -p site
-          # Default route (/) serves mermail-pitch-deck.html
-          cp mermail-pitch-deck.html site/index.html
+          # Default route (/) serves the Borneo Demo Day deck
+          cp borneo-demo-day/index.html site/index.html
           cp mermail-pitch-deck.html site/mermail-pitch-deck.html
           cp one-pager.html site/one-pager.html
           cp -r borneo-demo-day site/
