@@ -5833,13 +5833,18 @@
         .opportunity-source { margin-top: 14px; }
       }
       #slide-6 h2 { text-align: center; }
-      .traction-highlights { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100%; max-width: 1120px; margin-top: clamp(36px, 7vh, 80px); gap: 0; }
+      .traction-highlights { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); width: 100%; max-width: 1120px; margin-top: clamp(36px, 7vh, 80px); gap: 0; }
       .traction-highlight { padding: clamp(20px, 3vh, 36px) 16px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; }
       .traction-highlight + .traction-highlight { border-left: 1px solid var(--border-accent); }
-      .traction-highlight strong { font-size: clamp(48px, 7.2vw, 108px); line-height: 1; letter-spacing: -.05em; color: var(--success); font-weight: 700; }
+      .traction-highlight strong { font-size: clamp(40px, 5.4vw, 82px); line-height: 1; letter-spacing: -.05em; color: var(--success); font-weight: 700; }
       .traction-highlight span { font-size: clamp(15px, 1.7vw, 24px); color: var(--text-secondary); }
       .traction-asof { margin-top: 24px; font-size: 12px; color: var(--text-secondary); }
       @media (max-height: 650px) { .traction-highlight strong { font-size: clamp(48px, 10vh, 72px); } .traction-highlight { padding: 16px; } }
+      @media (min-width: 601px) and (max-width: 900px) {
+        .traction-highlights { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 20px; }
+        .traction-highlight:nth-child(3) { border-left: 0; }
+        .traction-highlight:nth-child(n + 3) { border-top: 1px solid var(--border-accent); }
+      }
       @media (max-width: 600px) {
         .traction-highlights { grid-template-columns: 1fr; margin-top: 20px; }
         .traction-highlight { padding: 16px; }
@@ -6167,11 +6172,12 @@
         </div>
 
         <div class="eyebrow">Traction</div>
-        <h2>Just 25 days since launch.</h2>
+        <h2>Traction to date.</h2>
         <div class="traction-highlights">
-          <div class="traction-highlight"><strong>9,178</strong><span>Emails sent</span></div>
-          <div class="traction-highlight"><strong>1,021</strong><span>Total users</span></div>
-          <div class="traction-highlight"><strong>93</strong><span>Agent Wallet users</span></div>
+          <div class="traction-highlight"><strong>12,493</strong><span>Emails sent</span></div>
+          <div class="traction-highlight"><strong>1,204</strong><span>Total users</span></div>
+          <div class="traction-highlight"><strong>160</strong><span>Agent Wallet Users</span></div>
+          <div class="traction-highlight"><strong>US$1K+</strong><span>Transaction volume</span></div>
         </div>
 
       </div>
