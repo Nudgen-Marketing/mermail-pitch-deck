@@ -5833,23 +5833,41 @@
         .opportunity-source { margin-top: 14px; }
       }
       #slide-6 h2 { text-align: center; }
-      .traction-highlights { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); width: 100%; max-width: 1120px; margin-top: clamp(36px, 7vh, 80px); gap: 0; }
-      .traction-highlight { padding: clamp(20px, 3vh, 36px) 16px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; }
-      .traction-highlight + .traction-highlight { border-left: 1px solid var(--border-accent); }
+      .traction-proof-layout { display: grid; grid-template-columns: minmax(0, .78fr) minmax(360px, 1.22fr); align-items: center; width: 100%; max-width: 1120px; margin-top: clamp(22px, 4vh, 44px); gap: clamp(30px, 5vw, 72px); }
+      .traction-highlights { display: grid; grid-template-columns: 1fr; width: 100%; gap: 0; }
+      .traction-highlight { padding: clamp(22px, 3.5vh, 40px) 16px; display: flex; flex-direction: column; align-items: flex-start; text-align: left; gap: 12px; }
       .traction-highlight strong { font-size: clamp(40px, 5.4vw, 82px); line-height: 1; letter-spacing: -.05em; color: var(--success); font-weight: 700; }
       .traction-highlight span { font-size: clamp(15px, 1.7vw, 24px); color: var(--text-secondary); }
+      .traction-highlight + .traction-highlight { border-left: 0; border-top: 1px solid var(--border-accent); }
+      .traction-feature { margin: 0; border: 1px solid var(--border-accent); border-radius: 18px; overflow: hidden; background: var(--surface); box-shadow: 0 24px 70px rgba(0, 0, 0, .32); }
+      .traction-feature img { display: block; width: 100%; max-height: min(52vh, 500px); object-fit: contain; background: #000; }
+      .traction-feature figcaption { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 14px 18px; border-top: 1px solid var(--border); color: var(--text-secondary); font-size: clamp(12px, 1.2vw, 15px); }
+      .traction-feature figcaption strong { color: var(--text-primary); font-weight: 600; }
+      .traction-feature figcaption span { white-space: nowrap; }
       .traction-asof { margin-top: 24px; font-size: 12px; color: var(--text-secondary); }
-      @media (max-height: 650px) { .traction-highlight strong { font-size: clamp(48px, 10vh, 72px); } .traction-highlight { padding: 16px; } }
+      @media (max-height: 650px) {
+        .traction-proof-layout { margin-top: 12px; gap: 24px; }
+        .traction-highlight strong { font-size: clamp(42px, 10vh, 64px); }
+        .traction-highlight { padding: 12px 8px; gap: 6px; }
+        .traction-feature img { max-height: 48vh; }
+        .traction-feature figcaption { padding: 9px 12px; }
+      }
+      @media (max-height: 500px) {
+        .traction-feature img { max-height: 33vh; }
+        .traction-feature figcaption { display: none; }
+      }
       @media (min-width: 601px) and (max-width: 900px) {
-        .traction-highlights { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 20px; }
-        .traction-highlight:nth-child(3) { border-left: 0; }
-        .traction-highlight:nth-child(n + 3) { border-top: 1px solid var(--border-accent); }
+        .traction-proof-layout { grid-template-columns: minmax(0, .72fr) minmax(320px, 1.28fr); gap: 24px; }
       }
       @media (max-width: 600px) {
-        .traction-highlights { grid-template-columns: 1fr; margin-top: 20px; }
-        .traction-highlight { padding: 16px; }
-        .traction-highlight + .traction-highlight { border-left: 0; border-top: 1px solid var(--border-accent); }
-        .traction-highlight strong { font-size: 52px; }
+        .traction-proof-layout { grid-template-columns: 1fr; margin-top: 14px; gap: 14px; }
+        .traction-highlights { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .traction-highlight { align-items: center; text-align: center; padding: 12px 8px; }
+        .traction-highlight + .traction-highlight { border-top: 0; border-left: 1px solid var(--border-accent); }
+        .traction-highlight strong { font-size: clamp(36px, 12vw, 52px); }
+        .traction-highlight span { font-size: 13px; }
+        .traction-feature img { max-height: 36vh; }
+        .traction-feature figcaption { padding: 9px 12px; }
       }
       #slide-7 h2 { text-align: center; text-wrap: balance; }
       .revenue-layout { display: grid; grid-template-columns: 1fr 1.25fr; gap: 40px; max-width: 1080px; width: 100%; margin-top: 36px; }
@@ -6014,6 +6032,52 @@
         #slide-8 .gtm-path-detail h3 { margin: 0; font-size: clamp(17px, 1.6vw, 23px); line-height: 1.2; }
         #slide-8 .gtm-path-detail p { margin: 10px auto 0; max-width: 220px; font-size: clamp(13px, 1.15vw, 16px); line-height: 1.45; text-wrap: balance; }
       }
+      /* Two complementary go-to-market directions. */
+      #slide-8 .gtm-directions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; max-width: 1120px; gap: clamp(18px, 3vw, 40px); margin-top: clamp(24px, 5vh, 52px); }
+      #slide-8 .gtm-direction { display: flex; flex-direction: column; min-width: 0; padding: clamp(22px, 3vw, 38px); border: 1px solid var(--border-accent); border-radius: 18px; background: var(--surface); }
+      #slide-8 .gtm-direction-label { color: var(--success); font-size: clamp(12px, 1.2vw, 16px); letter-spacing: .12em; text-transform: uppercase; }
+      #slide-8 .gtm-direction h3 { font-size: clamp(24px, 2.5vw, 36px); line-height: 1.15; margin: clamp(14px, 2vh, 24px) 0; }
+      #slide-8 .gtm-programs { display: flex; flex-wrap: wrap; gap: 8px; min-height: 70px; align-content: flex-start; }
+      #slide-8 .gtm-programs span { border: 1px solid var(--border-accent); border-radius: 6px; padding: 7px 10px; font-size: clamp(12px, 1.2vw, 15px); color: var(--success); }
+      #slide-8 .gtm-direction p { font-size: clamp(16px, 1.6vw, 21px); line-height: 1.5; color: var(--text-secondary); margin: 10px 0 clamp(22px, 4vh, 40px); }
+      #slide-8 .gtm-direction-outcome { margin-top: auto; padding-top: 18px; border-top: 1px solid var(--border-accent); font-size: clamp(13px, 1.3vw, 17px); line-height: 1.5; color: var(--text-primary); }
+      @media (max-width: 600px) {
+        #slide-8 { padding: 76px 20px 90px; justify-content: center; overflow: hidden; }
+        #slide-8 h2 { font-size: clamp(24px, 6vw, 32px); }
+        #slide-8 .gtm-directions { grid-template-columns: 1fr; gap: 12px; margin-top: 18px; }
+        #slide-8 .gtm-direction { padding: 16px; }
+        #slide-8 .gtm-direction h3 { font-size: 22px; margin: 8px 0; }
+        #slide-8 .gtm-programs { min-height: 0; gap: 5px; }
+        #slide-8 .gtm-programs span { font-size: 11px; padding: 4px 6px; }
+        #slide-8 .gtm-direction p { font-size: 14px; line-height: 1.4; margin: 10px 0; }
+        #slide-8 .gtm-direction-outcome { font-size: 12px; padding-top: 8px; }
+      }
+      @media (min-width: 601px) and (max-height: 500px) {
+        #slide-8 { padding: 50px 30px 80px; }
+        #slide-8 h2 { font-size: 24px; }
+        #slide-8 .gtm-directions { gap: 16px; margin-top: 12px; }
+        #slide-8 .gtm-direction { padding: 14px; }
+        #slide-8 .gtm-direction h3 { font-size: 21px; margin: 8px 0; }
+        #slide-8 .gtm-programs { min-height: 0; gap: 4px; }
+        #slide-8 .gtm-programs span { font-size: 11px; padding: 4px 6px; }
+        #slide-8 .gtm-direction p { font-size: 13px; line-height: 1.35; margin: 8px 0; }
+        #slide-8 .gtm-direction-outcome { font-size: 11px; padding-top: 8px; }
+      }
+      #slide-8 .gtm-partner-logos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+      #slide-8 .gtm-partner { min-width: 0; }
+      #slide-8 .gtm-partner-mark { height: clamp(42px, 7vh, 66px); display: flex; align-items: center; justify-content: center; background: #fff; border-radius: 7px; }
+      #slide-8 .gtm-partner-mark img { display: block; width: 80%; height: 100%; max-width: 160px; object-fit: contain; }
+      #slide-8 .gtm-partner > span { display: block; border: 0; padding: 7px 0 0; font-size: clamp(11px, 1vw, 14px); line-height: 1.3; color: var(--text-secondary); }
+      @media (max-width: 600px), (max-height: 500px) {
+        #slide-8 .gtm-partner-mark { height: 36px; }
+        #slide-8 .gtm-partner > span { font-size: 10px; padding-top: 4px; }
+      }
+      @media (min-width: 601px) and (max-height: 500px) {
+        #slide-8 .gtm-partner-mark { height: 26px; }
+        #slide-8 .gtm-direction { padding: 10px; }
+        #slide-8 .gtm-direction p { margin: 6px 0; }
+        #slide-8 .gtm-directions { margin-top: 8px; }
+      }
     </style>
   </head>
   <body>
@@ -6173,11 +6237,21 @@
 
         <div class="eyebrow">Traction</div>
         <h2>Traction to date.</h2>
-        <div class="traction-highlights">
-          <div class="traction-highlight"><strong>12,493</strong><span>Emails sent</span></div>
-          <div class="traction-highlight"><strong>1,204</strong><span>Total users</span></div>
-          <div class="traction-highlight"><strong>160</strong><span>Agent Wallet Users</span></div>
-          <div class="traction-highlight"><strong>US$1K+</strong><span>Transaction volume</span></div>
+        <div class="traction-proof-layout">
+          <div class="traction-highlights">
+            <div class="traction-highlight"><strong>1,204</strong><span>Total users</span></div>
+            <div class="traction-highlight"><strong>12,493</strong><span>Emails sent</span></div>
+          </div>
+          <figure class="traction-feature">
+            <img
+              src="../assets/solana-ecosystem-call-feature.png"
+              alt="Solana Ecosystem Call post featuring Mermail's AI agent booking demo"
+            />
+            <figcaption>
+              <strong>Featured on Solana Ecosystem Call</strong>
+              <span>27 Sep 2026</span>
+            </figcaption>
+          </figure>
         </div>
 
       </div>
@@ -6216,56 +6290,26 @@
 
         <div class="eyebrow">Go-to-Market</div>
         <h2>
-          Start with <span class="em">AI power users.</span>
+          Two paths to <span class="em">business growth.</span>
         </h2>
-        <div class="gtm-path-stage" aria-label="Mermail starts with AI power users, installs in their workflow, activates them with real tasks, and turns completed agent transactions into proof.">
-          <div class="gtm-path-track" aria-hidden="true">
-            <span class="gtm-path-edge top"></span>
-            <span class="gtm-path-edge bottom"></span>
-            <span class="gtm-path-rail"></span>
-            <span class="gtm-path-node">01</span>
-            <span class="gtm-path-node">02</span>
-            <span class="gtm-path-node">03</span>
-            <span class="gtm-path-node">04</span>
-          </div>
-
-          <div class="gtm-path-details">
-            <section class="gtm-path-detail">
-              <div class="gtm-path-detail-head">
-                <span class="gtm-path-detail-number">01</span>
-                <h3>Reach</h3>
-              </div>
-              <p>Builders · Founders · Operators</p>
-            </section>
-
-            <section class="gtm-path-detail">
-              <div class="gtm-path-detail-head">
-                <span class="gtm-path-detail-number">02</span>
-                <h3>Embed</h3>
-              </div>
-              <p>Skills &amp; plugins</p>
-            </section>
-
-            <section class="gtm-path-detail">
-              <div class="gtm-path-detail-head">
-                <span class="gtm-path-detail-number">03</span>
-                <h3>Activate</h3>
-              </div>
-              <p>Challenges &amp; bounties</p>
-            </section>
-
-            <section class="gtm-path-detail">
-              <div class="gtm-path-detail-head">
-                <span class="gtm-path-detail-number">04</span>
-                <h3>Expand</h3>
-              </div>
-              <p>Repeat use &amp; referrals</p>
-            </section>
-          </div>
-
-          <div class="gtm-path-thesis">
-            Real tasks. Repeat use. <strong>Compounding reach.</strong>
-          </div>
+        <div class="gtm-directions">
+          <section class="gtm-direction" aria-labelledby="gtm-b2b-title">
+            <span class="gtm-direction-label">01 · B2B</span>
+            <h3 id="gtm-b2b-title">Prove the use cases.</h3>
+            <div class="gtm-programs gtm-partner-logos">
+              <div class="gtm-partner"><div class="gtm-partner-mark"><img src="../assets/circle-alliance-logo.png" alt="Circle" /></div><span>Circle Alliance Program</span></div>
+              <div class="gtm-partner"><div class="gtm-partner-mark"><img src="../assets/nvidia-inception-logo.png" alt="NVIDIA" /></div><span>NVIDIA Inception Program</span></div>
+            </div>
+            <p>Use our program networks to reach businesses and validate real workflows.</p>
+            <div class="gtm-direction-outcome">Partner access → Pilots → Proven use cases</div>
+          </section>
+          <section class="gtm-direction" aria-labelledby="gtm-autogtm-title">
+            <span class="gtm-direction-label">02 · AutoGTM</span>
+            <h3 id="gtm-autogtm-title">Make growth accessible.</h3>
+            <div class="gtm-programs"><span>Business owners &amp; operators</span></div>
+            <p>Build AutoGTM for people who want to grow their business without deep AI expertise.</p>
+            <div class="gtm-direction-outcome">Find leads → Run outreach → Grow the business</div>
+          </section>
         </div>
       </div>
 
