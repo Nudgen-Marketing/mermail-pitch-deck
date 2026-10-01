@@ -9,6 +9,26 @@ on:
       - one-pager.html
       - colosseum/**
       - ds2s/**
+      - arc/**
+      - rtc/**
+      - uii-sip-share/**
+      - scripts/check-uii-sip-share.py
+      - scripts/check-rtc.py
+      - .github/workflows/deploy-mermail-pitch-deck.yml
+      - assets/**
+  pull_request:
+    branches:
+      - main
+    paths:
+      - mermail-pitch-deck.html
+      - one-pager.html
+      - colosseum/**
+      - ds2s/**
+      - arc/**
+      - rtc/**
+      - uii-sip-share/**
+      - scripts/check-uii-sip-share.py
+      - scripts/check-rtc.py
       - .github/workflows/deploy-mermail-pitch-deck.yml
       - assets/**
   workflow_dispatch:
@@ -29,8 +49,37 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v6
+      - name: Validate RTC deck
+        run: python3 scripts/check-rtc.py
+
+      - name: Validate UII SIP & SHARE deck
+        run: python3 scripts/check-uii-sip-share.py
+
+      - name: Build RTC preview artifact
+        run: |
+          mkdir -p rtc-preview/rtc
+          cp rtc/index.html rtc-preview/rtc/index.html
+          cp -r assets rtc-preview/assets
+
+      - name: Upload RTC preview
+        uses: actions/upload-artifact@v7
+        with:
+          name: rtc-pitch-deck
+          path: rtc-preview/
+          if-no-files-found: error
+
+      - name: Build UII SIP & SHARE preview artifact
+        run: |
+          mkdir -p uii-sip-share-preview/uii-sip-share
+          cp uii-sip-share/index.html uii-sip-share-preview/uii-sip-share/index.html
+          cp -r assets uii-sip-share-preview/assets
+
+      - name: Upload UII SIP & SHARE preview
+        uses: actions/upload-artifact@v7
+        with:
+          name: uii-sip-share-pitch-deck
+          path: uii-sip-share-preview/
+          if-no-files-found: error
 
       - name: Build static site artifact
         run: |
@@ -41,16 +90,25 @@ jobs:
           cp one-pager.html site/one-pager.html
           cp -r colosseum site/
           cp -r ds2s site/
+          cp -r arc site/
+          cp -r rtc site/
+          cp -r uii-sip-share site/
 
           # Copy assets directory so that favicon and og-image are deployed
           cp -r assets site/
 
+      - name: Configure GitHub Pages
+        if: github.event_name != 'pull_request'
+        uses: actions/configure-pages@v6
+
       - name: Upload Pages artifact
+        if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v5
         with:
           path: site
 
   deploy:
+    if: github.event_name != 'pull_request'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

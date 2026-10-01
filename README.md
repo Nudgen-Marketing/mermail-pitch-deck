@@ -27,6 +27,18 @@ The investor pitch deck (`mermail-pitch-deck.html`) is fully self-contained with
 8. **Funding Allocation** — $250K pre-seed, eight-month runway, six allocation buckets, and proof milestones.
 9. **Team & Connect** — Infrastructure builders for AiFi, co-founders Nathan Nguyen and Toan Nhu, and a QR code to try Mermail.
 
+## UII SIP & SHARE
+
+[`uii-sip-share/index.html`](uii-sip-share/index.html) is a six-slide Vietnamese deck for UII SIP & SHARE #4 (1 October 2026), “Building Your Startup Moat in the Age of AI.” It covers Mermail’s product, a sales workflow, its moat thesis, pilot measures, and the Team slide from the public pitch deck.
+
+The GitHub Pages workflow validates and packages a preview on pull requests, relevant `main` pushes, or manual dispatch, including `/uii-sip-share/` alongside the existing routes. After deployment, open [pitching.mermail.app/uii-sip-share](https://pitching.mermail.app/uii-sip-share). Validate locally with `python3 scripts/check-uii-sip-share.py`. Use arrow keys, Page Up/Down, swipe, or the on-screen buttons; print for a six-page landscape handout.
+
+## RTC
+
+[`rtc/index.html`](rtc/index.html) is the pitch revised from Josip’s 30 September 2026 feedback: a clear email-and-wallet explanation, readable emoji flow, sourced ecosystem context, focused pilot validation, and outcome-oriented team evidence. See [feedback and evidence notes](docs/rtc-feedback.md).
+
+The GitHub Pages workflow validates the deck and uploads a preview artifact on pull requests, relevant `main` pushes, or manual dispatch. It publishes the deck at [pitching.mermail.app/rtc](https://pitching.mermail.app/rtc) after deployment while preserving the existing routes. Run `python3 scripts/check-rtc.py` locally before publishing.
+
 ## DS2S
 
 [`ds2s/index.html`](ds2s/index.html) is the 12-slide DS2S deck based on Colosseum, with B2B/B2C customer segments and updated acquisition channels on the GTM slide. The Ask follows Team and covers brand awareness, community, user-generated content, and customer research. It is served at `/ds2s/` after deployment.
@@ -50,3 +62,7 @@ Mermail gives an AI agent its own email inbox and a user-controlled Agent Wallet
 - **Website:** [mermail.app](https://mermail.app)
 - **Founders:** Nathan Nguyen & Toan Nhu (Co-founders)
 - **Design Language:** HSL tailored dark neutrals with emerald/cyan accent (`#70eeee`).
+
+## Arc
+
+[`arc/index.html`](arc/index.html) is the 13-slide October 2, 2026 Vietnam Office Hours deck. It covers Agent Stack Wallets, CCTP funding, Agent Marketplace discovery, and the proposed MPP inbox-purchase flow on Arc. Existing implementation notes support Arc x402 and Base MPP; Arc MPP and directory acceptance are presented as milestones. The Pages build includes `/arc/`.
