@@ -1,0 +1,42 @@
+{
+  "type": "Hypothetical scenario, not observed AI traffic",
+  "formula": "AI baseline + max(0, Direct baseline - Direct month) + max(0, Google baseline - Google month)",
+  "baseline": "Jun 2025",
+  "source_data": "traffic-data.json",
+  "months": [
+    "Jun 2025",
+    "Jul 2025",
+    "Aug 2025",
+    "Sep 2025",
+    "Oct 2025",
+    "Nov 2025",
+    "Dec 2025",
+    "Jan 2026",
+    "Feb 2026",
+    "Mar 2026",
+    "Apr 2026",
+    "May 2026",
+    "Jun 2026",
+    "Jul 2026",
+    "Aug 2026",
+    "Sep 2026"
+  ],
+  "AI search (modeled)": [
+    2893565,
+    2893565,
+    8581388,
+    42664807,
+    36440135,
+    93412791,
+    38163516,
+    38698238,
+    108353069,
+    100205286,
+    137846956,
+    175495569,
+    188209302,
+    199059744,
+    212829437,
+    180517160
+  ]
+}
