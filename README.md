@@ -33,6 +33,12 @@ The investor pitch deck (`mermail-pitch-deck.html`) is fully self-contained with
 
 The GitHub Pages workflow validates and packages a preview on pull requests, relevant `main` pushes, or manual dispatch, including `/uii-sip-share/` alongside the existing routes. After deployment, open [pitching.mermail.app/uii-sip-share](https://pitching.mermail.app/uii-sip-share). Validate locally with `python3 scripts/check-uii-sip-share.py`. Use arrow keys, Page Up/Down, swipe, or the on-screen buttons; print for a six-page landscape handout.
 
+## SUSS 2026
+
+[`suss2026/index.html`](suss2026/index.html) is a ten-slide, ten-minute English introduction for the UEH–SUSS programme on 6 October 2026. It follows the programme sequence: introduction and Vietnam innovation context, Mermail’s journey and practical decisions, AI/innovation/digital business, product showcase, and discussion. The Mermail and Scouty service showcase begins on slide 7, after the journey and business context. Scouty is presented as going to market for SMEs that struggle to find B2B customers; the screenshot shows prospect suggestions, not achieved sales. See the [timed speaking script and Q&A notes](docs/suss2026-speaker-notes.md).
+
+The GitHub Pages workflow validates and uploads the `suss2026-pitch-deck` preview artifact on pull requests, relevant `main` pushes, or manual dispatch, and packages the route alongside the existing decks. After deployment, it is available at [pitching.mermail.app/suss2026/](https://pitching.mermail.app/suss2026/). Validate locally with `python3 scripts/check-suss2026.py`. Use keyboard navigation, swipe, or on-screen buttons; print for a ten-page landscape handout. The default homepage remains the Colosseum deck.
+
 ## RTC
 
 [`rtc/index.html`](rtc/index.html) is the pitch revised from Josip’s 30 September 2026 feedback: a clear email-and-wallet explanation, readable emoji flow, sourced ecosystem context, focused pilot validation, and outcome-oriented team evidence. See [feedback and evidence notes](docs/rtc-feedback.md).

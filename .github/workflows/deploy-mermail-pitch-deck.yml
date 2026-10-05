@@ -11,9 +11,11 @@ on:
       - ds2s/**
       - arc/**
       - rtc/**
+      - suss2026/**
       - uii-sip-share/**
       - scripts/check-uii-sip-share.py
       - scripts/check-rtc.py
+      - scripts/check-suss2026.py
       - .github/workflows/deploy-mermail-pitch-deck.yml
       - assets/**
   pull_request:
@@ -26,9 +28,11 @@ on:
       - ds2s/**
       - arc/**
       - rtc/**
+      - suss2026/**
       - uii-sip-share/**
       - scripts/check-uii-sip-share.py
       - scripts/check-rtc.py
+      - scripts/check-suss2026.py
       - .github/workflows/deploy-mermail-pitch-deck.yml
       - assets/**
   workflow_dispatch:
@@ -48,6 +52,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
+
+      - name: Validate SUSS 2026 deck
+        run: python3 scripts/check-suss2026.py
 
       - name: Validate RTC deck
         run: python3 scripts/check-rtc.py
@@ -81,6 +88,19 @@ jobs:
           path: uii-sip-share-preview/
           if-no-files-found: error
 
+      - name: Build SUSS 2026 preview artifact
+        run: |
+          mkdir -p suss2026-preview/suss2026
+          cp suss2026/index.html suss2026-preview/suss2026/index.html
+          cp -r assets suss2026-preview/assets
+
+      - name: Upload SUSS 2026 preview
+        uses: actions/upload-artifact@v7
+        with:
+          name: suss2026-pitch-deck
+          path: suss2026-preview/
+          if-no-files-found: error
+
       - name: Build static site artifact
         run: |
           mkdir -p site
@@ -92,6 +112,7 @@ jobs:
           cp -r ds2s site/
           cp -r arc site/
           cp -r rtc site/
+          cp -r suss2026 site/
           cp -r uii-sip-share site/
 
           # Copy assets directory so that favicon and og-image are deployed
